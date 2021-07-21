@@ -12,25 +12,25 @@ public class ㄴ반복문연습2예제 {
 		
 		
 		//(2) 1부터 100까지 각 수의 약수를 구해라.
-//		for(int i = 1; i<=100; i++) {
-//			System.out.print(i+"의 약수는");
-//			for(int j = 1; j<=i; j++) {
-//				if(i % j == 0) {
-//					System.out.print(j+",");
-//				}
-//			} System.out.println();
-//		}
+		for(int i = 1; i<=100; i++) {
+			System.out.print(i+"의 약수는");
+			for(int j = 1; j<=i; j++) {
+				if(i % j == 0) {
+					System.out.print(j+",");
+				}
+			} System.out.println();
+		}
 		
 		
 		//(3) 1부터 100까지의 숫자 중 소수를 구해라.
-//		for(int i = 2; i<=100; i++) {
-//			for(int j = 2; j<=i; j++) {
-//				if(i!=j && i%j==0)break;
-//				if(i==j) {
-//					System.out.println(i);
-//				} 
-//			}
-//		}
+		for(int i = 2; i<=100; i++) {
+			for(int j = 2; j<=i; j++) {
+				if(i!=j && i%j==0)break;
+				if(i==j) {
+					System.out.println(i);
+				} 
+			}
+		}
 		
 		
 		//(4) 1부터 100까지의 숫자 중 3의 배수를 구해라.
