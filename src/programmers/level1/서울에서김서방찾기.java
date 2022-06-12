@@ -1,6 +1,14 @@
 package programmers.level1;
 
-class 서울에서김서방찾기Solution{
+public class 서울에서김서방찾기 {
+    public static void main(String[] args) {
+        String[] seoul = {"Lee", "Park", "Kim"};
+        String[] seoul2 = {"Kim", "Lee", "Park", "Kim"};
+        System.out.println(서울에서김서방찾기.solution1(seoul));
+        System.out.println(서울에서김서방찾기.solution2(seoul));
+    }
+
+    /////////////////[solution 시작]/////////////////
     public static String solution1(String[] seoul) {
         String result = "";
 
@@ -24,14 +32,5 @@ class 서울에서김서방찾기Solution{
             x++;
         }
         return "김서방은 " + x + "에 있다";
-    }
-}
-
-public class 서울에서김서방찾기 {
-    public static void main(String[] args) {
-        String[] seoul = {"Lee", "Park", "Kim"};
-        String[] seoul2 = {"Kim", "Lee", "Park", "Kim"};
-        System.out.println(서울에서김서방찾기Solution.solution1(seoul));
-        System.out.println(서울에서김서방찾기Solution.solution2(seoul));
     }
 }
