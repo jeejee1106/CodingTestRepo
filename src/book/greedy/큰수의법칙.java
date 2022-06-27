@@ -5,9 +5,10 @@ import java.util.Collections;
 
 public class 큰수의법칙 {
     public static void main(String[] args) {
-        int[] num1 = {2, 4, 5, 4, 6};
-        int m1 = 8;
-        int k1 = 3;
+        int[] num1 = {2, 4, 5, 4, 6}; //num이라는 배열이 있다.
+        int m1 = 8; //배열 안의 숫자들끼리 m번 만큼만 더하기를 해줄 것이다.
+        int k1 = 3; //단, 한 숫자에 대한 연속적인 더하기는 k번만 가능!!
+        // 더했을 때 가장 큰 결과를 return해라. 단, 배열 안에 같은 숫자가 있어도 인덱스가 다르기 때문에 다른 숫자로 본다.
 
         int[] num2 = {3, 4, 3, 4, 3};
         int m2 = 7;
