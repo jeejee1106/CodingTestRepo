@@ -1,5 +1,7 @@
 package book.greedy;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
 
 public class 일이될때까지 {
@@ -16,11 +18,17 @@ public class 일이될때까지 {
 
         System.out.println(일이될때까지.solution1(n1, k1)); // 3
         System.out.println(일이될때까지.solution1(n2, k2)); // 2
-        System.out.println(일이될때까지.solution1(n3, k3)); //
+        System.out.println(일이될때까지.solution1(n3, k3)); // 8
+
+        System.out.println(일이될때까지.solution2(n1, k1)); // 3
+        System.out.println(일이될때까지.solution2(n2, k2)); // 2
+        System.out.println(일이될때까지.solution2(n3, k3)); // 8
     }
 
     /////////////////[solution 시작]/////////////////
     public static int solution1(int n, int k) { //내 풀이 - 6분 걸림
+        long startTime = System.nanoTime(); //코드 실행 시간을 알아보기 위해 추가함
+
         int answer = 0;
 
         //1. n이 1이 될 때 까지 while문을 돌린다.
@@ -36,6 +44,10 @@ public class 일이될때까지 {
                 answer++;
             }
         }
+
+        long finishTime = System.nanoTime();
+        long elapsedTime = finishTime - startTime;
+        System.out.println("elapsedTime(ns) : " + elapsedTime);
         return answer; //6. 제일 위의 if문에서 n이 1이 되었음을 확인했다면 while문을 빠져나와 계산 횟수를 return!
     }
 
@@ -44,4 +56,29 @@ public class 일이될때까지 {
      * 아이디어와 원리는 비슷한 것 같다!
      * 위 if문을 조금 더 다듬을 순 없을까? 고민해봐야겠다.
      */
+
+    //책의 코드를 적어보았다.
+    ////////////////답이 제대로 안나온다. 파이썬 코드를 해석해서 자바로 옮겼는데 뭔가 잘못된 모양이다........////////////
+    public static int solution2(int n, int k) {
+        int result = 0;
+
+        while (true) {
+            // (n==k로 나누어 떨어지는 수)가 될 때까지 1씩 빼기
+            int target = (n % k) * k;
+            result += (n - target);
+            n = target;
+
+            // n이 k보다 작을 때 (더 이상 나눌 수 없을 때) 반복문 탈출
+            if (n < k) {
+                break;
+            }
+            //k로 나누기
+            result += 1;
+            n %= k;
+        }
+        
+        // 마지막으로 남은 수에 대하여 1씩 빼기
+        result += n - 1;
+        return result;
+    }
 }
