@@ -1,7 +1,7 @@
 package book.implementation;
 
 public class 상하좌우 {
-    // 1이 될 때 까지
+    
     public static void main(String[] args) {
         int n1 = 5;
         char[] position1 = {'R', 'R', 'R', 'U', 'D', 'D'};
