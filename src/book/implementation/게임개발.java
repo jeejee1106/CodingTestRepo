@@ -16,6 +16,7 @@ public class 게임개발 {
                        {1, 1, 1, 1}};
 
         System.out.println("solution1 = " + 게임개발.solution1(n, m, x, y, direction, map)); //3
+        System.out.println("solution1 = " + 게임개발.solution2(n, m, x, y, direction, map)); //3
 
     }
 
@@ -80,6 +81,65 @@ public class 게임개발 {
                     xPos = nx;
                     yPos = ny;
                     turnCount = 0;
+                }
+            }
+        }
+
+        long finishTime = System.nanoTime();
+        BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
+        System.out.println("seconds : " + seconds + "초");
+        return answer;
+    }
+
+    /**
+     * 복습으로 다시 풀어봤다.
+     * 여전히 어렵다 ㅜㅜ 내일 한 번 더 복습해야겠다.
+     * 그래도 시간은 30분만에 풀었다!
+     */
+    public static int solution2(int n, int m, int x, int y, int direction, int[][] map) {
+        long startTime = System.nanoTime(); //코드 실행 시간을 알아보기 위해 추가함
+
+        int answer = 1; //캐릭터가 방문한 칸 수 - 처음 시작한 칸도 방문했다고 인정하고 1로 초기화
+        int xPos = x;
+        int yPos = y;
+        int[][] visitPos = new int[m][n]; //캐릭터가 방문한 위치를 표시하기 위해 0으로 초기화, 방문했으면 1로 변경할 것임
+        visitPos[x][y] = 1; //처음 시작 위치도 방문한 칸이 되니 1로 변경
+        int turnCount = 0; //캐릭터의 회전수 세기. turnCount가 4가 되면 더 이상 이동할 수 없는 상태임
+        //캐릭터가 바라보는 방향에서 한 칸 전진했을 때 바뀌는 좌표크기(?). 북,동,남,서 순서임
+        int[] dx = {-1, 0, 1, 0};
+        int[] dy = {0, 1, 0 , -1};
+
+        //시뮬레이션 시작
+        while (true) {
+            //1. 캐릭터 회전시키기
+            direction -= 1;
+            if (direction == -1) {
+                direction = 3;
+            }
+            //2. 앞으로 전진했을 때의 좌표를 보고 갈 수있으면 전진, 못가는 위치면 제자리
+            int nx = xPos + dx[direction];
+            int ny = yPos + dy[direction];
+            // 즉, (nx, ny)가 한 번도 안가봤고(visitPos[nx][ny]), 육지일 때(map[nx][ny] == 0)만 전진
+            if (visitPos[nx][ny] == 0 && map[nx][ny] == 0) {
+                xPos = nx;
+                yPos = ny; //캐릭터 이동시켜줌
+                visitPos[xPos][yPos] = 1; //한 번 와봤다는 것을 저장하기 위함.
+                answer++;
+                turnCount = 0;
+                continue; //이동했으니 회전부터 다시
+            } else { //(nx, ny)가 가본적 있거나 바다면 제자리
+                turnCount++; //회전수만 늘려주기
+            }
+            //3. 회전수가 4가 되면 더 이상 움직이지 못하는 상태. 뒤로 한 칸 가주기
+            if (turnCount > 4) {
+                nx = xPos - dx[direction];
+                ny = yPos - dy[direction];
+
+                if (map[nx][ny] == 1) { //뒤로 갔는데 거기가 바다???
+                    break; //게임 끝
+                } else {
+                     turnCount = 0; //육지라면 회전수 0으로 초기화 시켜주고 다시 처음으로
+                    continue;
                 }
             }
         }
