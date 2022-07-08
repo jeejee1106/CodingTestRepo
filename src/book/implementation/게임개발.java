@@ -17,6 +17,7 @@ public class 게임개발 {
 
         System.out.println("solution1 = " + 게임개발.solution1(n, m, x, y, direction, map)); //3
         System.out.println("solution1 = " + 게임개발.solution2(n, m, x, y, direction, map)); //3
+        System.out.println("solution1 = " + 게임개발.solution3(n, m, x, y, direction, map)); //3
 
     }
 
@@ -139,6 +140,71 @@ public class 게임개발 {
                     break; //게임 끝
                 } else {
                      turnCount = 0; //육지라면 회전수 0으로 초기화 시켜주고 다시 처음으로
+                    continue;
+                }
+            }
+        }
+
+        long finishTime = System.nanoTime();
+        BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
+        System.out.println("seconds : " + seconds + "초");
+        return answer;
+    }
+
+    /**
+     * 220708 복습 - 15분 클리어!
+     * 자꾸 헷갈리는 부분이 있다.
+     * turnCount가 4일 때는 한 칸 뒤로가는데, 이때 if문을 하나 더 써서 뒤로 간 칸이 바다인지 육지인지 확인을 해야한다.
+     * 뒤로 한 칸 갈 때 그 칸의 좌표를 nx 변수에 넣어도 되는데, 자꾸
+     * '새로운 변수를 선언해서 다시 넣어줘야하는거 아닌가? 위에서 이미 nx가 한 칸 앞으로 간 걸로 초기화 됐기 때문에 한 칸 뒤로가면 결국 제자리 아닌가???'
+     * 라는 생각을 한다ㅜㅜ
+     * 위에서 이미 nx가 한 칸 앞으로 간 건 맞는데, 어차피 nx = ~ 이렇게 넣으면 재초기화가 되는거니까 상관 없다ㅜㅜ
+     * 이 기본적인 걸 자꾸 헷갈려한다 이 바보........
+     */
+    public static int solution3(int n, int m, int x, int y, int direction, int[][] map) {
+        long startTime = System.nanoTime(); //코드 실행 시간을 알아보기 위해 추가함
+
+        int answer = 1;
+        int xPos = x;
+        int yPos = y;
+        int[][] visitPos = new int[m][n];
+        visitPos[x][y] = 1;
+        //북,동,남,서
+        int[] dx = {-1, 0, 1, 0};
+        int[] dy = {0, 1, 0, -1};
+        int turnCount = 0;
+
+        while (true) {
+            //왼쪽으로 회전 시키기
+            direction -= 1;
+            if (direction == -1) {
+                direction = 3;
+            }
+
+            //한 칸 이동하기
+            int nx = xPos + dx[direction];
+            int ny = yPos + dy[direction];
+
+            if (map[nx][ny] == 0 && visitPos[nx][ny] == 0) {
+                xPos = nx;
+                yPos = ny;
+                turnCount = 0;
+                visitPos[xPos][yPos] = 1;
+                answer++;
+                continue;
+            } else {
+                turnCount++;
+            }
+
+            if (turnCount == 4) {
+                int nx2 = xPos - dx[direction]; //새로운 변수 다시 안만들어도 돼!!!!!!!!!!!!!!!!!!!!
+                int ny2 = yPos - dy[direction]; //위에 선언한 nx 다시 써도 돼!!!! 어차피 재초기화라 한 칸 뒤로 가지는 게 맞아!!
+                if (map[nx2][ny2] == 1) {
+                    break;
+                } else {
+                    xPos = nx2;
+                    yPos = ny2;
+                    turnCount = 0;
                     continue;
                 }
             }
