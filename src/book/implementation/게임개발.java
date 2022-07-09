@@ -18,6 +18,7 @@ public class 게임개발 {
         System.out.println("solution1 = " + 게임개발.solution1(n, m, x, y, direction, map)); //3
         System.out.println("solution1 = " + 게임개발.solution2(n, m, x, y, direction, map)); //3
         System.out.println("solution1 = " + 게임개발.solution3(n, m, x, y, direction, map)); //3
+        System.out.println("solution1 = " + 게임개발.solution4(n, m, x, y, direction, map)); //3
 
     }
 
@@ -204,6 +205,64 @@ public class 게임개발 {
                 } else {
                     xPos = nx2;
                     yPos = ny2;
+                    turnCount = 0;
+                    continue;
+                }
+            }
+        }
+
+        long finishTime = System.nanoTime();
+        BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
+        System.out.println("seconds : " + seconds + "초");
+        return answer;
+    }
+
+    /**
+     * 220709 복습 - 8분 30초 클리어!
+     * 이젠 문제를 거의 외워서 그런지 빨라졌다.
+     * 차라리 이렇게 외워서라도 이런 문제에 익숙해지고, 나중에 진짜 코테에서 참고할 수 있는 기억이 됐으면 좋겠다.
+     * 이젠 일주일에 한 번씩만 복습 꾸준히 하자.
+     */
+    public static int solution4(int n, int m, int x, int y, int direction, int[][] map) {
+        long startTime = System.nanoTime(); //코드 실행 시간을 알아보기 위해 추가함
+
+        int answer = 1;
+        int xPos = x;
+        int yPos = y;
+        int[][] visitPos = new int[m][n];
+        visitPos[x][y] = 1;
+        //북,동,남,서로 전진했을 때 변하는 좌표 크기
+        int[] dx = {-1, 0, 1, 0};
+        int[] dy = {0, 1, 0 , -1};
+        int turnCount = 0;
+
+        while (true) {
+            direction -= 1; //왼쪽으로 회전
+            if(direction == -1){
+                direction = 3;
+            }
+            int nx = xPos + dx[direction];
+            int ny = yPos + dy[direction];
+
+            if (map[nx][ny] == 0 && visitPos[nx][ny] == 0) {
+                xPos = nx;
+                yPos = ny;
+                answer++;
+                visitPos[xPos][yPos] = 1;
+                turnCount = 0;
+                continue;
+            } else {
+                turnCount++;
+            }
+
+            if (turnCount == 4) {
+                nx = xPos - dx[direction];
+                ny = yPos - dy[direction];
+                if (map[nx][ny] == 1) {
+                    break;
+                } else {
+                    xPos = nx;
+                    yPos = ny;
                     turnCount = 0;
                     continue;
                 }
