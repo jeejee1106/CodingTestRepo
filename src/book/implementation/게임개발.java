@@ -15,10 +15,33 @@ public class 게임개발 {
                        {1, 1, 0, 1},
                        {1, 1, 1, 1}};
 
+        /**
+         * 220710
+         * 이 예시를 추가한 후 깨달은 사실
+         * 책에 있는 예시로는 내 풀이던, 책의 풀이던 프로그램이 잘 실행되지만,
+         * 다른 예시를 넣어보니 모든 풀이가 제대로 동작하지 않는다.
+         * 책 어딘가에 '책에 나온 예시만 동작할 수 있다' 라는 구문을 본 적이 있는데 진짜였네...
+         * 난 내 코드가 잘못된 줄 알고 울뻔했다 ㅜㅜ
+         * 아무튼 책의 풀이는 참고만 하고 다른 예외도 잘 처리할 수 있도록 노력해야겠다.
+         */
+        int n2 = 7; //3 <= n <= 50 맵의 세로크기
+        int m2 = 7; //3 <= m <= 50 맵의 가로크기
+        int x2 = 4; //캐릭터의 위치 (x, y)
+        int y2 = 2; //캐릭터의 위치 (x, y)
+        int direction2 = 3; // 캐릭터가 바라보는 방향 (0:북쪽,  1:동쪽, 2:남쪽, 3:서쪽)
+        int[][] map2 = {{1, 1, 1, 1, 0, 0, 0}, //0:육지, 1:바다
+                       {1, 0, 0, 1, 0, 1, 1},
+                       {1, 1, 0, 1, 1, 0, 0},
+                       {1, 0, 1, 1, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 1, 1, 0},
+                       {0, 0, 0, 0, 1, 1, 0}};
+        System.out.println("solution2 = " + 게임개발.solution1(n2, m2, x2, y2, direction2, map2)); //3
+
         System.out.println("solution1 = " + 게임개발.solution1(n, m, x, y, direction, map)); //3
-        System.out.println("solution1 = " + 게임개발.solution2(n, m, x, y, direction, map)); //3
-        System.out.println("solution1 = " + 게임개발.solution3(n, m, x, y, direction, map)); //3
-        System.out.println("solution1 = " + 게임개발.solution4(n, m, x, y, direction, map)); //3
+        System.out.println("solution2 = " + 게임개발.solution2(n, m, x, y, direction, map)); //3
+        System.out.println("solution3 = " + 게임개발.solution3(n, m, x, y, direction, map)); //3
+        System.out.println("solution4 = " + 게임개발.solution4(n, m, x, y, direction, map)); //3
 
     }
 
