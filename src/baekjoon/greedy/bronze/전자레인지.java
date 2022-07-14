@@ -1,6 +1,4 @@
-package baekjoon.greedy;
-
-import book.greedy.거스름돈;
+package baekjoon.greedy.bronze;
 
 import java.math.BigDecimal;
 import java.util.Scanner;

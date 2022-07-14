@@ -1,4 +1,4 @@
-package baekjoon.greedy;
+package baekjoon.greedy.bronze;
 
 import java.io.*;
 import java.math.BigDecimal;
