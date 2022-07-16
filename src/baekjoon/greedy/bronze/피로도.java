@@ -15,6 +15,10 @@ public class 피로도 {
         System.out.println(solution2(A1, B1, C1, M1)); // 24
         System.out.println(solution2(A2, B2, C2, M2)); // 15
         System.out.println(solution2(A3, B3, C3, M3)); // 0
+
+        System.out.println(solution3(A1, B1, C1, M1)); // 24
+        System.out.println(solution3(A2, B2, C2, M2)); // 15
+        System.out.println(solution3(A3, B3, C3, M3)); // 0
     }
 
     public static void solution1() throws IOException { //백준 방식(BufferedReader로 한 줄 입력받고 StringTokenizer로 쪼개기) 풀이
@@ -65,6 +69,26 @@ public class 피로도 {
             fatigue += A; //일할 수 있는 상태라면 현재 피로도에 1시간 더 하면 쌓일 피로도 더해주기
             work += B; //일한 양 더해주기
             time++; //일한 시간 더해주기
+        }
+        return  work;
+    }
+
+    public static int solution3(int A, int B, int C, int M) {
+        int fatigue = 0; //피로도
+        int work = 0; //일한 양
+        int time = 0;
+
+        while(time < 24) {
+            if (A > M) { //처음부터 피로도가 최고치(M)을 넘어가면 일 그만.
+                break;
+            }
+            if (fatigue + A > M) { //현재 피로도 + 1시간 더 하면 쌓일 피로도가 최대치(M)보다 크면 쉬어주기
+                fatigue = fatigue - C < 0 ? 0 : fatigue - C; //쉬면서 피로도 줄이고 피로도가 음수면 0으로 바꿔주기
+            } else {
+                fatigue += A; //일할 수 있는 상태라면 현재 피로도에 1시간 더 하면 쌓일 피로도 더해주기
+                work += B; //일한 양 더해주기
+            }
+            time++; //쉬는시간 or 일한시간 더해주기
         }
         return  work;
     }
