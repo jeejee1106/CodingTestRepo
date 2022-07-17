@@ -9,7 +9,11 @@ import java.util.StringTokenizer;
 public class 우유축제 {
     public static void main(String[] args) throws IOException {
 //        solution1();
-        solution2();
+//        solution2();
+        int[] milkShop1 = {0, 1, 2, 0, 1, 2, 0};
+        int[] milkShop2 = {2, 0, 1, 2, 0, 2, 1, 0, 0, 1};
+        System.out.println(solution3(milkShop1)); //7
+        System.out.println(solution3(milkShop2)); //5
     }
 
     public static void solution1() throws IOException { //백준 방식(BufferedReader로 한 줄 입력받고 StringTokenizer로 쪼개기) 풀이
@@ -80,5 +84,19 @@ public class 우유축제 {
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
         System.out.println("seconds : " + seconds + "초");
+    }
+
+    public static int solution3(int[] milkShop) throws IOException {
+        int count = 0, nextMilk = 0;
+        for (int i = 0; i < milkShop.length; i++) {
+            if (milkShop[i] == nextMilk) {
+                count++;
+                nextMilk++;
+            }
+            if (nextMilk == 3) {
+                nextMilk = 0;
+            }
+        }
+        return count;
     }
 }
