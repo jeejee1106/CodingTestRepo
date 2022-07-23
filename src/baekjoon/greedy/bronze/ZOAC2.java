@@ -1,31 +1,24 @@
 package baekjoon.greedy.bronze;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class ZOAC2 {
-    public static void main(String[] args) throws IOException {
-        solution1();
+    public static void main(String[] args) {
+        System.out.println(solution1("ZOAC")); //26
+        System.out.println(solution1("LBOLVUEEPMOIENMG")); //100
     }
 
-    public static void solution1() throws IOException { //백준 방식(BufferedReader로 한 줄 입력받기) 풀이
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String zoac = br.readLine();
+   public static int solution1(String str) {
+        int answer = 0;
 
-        int time = 0;
-        char s = 'A';
-        // 1. 아스키코드를 사용해 풀이
-        // 2. 오른쪽으로 돌리는 횟수 = abs(가야되는 위치 - 현재위치)
-        // 3. 왼쪽으로 돌리는 횟수 = 26 - 오른쪽으로 돌리는 횟수
-        // 4. 둘의 값을 비교해 최솟값을 더해주면 된다.
+        //1. 첫 시작은 무조건 A
+        char ch = 'A';
 
-        for(int i=0; i<zoac.length(); i++) {
-            char tmp = zoac.charAt(i);
-            int a = Math.abs(tmp - s); //오른쪽으로 돌리는 횟수
-            time += Math.min(a, 26 - a); // 오른쪽으로 돌리는 횟수 vs 왼쪽으로 돌리는 횟수
-            s = tmp;
+        for (int i = 0; i < str.length(); i++) {
+            char tmp = str.charAt(i); //2. 빈 변수에는 입력받은 문자열의 첫 글자부터 담아본다.
+            int rightTime = Math.abs(ch - tmp); //3. 오른쪽으로 돌렸을 때 두 문자의 거리(즉, 시간)
+            int leftTime = 26 - rightTime; //4. 알파벳의 갯수 26에서 rightTime을 빼주면 왼쪽으로 돌린 시간이 나온다
+            answer += Math.min(rightTime, leftTime); //5. answer 변수에 두 값 중 더 작은 수(즉, 시간)를 계속 더해준다.
+            ch = tmp; //6. ch변수에 tmp를 넣어주면 계속해서 현재 문자와 다음문자의 거리 비교가 가능하다.
         }
-        System.out.println(time);
+    return answer;
     }
 }
