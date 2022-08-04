@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//사실 실버단계이지만 형제(?)들과 함께 있으라고 브론즈에 넣었다ㅎㅎ
+
 public class 수정렬하기2 {
     public static void main(String[] args) throws IOException {
         solution1();
