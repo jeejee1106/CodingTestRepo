@@ -25,6 +25,7 @@ public class 수정렬하기2 {
     public static void solution1() throws IOException {
         /**
          * 방법1 : BufferedReader + Collections.sort
+         * 참고 블로그 : https://st-lab.tistory.com/106
          * 수 정렬하기1의 solution2보다는 조금 빠르지만, 이 문제의 solution2에 비해 많이 느리다.
          */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -48,8 +49,12 @@ public class 수정렬하기2 {
 
     public static void solution2() throws IOException {
         /**
+         * 방법2 : Counting Sort(계수 정렬) 알고리즘을 응용한 방법
          * 제일 빠른 알고리즘 solution1에 비해 약 두배 정도 빠르다.
-         * 작동원리 :
+         *
+         * 참고 블로그 : https://st-lab.tistory.com/104
+         *
+         * 작동원리 : 를 적으려고 했지만 너무 어렵다.. 블로그 보면서 계속 공부하자..
          */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
@@ -57,7 +62,7 @@ public class 수정렬하기2 {
 
         /*
 		  -1000000 ~ 1000000
-		  기준점 0 = index 100000 으로 생각
+		  기준점 0 = index[100000] 으로 생각
 		*/
         boolean[] arr = new boolean[2000001];
 
