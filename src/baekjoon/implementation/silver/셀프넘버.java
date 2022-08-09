@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 public class 셀프넘버 {
     public static void main(String[] args) {
-        solution1();
+//        solution1();
+        solution2();
     }
 
     public static void solution1() { //내 풀이
@@ -36,9 +37,35 @@ public class 셀프넘버 {
         }
     }
 
-    public static void solution2() { //다른 사람 풀이 참고
-        //10,000 이하의 양의 정수 중 셀프넘버를 출력하시오
-        
-        
+    public static void solution2() { //다른 사람 풀이 - 속도가 훨씬 빠르다....거의 1.7배정도....
+        boolean[] check = new boolean[10001]; //주어진 수의 범위는 1부터 10000이므로
+
+        for (int i = 1; i < 10001; i++){
+            int n = d(i);
+
+            if(n < 10001){ // 10000 이 넘는 수는 필요가 없음
+                check[n] = true; //n은 생성자가 있는 수이기 때문에 true입력
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i < 10001; i++) {
+            if (!check[i]) { // false 인 인덱스만 출력
+                sb.append(i).append('\n');
+            }
+        }
+        System.out.println(sb);
+    }
+
+    public static int d(int number){
+        int sum = number;
+
+        while(number != 0){
+            sum = sum + (number % 10); // 1의 자리수
+            number = number/10;	// 10을 나누어 1의자리를 없앤다
+        }
+
+        return sum;
     }
 }
