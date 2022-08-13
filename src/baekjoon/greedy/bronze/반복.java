@@ -4,17 +4,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ë°˜ë³µ {
+public class ¹İº¹ {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
-        //ì•„ìŠ¤í‚¤ì½”ë“œë¡œ ë³€í™˜ í›„ ë’· ë¬¸ìê°€ í˜„ì¬ ë¬¸ìë³´ë‹¤ í¬ë©´ ì¬ì…ë ¥ ì•ˆí•´ë„ë¨. ê·¸ ë‹¤ë‹¤ìŒë¬¸ìë¥¼ ê²€ì‚¬í•˜ë©´ ë¨
+        //¾Æ½ºÅ°ÄÚµå·Î º¯È¯ ÈÄ µŞ ¹®ÀÚ°¡ ÇöÀç ¹®ÀÚº¸´Ù Å©¸é ÀçÀÔ·Â ¾ÈÇØµµµÊ. ±× ´Ù´ÙÀ½¹®ÀÚ¸¦ °Ë»çÇÏ¸é µÊ
 
-        int answer  = 1; //ì²« ë¬¸ìëŠ” ë¬´ì¡°ê±´ ì…ë ¥ì„ ë°›ì•„ì•¼ í•˜ê¸° ë•Œë¬¸ì— 1ë¡œ ì´ˆê¸°í™”
+        int answer  = 1; //Ã¹ ¹®ÀÚ´Â ¹«Á¶°Ç ÀÔ·ÂÀ» ¹Ş¾Æ¾ß ÇÏ±â ¶§¹®¿¡ 1·Î ÃÊ±âÈ­
 
         for (int i = 0; i < str.length() - 1; i++) {
             int now = str.charAt(i);

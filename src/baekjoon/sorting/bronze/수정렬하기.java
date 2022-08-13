@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class ìˆ˜ì •ë ¬í•˜ê¸° {
+public class ¼öÁ¤·ÄÇÏ±â {
     public static void main(String[] args) throws IOException {
         solution1();
     }
@@ -28,11 +28,11 @@ public class ìˆ˜ì •ë ¬í•˜ê¸° {
 
     public static void solution2() throws IOException {
         /**
-         * solution1ê³¼ ì½”ë“œëŠ” ê°™ë‹¤.
-         * ë‹¤ë§Œ ì¶œë ¥í•˜ëŠ” ë¶€ë¶„ì—ì„œ System.out.println();ì„ ë°˜ë³µì ìœ¼ë¡œ ëŒë¦¬ëŠ” ê²ƒì´ ì•„ë‹ˆë¼
-         * StringBuilderë¥¼ ì‚¬ìš©í•´ì„œ StringBuilderì— ê°’ì„ ë„£ëŠ” ê²ƒì„ ë°˜ë³µë¬¸ìœ¼ë¡œ ëŒë¦¬ê³ ,
-         * ì¶œë ¥ì€ StringBuilderë¥¼ ì¶œë ¥í•œë‹¤.
-         * ì´ ë°©ë²•ì´ solution1ë³´ë‹¤ ë” íš¨ìœ¨ì´ ì¢‹ì€(ë” ë¹ ë¥¸) ë°©ë²•ì´ë¼ê³  í•œë‹¤.
+         * solution1°ú ÄÚµå´Â °°´Ù.
+         * ´Ù¸¸ Ãâ·ÂÇÏ´Â ºÎºĞ¿¡¼­ System.out.println();À» ¹İº¹ÀûÀ¸·Î µ¹¸®´Â °ÍÀÌ ¾Æ´Ï¶ó
+         * StringBuilder¸¦ »ç¿ëÇØ¼­ StringBuilder¿¡ °ªÀ» ³Ö´Â °ÍÀ» ¹İº¹¹®À¸·Î µ¹¸®°í,
+         * Ãâ·ÂÀº StringBuilder¸¦ Ãâ·ÂÇÑ´Ù.
+         * ÀÌ ¹æ¹ıÀÌ solution1º¸´Ù ´õ È¿À²ÀÌ ÁÁÀº(´õ ºü¸¥) ¹æ¹ıÀÌ¶ó°í ÇÑ´Ù.
          */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();

@@ -2,7 +2,7 @@ package programmers.level1;
 
 import java.util.HashMap;
 
-public class ì™„ì£¼í•˜ì§€ëª»í•œì„ ìˆ˜ {
+public class ¿ÏÁÖÇÏÁö¸øÇÑ¼±¼ö {
     public static void main(String[] args) {
         String[] participant1 = {"leo", "kiki", "eden"};
         String[] completion1 = {"eden", "kiki"};
@@ -14,25 +14,25 @@ public class ì™„ì£¼í•˜ì§€ëª»í•œì„ ìˆ˜ {
         String[] completion3 = {"stanko", "ana", "mislav"};
 
 
-        System.out.println(ì™„ì£¼í•˜ì§€ëª»í•œì„ ìˆ˜.solution1(participant1, completion1)); //leo
-        System.out.println(ì™„ì£¼í•˜ì§€ëª»í•œì„ ìˆ˜.solution1(participant2, completion2)); //vinko
-        System.out.println(ì™„ì£¼í•˜ì§€ëª»í•œì„ ìˆ˜.solution1(participant3, completion3)); //mislav
+        System.out.println(¿ÏÁÖÇÏÁö¸øÇÑ¼±¼ö.solution1(participant1, completion1)); //leo
+        System.out.println(¿ÏÁÖÇÏÁö¸øÇÑ¼±¼ö.solution1(participant2, completion2)); //vinko
+        System.out.println(¿ÏÁÖÇÏÁö¸øÇÑ¼±¼ö.solution1(participant3, completion3)); //mislav
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static String solution1(String[] participant, String[] completion) {
         String answer = "";
-        //1. HashMapì— ì°¸ê°€ìì˜ ì´ë¦„ì„ keyë¡œ, ëª… ìˆ˜ë¥¼ valueë¡œ ë‹´ëŠ”ë‹¤.
+        //1. HashMap¿¡ Âü°¡ÀÚÀÇ ÀÌ¸§À» key·Î, ¸í ¼ö¸¦ value·Î ´ã´Â´Ù.
         HashMap<String, Integer> map = new HashMap<>();
         for (String part : participant) {
 //            map.put(part, map.get(part) + 1);
             map.put(part, map.getOrDefault(part, 0) + 1);
         }
-        //2. mapì—ì„œ ì™„ì£¼ìì˜ ì´ë¦„ì„ ë„£ì–´ ì™„ì£¼ë¥¼ í–ˆìœ¼ë©´ valueë¥¼ -1í•´ì¤€ë‹¤.
+        //2. map¿¡¼­ ¿ÏÁÖÀÚÀÇ ÀÌ¸§À» ³Ö¾î ¿ÏÁÖ¸¦ ÇßÀ¸¸é value¸¦ -1ÇØÁØ´Ù.
         for (String comp : completion) {
             map.put(comp, map.get(comp) - 1);
         }
-        //3. ì°¸ê°€ìì˜ ì´ë¦„ìœ¼ë¡œ valueê°’ì„ í™•ì¸ í–ˆì„ ë•Œ valueê°’ 0ì´ ì•„ë‹Œ(í˜¹ì¸ 1ì¸) ì°¸ê°€ìê°€ ì™„ì£¼ë¥¼ ëª»í•œ ì„ ìˆ˜ë‹¤.
+        //3. Âü°¡ÀÚÀÇ ÀÌ¸§À¸·Î value°ªÀ» È®ÀÎ ÇßÀ» ¶§ value°ª 0ÀÌ ¾Æ´Ñ(È¤ÀÎ 1ÀÎ) Âü°¡ÀÚ°¡ ¿ÏÁÖ¸¦ ¸øÇÑ ¼±¼ö´Ù.
         for (String part : participant) {
             if (map.get(part) != 0) {
                 answer = part;

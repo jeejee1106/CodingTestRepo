@@ -2,26 +2,26 @@ package programmers.level1;
 
 import java.util.Arrays;
 
-public class Kë²ˆì§¸ìˆ˜ {
+public class K¹øÂ°¼ö {
     public static void main(String[] args) {
         int[] array = {1, 5, 2, 6, 3, 7, 4};
         int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
 
-        System.out.println(Arrays.toString(Kë²ˆì§¸ìˆ˜.solution1(array, commands)));
+        System.out.println(Arrays.toString(K¹øÂ°¼ö.solution1(array, commands)));
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int[] solution1(int[] array, int[][] commands) {
-        int[] answer = new int[commands.length]; //commandsì˜ lengthë§Œí¼ ë°°ì—´ í¬ê¸° í• ë‹¹
+        int[] answer = new int[commands.length]; //commandsÀÇ length¸¸Å­ ¹è¿­ Å©±â ÇÒ´ç
 
         for (int i = 0; i < commands.length; i++){
-            //1. array ë°°ì—´ì„ ìë¥¸ë‹¤. commandsë°°ì—´ì˜ x,0 y,1 ë§Œí¼ ìë¥¸ë‹¤.
+            //1. array ¹è¿­À» ÀÚ¸¥´Ù. commands¹è¿­ÀÇ x,0 y,1 ¸¸Å­ ÀÚ¸¥´Ù.
             int[] array2 = Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);
 
-            //2. ìë¥¸ ë°°ì—´ì„ ì •ë ¬í•œë‹¤.
+            //2. ÀÚ¸¥ ¹è¿­À» Á¤·ÄÇÑ´Ù.
             Arrays.sort(array2);
 
-            //3. ì •ë ¬ëœ ë°°ì—´ì—ì„œ kë²ˆì§¸ ìˆ˜ë¥¼ ì°¾ëŠ”ë‹¤.
+            //3. Á¤·ÄµÈ ¹è¿­¿¡¼­ k¹øÂ° ¼ö¸¦ Ã£´Â´Ù.
             answer[i] = array2[commands[i][2]-1];
         }
         return answer;

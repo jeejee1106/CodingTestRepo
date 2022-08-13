@@ -3,40 +3,40 @@ package programmers.level1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ëª¨ì˜ê³ ì‚¬ {
+public class ¸ğÀÇ°í»ç {
     public static void main(String[] args) {
         int[] answers1 = {1,2,3,4,5};
         int[] answers2 = {1,3,2,4,2};
 
-        System.out.println(Arrays.toString(ëª¨ì˜ê³ ì‚¬.solution1(answers1))); // [1]
-        System.out.println(Arrays.toString(ëª¨ì˜ê³ ì‚¬.solution1(answers2))); // [1,2,3]
+        System.out.println(Arrays.toString(¸ğÀÇ°í»ç.solution1(answers1))); // [1]
+        System.out.println(Arrays.toString(¸ğÀÇ°í»ç.solution1(answers2))); // [1,2,3]
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int[] solution1(int[] answers) {
         int[] supoja1 = {1,2,3,4,5}, supoja2 = {2,1,2,3,2,4,2,5}, supoja3 = {3,3,1,1,2,2,4,4,5,5};
         int count1 = 0, count2 = 0, count3 = 0;
 
         for(int i = 0 ; i < answers.length; i++){
-            //ìˆ˜í¬ìë“¤ì˜ ì¸ë±ìŠ¤ë²ˆí˜¸ [i]ëŠ” ê°ìì˜ ë°°ì—´ ê¸¸ì´ë§Œí¼ì´ ê³„ì† ë°˜ë³µ ë˜ì–´ì•¼ í•¨
+            //¼öÆ÷ÀÚµéÀÇ ÀÎµ¦½º¹øÈ£ [i]´Â °¢ÀÚÀÇ ¹è¿­ ±æÀÌ¸¸Å­ÀÌ °è¼Ó ¹İº¹ µÇ¾î¾ß ÇÔ
             if(answers[i] == supoja1[i%supoja1.length]) count1++;
             if(answers[i] == supoja2[i%supoja2.length]) count2++;
             if(answers[i] == supoja3[i%supoja3.length]) count3++;
         }
 
-        //1ë“±ì´ ëª‡ëª…ì´ ë‚˜ì˜¬ ì¤„ ëª¨ë¥´ë¯€ë¡œ Listì„ ì–¸
+        //1µîÀÌ ¸î¸íÀÌ ³ª¿Ã ÁÙ ¸ğ¸£¹Ç·Î List¼±¾ğ
         ArrayList<Integer> list = new ArrayList<>();
 
-        //ì œì¼ ë†’ì€ ì ìˆ˜ ì°¾ê¸°
+        //Á¦ÀÏ ³ôÀº Á¡¼ö Ã£±â
         // #1
-//        int max = count1; //count1ì´ ì œì¼ ë†’ë‹¤ê³  ê°€ì •
+//        int max = count1; //count1ÀÌ Á¦ÀÏ ³ô´Ù°í °¡Á¤
 //        if(max < count2) max = count2;
 //        if(max < count3) max = count3;
 
         // #2
-        int max = Math.max(Math.max(count1, count2),count3); // maxê°’ êµ¬í•˜ê¸°
+        int max = Math.max(Math.max(count1, count2),count3); // max°ª ±¸ÇÏ±â
 
-        //ì œì¼ ì ìˆ˜ ë†’ì€ ì‚¬ëŒ listì— ë‹´ê¸°
+        //Á¦ÀÏ Á¡¼ö ³ôÀº »ç¶÷ list¿¡ ´ã±â
         if(max == count1) list.add(1);
         if(max == count2) list.add(2);
         if(max == count3) list.add(3);

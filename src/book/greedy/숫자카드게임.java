@@ -5,34 +5,34 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ìˆ«ìì¹´ë“œê²Œì„ {
+public class ¼ıÀÚÄ«µå°ÔÀÓ {
     public static void main(String[] args) {
         int[][] num1 = {{3, 1, 2},
-                        {4, 1, 4},
-                        {2, 2, 2}};
+                {4, 1, 4},
+                {2, 2, 2}};
         int[][] num2 = {{7, 3, 1, 8},
-                        {3, 3, 3, 4}};
+                {3, 3, 3, 4}};
         int[][] num3 = {{73,16,94,20},
-                        {67,23,56,13},
-                        {94,34,18,47},
-                        {56,14,10,44}};
+                {67,23,56,13},
+                {94,34,18,47},
+                {56,14,10,44}};
 
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution1(num1)); //2
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution1(num2)); //3
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution1(num3)); //2
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution1(num1)); //2
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution1(num2)); //3
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution1(num3)); //2
 
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution2(num1)); //2
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution2(num2)); //3
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution2(num3)); //2
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution2(num1)); //2
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution2(num2)); //3
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution2(num3)); //2
 
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution3(num1)); //2
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution3(num2)); //3
-        System.out.println(ìˆ«ìì¹´ë“œê²Œì„.solution3(num3)); //2
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution3(num1)); //2
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution3(num2)); //3
+        System.out.println(¼ıÀÚÄ«µå°ÔÀÓ.solution3(num3)); //2
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
-    public static int solution1(int[][] num) { //ë‚´ í’€ì´
-        //1. Listì— ê° í–‰ì—ì„œ ê°€ì¥ ì‘ì€ ìˆ˜ë¥¼ ë‹´ê¸°
+    /////////////////[solution ½ÃÀÛ]/////////////////
+    public static int solution1(int[][] num) { //³» Ç®ÀÌ
+        //1. List¿¡ °¢ Çà¿¡¼­ °¡Àå ÀÛÀº ¼ö¸¦ ´ã±â
         List<Integer> minNumList = new ArrayList<>();
         for (int i = 0; i < num.length; i++) {
             int minNum = num[0][0];
@@ -44,11 +44,11 @@ public class ìˆ«ìì¹´ë“œê²Œì„ {
             minNumList.add(minNum);
         }
 
-        //2. Listì— ë‹´ê¸´ ìˆ˜ë“¤ ì¤‘ ê°€ì¥ í°ìˆ˜ë¥¼ returní•˜ê¸°
+        //2. List¿¡ ´ã±ä ¼öµé Áß °¡Àå Å«¼ö¸¦ returnÇÏ±â
         return Collections.max(minNumList);
     }
 
-    public static int solution2(int[][] num) { //ë‚´ í’€ì´ - 2ì°¨ì› ë°°ì—´ì„ í–¥ìƒëœ forë¬¸ìœ¼ë¡œ!! (ìš°ì™€ ì²˜ìŒí•´ë³¸ë‹¤..! ê³¼ì—° ë ê¹Œ?) ì˜ëœë‹¤!
+    public static int solution2(int[][] num) { //³» Ç®ÀÌ - 2Â÷¿ø ¹è¿­À» Çâ»óµÈ for¹®À¸·Î!! (¿ì¿Í Ã³À½ÇØº»´Ù..! °ú¿¬ µÉ±î?) ÀßµÈ´Ù!
         List<Integer> minNumList = new ArrayList<>();
         for (int[] columns : num) {
             int minNum = num[0][0];
@@ -62,21 +62,21 @@ public class ìˆ«ìì¹´ë“œê²Œì„ {
         return Collections.max(minNumList);
     }
 
-    public static int solution3(int[][] num) { //ë‚´ í’€ì´
+    public static int solution3(int[][] num) { //³» Ç®ÀÌ
         List<Integer> minNumList = new ArrayList<>();
-        for (int[] columns : num) { //í–¥ìƒëœ forë¬¸ìœ¼ë¡œ 2ì°¨ì› ë°°ì—´ì„ 1ì°¨ì›ìœ¼ë¡œ ë§Œë“  í›„
-            Arrays.sort(columns); //ì •ë ¬ì„ í†µí•´
-            minNumList.add(columns[0]); //ê°€ì¥ ì‘ì€ ìˆ˜ë¥¼ Listì— ë„£ì–´ì£¼ê¸°!
+        for (int[] columns : num) { //Çâ»óµÈ for¹®À¸·Î 2Â÷¿ø ¹è¿­À» 1Â÷¿øÀ¸·Î ¸¸µç ÈÄ
+            Arrays.sort(columns); //Á¤·ÄÀ» ÅëÇØ
+            minNumList.add(columns[0]); //°¡Àå ÀÛÀº ¼ö¸¦ List¿¡ ³Ö¾îÁÖ±â!
         }
         return Collections.max(minNumList);
     }
 
     /**
-     * ì±…ì˜ í•´ì„¤ê³¼ ë˜‘ê°™ì€ ì•„ì´ë””ì–´ë¡œ ë¬¸ì œë¥¼ í’€ì–´ëƒ„.
-     * solution1ì—ì„œëŠ” ë¬´ì‘ì • ì½”ë“œë¥¼ ì¨ë‚´ë ¤ê°”ê³ ,
-     * solution2ì—ì„œëŠ” 2ì°¨ì› ë°°ì—´ì„ í–¥ìƒëœ forë¬¸ìœ¼ë¡œ ì“¸ ìˆ˜ëŠ” ì—†ì„ê¹Œ? ë¼ëŠ” ì˜ë¬¸ì„ ê°€ì ¸ êµ¬ê¸€ë§ì„ í†µí•´ í–¥ìƒëœ forë¬¸ìœ¼ë¡œ ë¬¸ì œ í•´ê²°
-     * solution3ì—ì„œëŠ” 2ì¤‘ forë¬¸ì„ ëŒë¦¬ì§€ ì•Šê³  ë¬¸ì œë¥¼ í•´ê²°í•´ë´¤ë‹¤.
-     * ì œí•œì‹œê°„ë‚´ì— ë‹¤ ëŒì•„ê°ˆì§€ê°€ ë„ˆë¬´ ê¶ê¸ˆí•˜ë‹¤ 3ë²ˆ ì½”ë“œê°€ ì œì¼ ì§§ê¸´ í•˜ì§€ë§Œ ë” ì¢‹ì€ ë°©ë²•ì´ ìˆëŠ”ì§€, ì‹œê°„ë³µì¡ë„ì—ì„œ ë§ˆì´ë„ˆìŠ¤ê°€ ë˜ëŠ” ê±´ ì•„ë‹Œì§€ ê¶ê¸ˆí•˜ë‹¤.
+     * Ã¥ÀÇ ÇØ¼³°ú ¶È°°Àº ¾ÆÀÌµğ¾î·Î ¹®Á¦¸¦ Ç®¾î³¿.
+     * solution1¿¡¼­´Â ¹«ÀÛÁ¤ ÄÚµå¸¦ ½á³»·Á°¬°í,
+     * solution2¿¡¼­´Â 2Â÷¿ø ¹è¿­À» Çâ»óµÈ for¹®À¸·Î ¾µ ¼ö´Â ¾øÀ»±î? ¶ó´Â ÀÇ¹®À» °¡Á® ±¸±Û¸µÀ» ÅëÇØ Çâ»óµÈ for¹®À¸·Î ¹®Á¦ ÇØ°á
+     * solution3¿¡¼­´Â 2Áß for¹®À» µ¹¸®Áö ¾Ê°í ¹®Á¦¸¦ ÇØ°áÇØºÃ´Ù.
+     * Á¦ÇÑ½Ã°£³»¿¡ ´Ù µ¹¾Æ°¥Áö°¡ ³Ê¹« ±Ã±İÇÏ´Ù 3¹ø ÄÚµå°¡ Á¦ÀÏ Âª±ä ÇÏÁö¸¸ ´õ ÁÁÀº ¹æ¹ıÀÌ ÀÖ´ÂÁö, ½Ã°£º¹Àâµµ¿¡¼­ ¸¶ÀÌ³Ê½º°¡ µÇ´Â °Ç ¾Æ´ÑÁö ±Ã±İÇÏ´Ù.
      */
 
 }

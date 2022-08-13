@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.StringTokenizer;
 
-public class ìš°ìœ ì¶•ì œ {
+public class ¿ìÀ¯ÃàÁ¦ {
     public static void main(String[] args) throws IOException {
 //        solution1();
 //        solution2();
@@ -16,7 +16,7 @@ public class ìš°ìœ ì¶•ì œ {
         System.out.println(solution3(milkShop2)); //5
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine()); //7
         int[] milkShop = new int[n];
@@ -25,12 +25,12 @@ public class ìš°ìœ ì¶•ì œ {
         for (int i = 0; i < milkShop.length; i++) {
             milkShop[i] = Integer.parseInt(st.nextToken()); //0 1 2 0 1 2 0
         }
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
         int count = 0, nextMilk = 0;
-        //ë”¸ê¸° - ì´ˆì½” - ë°”ë‚˜ë‚˜ - ë”¸ê¸°
-        //ë”¸ê¸° : 0, ì´ˆì½” : 1, ë°”ë‚˜ë‚˜ : 2
-        //0,1,2 ìˆœìœ¼ë¡œ ìˆì„ ë•Œë§Œ ìš°ìœ ë¥¼ ë¨¹ëŠ”ë‹¤.
+        //µş±â - ÃÊÄÚ - ¹Ù³ª³ª - µş±â
+        //µş±â : 0, ÃÊÄÚ : 1, ¹Ù³ª³ª : 2
+        //0,1,2 ¼øÀ¸·Î ÀÖÀ» ¶§¸¸ ¿ìÀ¯¸¦ ¸Ô´Â´Ù.
         for (int i = 0; i < milkShop.length; i++) {
             if (milkShop[i] == nextMilk && nextMilk == 0) {
                 count++;
@@ -51,10 +51,10 @@ public class ìš°ìœ ì¶•ì œ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 
-    public static void solution2() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution2() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine()); //7
         int[] milkShop = new int[n];
@@ -63,12 +63,12 @@ public class ìš°ìœ ì¶•ì œ {
         for (int i = 0; i < milkShop.length; i++) {
             milkShop[i] = Integer.parseInt(st.nextToken()); //0 1 2 0 1 2 0
         }
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
         int count = 0, nextMilk = 0;
-        //ë”¸ê¸° - ì´ˆì½” - ë°”ë‚˜ë‚˜ - ë”¸ê¸°
-        //ë”¸ê¸° : 0, ì´ˆì½” : 1, ë°”ë‚˜ë‚˜ : 2
-        //0,1,2 ìˆœìœ¼ë¡œ ìˆì„ ë•Œë§Œ ìš°ìœ ë¥¼ ë¨¹ëŠ”ë‹¤.
+        //µş±â - ÃÊÄÚ - ¹Ù³ª³ª - µş±â
+        //µş±â : 0, ÃÊÄÚ : 1, ¹Ù³ª³ª : 2
+        //0,1,2 ¼øÀ¸·Î ÀÖÀ» ¶§¸¸ ¿ìÀ¯¸¦ ¸Ô´Â´Ù.
         for (int i = 0; i < milkShop.length; i++) {
             if (milkShop[i] == nextMilk) {
                 count++;
@@ -83,7 +83,7 @@ public class ìš°ìœ ì¶•ì œ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 
     public static int solution3(int[] milkShop) throws IOException {

@@ -3,31 +3,31 @@ package baekjoon.greedy.bronze;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class ì˜¤ì™€ìœ¡ì˜ì°¨ì´ {
-    //5ì™€ 6ì˜ ì°¨ì´
+public class ¿À¿ÍÀ°ÀÇÂ÷ÀÌ {
+    //5¿Í 6ÀÇ Â÷ÀÌ
     public static void main(String[] args) {
         solution1();
     }
 
-    public static void solution1() { //ë°±ì¤€ ë°©ì‹(Scannerë¡œ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() { //¹éÁØ ¹æ½Ä(Scanner·Î ÀÔ·Â¹Ş±â) Ç®ÀÌ
         Scanner in = new Scanner(System.in);
         String firstNum = in.next();
         String secondNum = in.next();
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
-        int minFirstNum = Integer.parseInt(firstNum.replace("6", "5")); //ì²« ë²ˆì§¸ë¡œ ë°›ì€ ìˆ«ì ì¤‘ 6ì„ 5ë¡œ ë³€ê²½
-        int minSecondNum = Integer.parseInt(secondNum.replace("6", "5")); //ë‘ ë²ˆì§¸ë¡œ ë°›ì€ ìˆ«ì ì¤‘ 6ì„ 5ë¡œ ë³€ê²½
-        int minNum = minFirstNum + minSecondNum; //6ì„ 5ë¡œ ë³€ê²½í•œ í›„ ë‘ ìˆ˜ë¥¼ ë”í•˜ë©´ ìµœì†Ÿê°’
+        int minFirstNum = Integer.parseInt(firstNum.replace("6", "5")); //Ã¹ ¹øÂ°·Î ¹ŞÀº ¼ıÀÚ Áß 6À» 5·Î º¯°æ
+        int minSecondNum = Integer.parseInt(secondNum.replace("6", "5")); //µÎ ¹øÂ°·Î ¹ŞÀº ¼ıÀÚ Áß 6À» 5·Î º¯°æ
+        int minNum = minFirstNum + minSecondNum; //6À» 5·Î º¯°æÇÑ ÈÄ µÎ ¼ö¸¦ ´õÇÏ¸é ÃÖ¼Ú°ª
 
-        int maxFirstNum = Integer.parseInt(firstNum.replace("5", "6")); //ì²« ë²ˆì§¸ë¡œ ë°›ì€ ìˆ«ì ì¤‘ 5ë¥¼ 6ìœ¼ë¡œ ë³€ê²½
-        int maxSecondNum = Integer.parseInt(secondNum.replace("5", "6")); //ì²« ë²ˆì§¸ë¡œ ë°›ì€ ìˆ«ì ì¤‘ 5ë¥¼ 6ìœ¼ë¡œ ë³€ê²½
-        int maxNum = maxFirstNum + maxSecondNum; //5ë¥¼ 6ìœ¼ë¡œ ë³€ê²½í•œ í›„ ë‘ ìˆ˜ë¥¼ ë”í•˜ë©´ ìµœëŒ“ê°’
+        int maxFirstNum = Integer.parseInt(firstNum.replace("5", "6")); //Ã¹ ¹øÂ°·Î ¹ŞÀº ¼ıÀÚ Áß 5¸¦ 6À¸·Î º¯°æ
+        int maxSecondNum = Integer.parseInt(secondNum.replace("5", "6")); //Ã¹ ¹øÂ°·Î ¹ŞÀº ¼ıÀÚ Áß 5¸¦ 6À¸·Î º¯°æ
+        int maxNum = maxFirstNum + maxSecondNum; //5¸¦ 6À¸·Î º¯°æÇÑ ÈÄ µÎ ¼ö¸¦ ´õÇÏ¸é ÃÖ´ñ°ª
 
         System.out.println(minNum + " " + maxNum);
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 }

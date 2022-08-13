@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ë‹¤ì´ì–¼ {
+public class ´ÙÀÌ¾ó {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
         int second = 0;
@@ -25,7 +25,7 @@ public class ë‹¤ì´ì–¼ {
                     second += 3;
                     break;
 
-                    case 'D' : case 'E' : case 'F' :
+                case 'D' : case 'E' : case 'F' :
                     second += 4;
                     break;
 
@@ -46,8 +46,8 @@ public class ë‹¤ì´ì–¼ {
                     break;
 
                 case 'T' : case 'U' : case 'V' :
-                second += 9;
-                break;
+                    second += 9;
+                    break;
 
                 case 'W' : case 'X' : case 'Y' : case 'Z' :
                     second += 10;

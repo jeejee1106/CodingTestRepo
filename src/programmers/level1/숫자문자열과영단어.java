@@ -1,28 +1,28 @@
 package programmers.level1;
 
-public class ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´ {
+public class ¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î {
     public static void main(String[] args) {
         String s1 = "one4seveneight";
         String s2 = "23four5six7";
         String s3 = "2three45sixseven";
         String s4 = "123";
 
-        System.out.println(ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´.solution1(s1)); //1478
-        System.out.println(ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´.solution1(s2)); //234567
-        System.out.println(ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´.solution1(s3)); //234567
-        System.out.println(ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´.solution1(s4)); //123
+        System.out.println(¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î.solution1(s1)); //1478
+        System.out.println(¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î.solution1(s2)); //234567
+        System.out.println(¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î.solution1(s3)); //234567
+        System.out.println(¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î.solution1(s4)); //123
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int solution1(String s) {
         String[] num = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
         for(int i = 0; i < num.length; i++){
-            //ë¬¸ìì—´ sì— num[i]ê°€ í¬í•¨ë˜ì–´ ìˆìœ¼ë©´ replaceí•´ì£¼ê¸°
-            s = s.replace(num[i], Integer.toString(i)); //1. intíƒ€ì…ì„ Stringíƒ€ì…ìœ¼ë¡œ ë°”ê¿”ì¤„ ë• Integer.toString()
-                                                        //2. "" + i ë¥¼ í•´ë„ Stringíƒ€ì…ì˜ ìˆ«ìê°€ ëœë‹¤.
+            //¹®ÀÚ¿­ s¿¡ num[i]°¡ Æ÷ÇÔµÇ¾î ÀÖÀ¸¸é replaceÇØÁÖ±â
+            s = s.replace(num[i], Integer.toString(i)); //1. intÅ¸ÀÔÀ» StringÅ¸ÀÔÀ¸·Î ¹Ù²ãÁÙ ¶© Integer.toString()
+            //2. "" + i ¸¦ ÇØµµ StringÅ¸ÀÔÀÇ ¼ıÀÚ°¡ µÈ´Ù.
         }
 
-        return Integer.parseInt(s); //Stringíƒ€ì…ì„ intíƒ€ì…ìœ¼ë¡œ ë°”ê¿”ì¤„ ë• Integer.parseInt();
+        return Integer.parseInt(s); //StringÅ¸ÀÔÀ» intÅ¸ÀÔÀ¸·Î ¹Ù²ãÁÙ ¶© Integer.parseInt();
     }
 }

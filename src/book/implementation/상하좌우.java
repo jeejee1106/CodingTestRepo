@@ -2,8 +2,8 @@ package book.implementation;
 
 import java.math.BigDecimal;
 
-public class ìƒí•˜ì¢Œìš° {
-    
+public class »óÇÏÁÂ¿ì {
+
     public static void main(String[] args) {
         int n1 = 5;
         char[] position1 = {'R', 'R', 'R', 'U', 'D', 'D'};
@@ -14,22 +14,22 @@ public class ìƒí•˜ì¢Œìš° {
         int n3 = 4;
         char[] position3 = {'R', 'R', 'D', 'D', 'R', 'U', 'R', 'U', 'L'};
 
-        System.out.println("solution1 = " + ìƒí•˜ì¢Œìš°.solution1(n1, position1)); // (3, 4)
-        System.out.println("solution1 = " + ìƒí•˜ì¢Œìš°.solution1(n2, position2)); // (6, 9)
-        System.out.println("solution1 = " + ìƒí•˜ì¢Œìš°.solution1(n3, position3)); // (1, 3)
+        System.out.println("solution1 = " + »óÇÏÁÂ¿ì.solution1(n1, position1)); // (3, 4)
+        System.out.println("solution1 = " + »óÇÏÁÂ¿ì.solution1(n2, position2)); // (6, 9)
+        System.out.println("solution1 = " + »óÇÏÁÂ¿ì.solution1(n3, position3)); // (1, 3)
 
-        System.out.println("solution2 = " + ìƒí•˜ì¢Œìš°.solution2(n1, position1)); // (3, 4)
-        System.out.println("solution2 = " + ìƒí•˜ì¢Œìš°.solution2(n2, position2)); // (6, 9)
-        System.out.println("solution2 = " + ìƒí•˜ì¢Œìš°.solution2(n3, position3)); // (1, 3)
+        System.out.println("solution2 = " + »óÇÏÁÂ¿ì.solution2(n1, position1)); // (3, 4)
+        System.out.println("solution2 = " + »óÇÏÁÂ¿ì.solution2(n2, position2)); // (6, 9)
+        System.out.println("solution2 = " + »óÇÏÁÂ¿ì.solution2(n3, position3)); // (1, 3)
 
-        System.out.println("solution3 = " + ìƒí•˜ì¢Œìš°.solution3(n1, position1)); // (3, 4)
-        System.out.println("solution3 = " + ìƒí•˜ì¢Œìš°.solution3(n2, position2)); // (6, 9)
-        System.out.println("solution3 = " + ìƒí•˜ì¢Œìš°.solution3(n3, position3)); // (1, 3)
+        System.out.println("solution3 = " + »óÇÏÁÂ¿ì.solution3(n1, position1)); // (3, 4)
+        System.out.println("solution3 = " + »óÇÏÁÂ¿ì.solution3(n2, position2)); // (6, 9)
+        System.out.println("solution3 = " + »óÇÏÁÂ¿ì.solution3(n3, position3)); // (1, 3)
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static String solution1(int n, char[] position) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int x = 1, y = 1;
 
         //R = [ , +1], L = [ , -1], U = [+1, ], D[-1, ]
@@ -59,15 +59,15 @@ public class ìƒí•˜ì¢Œìš° {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
         return "(" + x + ", " + y + ")";
     }
 
     public static String solution2(int n, char[] position) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int x = 1, y = 1;
 
-        //ifë¬¸ ì•ˆì˜ ifë¬¸ì„ ì‚¼í•­ ì—°ì‚°ìë¡œ ë°”ê¿”ë³´ì•˜ë‹¤. ì½”ë“œëŠ” ë” ì§§ì•„ì¡Œì§€ë§Œ ê°€ë…ì„±ë©´ê³¼ ì‹œê°„ë³µì¡ë„ë©´ì—ì„œëŠ” ë” ë‚˜ì•„ì§„ê±´ì§€ ì˜ ëª¨ë¥´ê² ë‹¤.
+        //if¹® ¾ÈÀÇ if¹®À» »ïÇ× ¿¬»êÀÚ·Î ¹Ù²ãº¸¾Ò´Ù. ÄÚµå´Â ´õ Âª¾ÆÁ³Áö¸¸ °¡µ¶¼º¸é°ú ½Ã°£º¹Àâµµ¸é¿¡¼­´Â ´õ ³ª¾ÆÁø°ÇÁö Àß ¸ğ¸£°Ú´Ù.
         for (char pos : position) {
             if (pos == 'R') {
                 y = y>=n ? y : y+1;
@@ -82,26 +82,26 @@ public class ìƒí•˜ì¢Œìš° {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
         return "(" + x + ", " + y + ")";
     }
 
     public static String solution3(int n, char[] position) {
         /**
-         * ì±…ì˜ í’€ì´ : í™•ì‹¤íˆ ë‚´ ì½”ë“œë³´ë‹¨ í›¨ì”¬ ê¹”ë”í•˜ê¸´ í•˜ë‹¤.ì´ë™í•  ìˆ˜ ìˆëŠ” ì¢Œí‘œë¥¼ ë°°ì—´ë¡œ..!
-         * ë˜í•œ ê²½ìš°ì˜ ìˆ˜ê°€ ì•„ë‹ ë•Œë§Œ ë¬´ì‹œí•˜ë„ë¡ í•˜ëŠ” ì½”ë“œë„ ê¹”ë”í•œ ê²ƒ ê°™ë‹¤.
-         * ê·¸ë ‡ì§€ë§Œ ì½”ë“œì‹¤í–‰ ì†ë„ë¥¼ ì¸¡ì •í•œ ê²°ê³¼ ë‚´ ì½”ë“œê°€ ì¡°ê¸ˆ ë” ë¹ ë¥¸ ê²ƒì„ í™•ì¸í•  ìˆ˜ ìˆë‹¤..!ã…ã…..!
+         * Ã¥ÀÇ Ç®ÀÌ : È®½ÇÈ÷ ³» ÄÚµåº¸´Ü ÈÎ¾À ±ò²ûÇÏ±ä ÇÏ´Ù.ÀÌµ¿ÇÒ ¼ö ÀÖ´Â ÁÂÇ¥¸¦ ¹è¿­·Î..!
+         * ¶ÇÇÑ °æ¿ìÀÇ ¼ö°¡ ¾Æ´Ò ¶§¸¸ ¹«½ÃÇÏµµ·Ï ÇÏ´Â ÄÚµåµµ ±ò²ûÇÑ °Í °°´Ù.
+         * ±×·¸Áö¸¸ ÄÚµå½ÇÇà ¼Óµµ¸¦ ÃøÁ¤ÇÑ °á°ú ³» ÄÚµå°¡ Á¶±İ ´õ ºü¸¥ °ÍÀ» È®ÀÎÇÒ ¼ö ÀÖ´Ù..!¤¾¤¾..!
          */
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int x = 1, y = 1;
         int[] dx = {0, 0, -1, 1};
         int[] dy = {-1, 1, 0, 0};
         char[] moveTypes = {'L', 'R', 'U', 'D'};
 
-        // ì´ë™ ê³„íšì„ í•˜ë‚˜ì”© í™•ì¸
+        // ÀÌµ¿ °èÈ¹À» ÇÏ³ª¾¿ È®ÀÎ
         for (int i = 0; i < position.length; i++) {
             char plan = position[i];
-            // ì´ë™ í›„ ì¢Œí‘œ êµ¬í•˜ê¸°
+            // ÀÌµ¿ ÈÄ ÁÂÇ¥ ±¸ÇÏ±â
             int nx = -1, ny = -1;
             for (int j = 0; j < 4; j++) {
                 if (plan == moveTypes[j]) {
@@ -109,16 +109,16 @@ public class ìƒí•˜ì¢Œìš° {
                     ny = y + dy[j];
                 }
             }
-            // ê³µê°„ì„ ë²—ì–´ë‚˜ëŠ” ê²½ìš° ë¬´ì‹œ
+            // °ø°£À» ¹ş¾î³ª´Â °æ¿ì ¹«½Ã
             if (nx < 1 || ny < 1 || nx > n || ny > n) continue;
-            // ì´ë™ ìˆ˜í–‰
+            // ÀÌµ¿ ¼öÇà
             x = nx;
             y = ny;
         }
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
         return "(" + x + ", " + y + ")";
     }
 }

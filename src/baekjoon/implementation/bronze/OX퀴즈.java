@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class OXí€´ì¦ˆ {
+public class OXÄûÁî {
     public static void main(String[] args) throws IOException {
         solution1();
         System.out.println(solution2("OOXXOXXOOO")); //10
@@ -15,9 +15,9 @@ public class OXí€´ì¦ˆ {
     }
 
     /**
-     * ë°±ì¤€ ë°©ì‹ì€.... ë¬¸ì œë¥¼ í‘¸ëŠ” ê²ƒ ë³´ë‹¤ ì…ë ¥ë°›ê³  ì¶œë ¥í•˜ëŠ” ê²Œ ë” ì–´ë µë‹¤ã…œã…œ
+     * ¹éÁØ ¹æ½ÄÀº.... ¹®Á¦¸¦ Çª´Â °Í º¸´Ù ÀÔ·Â¹Ş°í Ãâ·ÂÇÏ´Â °Ô ´õ ¾î·Æ´Ù¤Ì¤Ì
      */
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
@@ -41,15 +41,15 @@ public class OXí€´ì¦ˆ {
     }
 
     public static int solution2(String str) {
-        int answer = 0; //ë‹µì„ ë„£ì„ ë³€ìˆ˜
-        int count = 0; //ì—°ì†ëœ ë‹µì˜ ê°¯ìˆ˜
+        int answer = 0; //´äÀ» ³ÖÀ» º¯¼ö
+        int count = 0; //¿¬¼ÓµÈ ´äÀÇ °¹¼ö
 
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == 'O') { //ë§Œì•½ ë‹µì´ ë§ì•˜ìœ¼ë©´
-                count++; //ì—°ì†ëœ ë‹µì˜ ê°¯ìˆ˜(ì ìˆ˜)ë¥¼ 1ì”© ëŠ˜ë ¤ì£¼ê³ 
-                answer += count; //1ì”© ëŠ˜ì–´ë‚œ ê°’ì„ ê³„ì† answerì— ë”í•´ì¤€ë‹¤.
-            } else { //ë‹µì´ í‹€ë ¸ë‹¤ë©´
-                count = 0; //ì—°ì†ëœ ë‹µì˜ ê°¯ìˆ˜ë¥¼ ë‹¤ì‹œ 0ìœ¼ë¡œ ì´ˆê¸°í™”
+            if (str.charAt(i) == 'O') { //¸¸¾à ´äÀÌ ¸Â¾ÒÀ¸¸é
+                count++; //¿¬¼ÓµÈ ´äÀÇ °¹¼ö(Á¡¼ö)¸¦ 1¾¿ ´Ã·ÁÁÖ°í
+                answer += count; //1¾¿ ´Ã¾î³­ °ªÀ» °è¼Ó answer¿¡ ´õÇØÁØ´Ù.
+            } else { //´äÀÌ Æ²·È´Ù¸é
+                count = 0; //¿¬¼ÓµÈ ´äÀÇ °¹¼ö¸¦ ´Ù½Ã 0À¸·Î ÃÊ±âÈ­
             }
         }
         return answer;

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ì´ë¡ ì˜ˆì œ2 {
+public class ÀÌ·Ğ¿¹Á¦2 {
 
     /**
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-     * DFS, BFSì— ëŒ€í•œ ê°„ë‹¨í•œ ì´ë¡ ê³¼ ì˜ˆì œ!!!
+     * DFS, BFS¿¡ ´ëÇÑ °£´ÜÇÑ ÀÌ·Ğ°ú ¿¹Á¦!!!
      * <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
      */
 
@@ -19,19 +19,19 @@ public class ì´ë¡ ì˜ˆì œ2 {
         mainBFS();
     }
 
-    //DFS : ì¸ì ‘ í–‰ë ¬ ì˜ˆì œ
+    //DFS : ÀÎÁ¢ Çà·Ä ¿¹Á¦
     static void  adjacencyMatrix() {
-        System.out.println(">>>>> ì¸ì ‘ í–‰ë ¬ ì˜ˆì œ <<<<<");
-        int inf = 999999999; //ë¬´í•œì˜ ë¹„ìš© ì„ ì–¸(infinity)
+        System.out.println(">>>>> ÀÎÁ¢ Çà·Ä ¿¹Á¦ <<<<<");
+        int inf = 999999999; //¹«ÇÑÀÇ ºñ¿ë ¼±¾ğ(infinity)
 
-        //2ì°¨ì› ë¦¬ìŠ¤íŠ¸ë¥¼ ì´ìš©í•´ ì¸ì ‘ í–‰ë ¬ í‘œí˜„
+        //2Â÷¿ø ¸®½ºÆ®¸¦ ÀÌ¿ëÇØ ÀÎÁ¢ Çà·Ä Ç¥Çö
         int[][] graph = {
                 {0, 7, 5},
                 {7, 0, inf},
                 {5, inf, 0}
         };
 
-        // ê·¸ë˜í”„ ì¶œë ¥
+        // ±×·¡ÇÁ Ãâ·Â
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print(graph[i][j] + " ");
@@ -41,7 +41,7 @@ public class ì´ë¡ ì˜ˆì œ2 {
         System.out.println();
     }
 
-    //DFS : ì¸ì ‘ ë¦¬ìŠ¤íŠ¸ ì˜ˆì œ
+    //DFS : ÀÎÁ¢ ¸®½ºÆ® ¿¹Á¦
     static class Node {
 
         private int index;
@@ -57,25 +57,25 @@ public class ì´ë¡ ì˜ˆì œ2 {
         }
     }
     static void adjacencyList() {
-        System.out.println(">>>>> ì¸ì ‘ ë¦¬ìŠ¤íŠ¸ ì˜ˆì œ <<<<<");
+        System.out.println(">>>>> ÀÎÁ¢ ¸®½ºÆ® ¿¹Á¦ <<<<<");
         ArrayList<ArrayList<Node>> graph = new ArrayList<ArrayList<Node>>();
 
-        // ê·¸ë˜í”„ ì´ˆê¸°í™”
+        // ±×·¡ÇÁ ÃÊ±âÈ­
         for (int i = 0; i < 3; i++) {
-            graph.add(new ArrayList<Node>()); //ì•ˆìª½ì˜ ë¦¬ìŠ¤íŠ¸ì— 0,1,2 ì¶”ê°€
+            graph.add(new ArrayList<Node>()); //¾ÈÂÊÀÇ ¸®½ºÆ®¿¡ 0,1,2 Ãß°¡
         }
 
-        // ë…¸ë“œ 0ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥ (ë…¸ë“œ, ê±°ë¦¬)
+        // ³ëµå 0¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå (³ëµå, °Å¸®)
         graph.get(0).add(new Node(1, 7));
         graph.get(0).add(new Node(2, 5));
 
-        // ë…¸ë“œ 1ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥ (ë…¸ë“œ, ê±°ë¦¬)
+        // ³ëµå 1¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå (³ëµå, °Å¸®)
         graph.get(1).add(new Node(0, 7));
 
-        // ë…¸ë“œ 2ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥ (ë…¸ë“œ, ê±°ë¦¬)
+        // ³ëµå 2¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå (³ëµå, °Å¸®)
         graph.get(2).add(new Node(0, 5));
 
-        // ê·¸ë˜í”„ ì¶œë ¥
+        // ±×·¡ÇÁ Ãâ·Â
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < graph.get(i).size(); j++) {
                 graph.get(i).get(j).show();
@@ -85,16 +85,16 @@ public class ì´ë¡ ì˜ˆì œ2 {
         System.out.println();
     }
 
-    //DFS, BSFì˜ˆì œ ê³µí†µ í•„ë“œ
+    //DFS, BSF¿¹Á¦ °øÅë ÇÊµå
     static boolean[] visited = new boolean[9];
     static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
-    //DFS ì•Œê³ ë¦¬ì¦˜ ì˜ˆì œ
+    //DFS ¾Ë°í¸®Áò ¿¹Á¦
     static void subDFS(int x) {
-        //í˜„ì¬ ë…¸ë“œë¥¼ ë°©ë¬¸ì²˜ë¦¬
+        //ÇöÀç ³ëµå¸¦ ¹æ¹®Ã³¸®
         visited[x] = true;
-        System.out.print(x + " "); //ë…¸ë“œì˜ ë°©ë¬¸ ìˆœì„œ ì¶œë ¥
+        System.out.print(x + " "); //³ëµåÀÇ ¹æ¹® ¼ø¼­ Ãâ·Â
 
-        //í˜„ì¬ ë…¸ë“œì™€ ì—°ê²°ëœ ë‹¤ë¥¸ ë…¸ë“œë¥¼ ì¬ê·€ì ìœ¼ë¡œ ë°©ë¬¸
+        //ÇöÀç ³ëµå¿Í ¿¬°áµÈ ´Ù¸¥ ³ëµå¸¦ Àç±ÍÀûÀ¸·Î ¹æ¹®
         for (int i = 0; i < graph.get(x).size(); i++) {
             int y = graph.get(x).get(i);
             if (!visited[y]) {
@@ -104,48 +104,48 @@ public class ì´ë¡ ì˜ˆì œ2 {
     }
 
     static void mainDFS() {
-        System.out.println(">>>>> DFS ì˜ˆì œ <<<<<");
+        System.out.println(">>>>> DFS ¿¹Á¦ <<<<<");
 
-        // ê·¸ë˜í”„ ì´ˆê¸°í™”
+        // ±×·¡ÇÁ ÃÊ±âÈ­
         for (int i = 0; i < 9; i++) {
-            graph.add(new ArrayList<Integer>()); //ArrayList<Integer> ë¦¬ìŠ¤íŠ¸ì— 0,1,2,3,4,5,6,7,8 ì¶”ê°€
+            graph.add(new ArrayList<Integer>()); //ArrayList<Integer> ¸®½ºÆ®¿¡ 0,1,2,3,4,5,6,7,8 Ãß°¡
         }
 
-        // ë…¸ë“œ 1ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
-        graph.get(1).add(2); //ì¦‰, 1ë²ˆ ë…¸ë“œì—” 2ë²ˆ, 3ë²ˆ, 8ë²ˆ ë…¸ë“œê°€ ì—°ê²°ë˜ì–´ ìˆë‹¤.
+        // ³ëµå 1¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+        graph.get(1).add(2); //Áï, 1¹ø ³ëµå¿£ 2¹ø, 3¹ø, 8¹ø ³ëµå°¡ ¿¬°áµÇ¾î ÀÖ´Ù.
         graph.get(1).add(3);
         graph.get(1).add(8);
 
-        // ë…¸ë“œ 2ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 2¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(2).add(1);
         graph.get(2).add(7);
 
-        // ë…¸ë“œ 3ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 3¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(3).add(1);
         graph.get(3).add(4);
         graph.get(3).add(5);
 
-        // ë…¸ë“œ 4ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 4¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(4).add(3);
         graph.get(4).add(5);
 
-        // ë…¸ë“œ 5ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 5¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(5).add(3);
         graph.get(5).add(4);
 
-        // ë…¸ë“œ 6ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 6¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(6).add(7);
 
-        // ë…¸ë“œ 7ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 7¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(7).add(2);
         graph.get(7).add(6);
         graph.get(7).add(8);
 
-        // ë…¸ë“œ 8ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 8¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph.get(8).add(1);
         graph.get(8).add(7);
 
-        subDFS(1); //ë…¸ë“œì˜ ì²« ì‹œì‘ì¸ 1ì„ ë„£ì–´ì¤Œ.
+        subDFS(1); //³ëµåÀÇ Ã¹ ½ÃÀÛÀÎ 1À» ³Ö¾îÁÜ.
 
         System.out.println();
         System.out.println();
@@ -154,21 +154,21 @@ public class ì´ë¡ ì˜ˆì œ2 {
 
     static boolean[] visited2 = new boolean[9];
     static ArrayList<ArrayList<Integer>> graph2 = new ArrayList<ArrayList<Integer>>();
-    //BFS ì•Œê³ ë¦¬ì¦˜ ì˜ˆì œ
+    //BFS ¾Ë°í¸®Áò ¿¹Á¦
     static void subBFS(int start) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(start);
 
-        // í˜„ì¬ ë…¸ë“œë¥¼ ë°©ë¬¸ ì²˜ë¦¬
+        // ÇöÀç ³ëµå¸¦ ¹æ¹® Ã³¸®
         visited2[start] = true;
 
-        // íê°€ ë¹Œ ë•Œê¹Œì§€ ë°˜ë³µ
+        // Å¥°¡ ºô ¶§±îÁö ¹İº¹
         while(!q.isEmpty()) {
-            // íì—ì„œ í•˜ë‚˜ì˜ ì›ì†Œë¥¼ ë½‘ì•„ ì¶œë ¥
+            // Å¥¿¡¼­ ÇÏ³ªÀÇ ¿ø¼Ò¸¦ »Ì¾Æ Ãâ·Â
             int x = q.poll();
             System.out.print(x + " ");
 
-            // í•´ë‹¹ ì›ì†Œì™€ ì—°ê²°ëœ, ì•„ì§ ë°©ë¬¸í•˜ì§€ ì•Šì€ ì›ì†Œë“¤ì„ íì— ì‚½ì…
+            // ÇØ´ç ¿ø¼Ò¿Í ¿¬°áµÈ, ¾ÆÁ÷ ¹æ¹®ÇÏÁö ¾ÊÀº ¿ø¼ÒµéÀ» Å¥¿¡ »ğÀÔ
             for(int i = 0; i < graph2.get(x).size(); i++) {
                 int y = graph2.get(x).get(i);
                 if(!visited2[y]) {
@@ -180,48 +180,48 @@ public class ì´ë¡ ì˜ˆì œ2 {
     }
 
     static void mainBFS() {
-        System.out.println(">>>>> BFS ì˜ˆì œ <<<<<");
+        System.out.println(">>>>> BFS ¿¹Á¦ <<<<<");
 
-        // ê·¸ë˜í”„ ì´ˆê¸°í™”
+        // ±×·¡ÇÁ ÃÊ±âÈ­
         for (int i = 0; i < 9; i++) {
-            graph2.add(new ArrayList<Integer>()); //ArrayList<Integer> ë¦¬ìŠ¤íŠ¸ì— 0,1,2,3,4,5,6,7,8 ì¶”ê°€
+            graph2.add(new ArrayList<Integer>()); //ArrayList<Integer> ¸®½ºÆ®¿¡ 0,1,2,3,4,5,6,7,8 Ãß°¡
         }
 
-        // ë…¸ë“œ 1ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
-        graph2.get(1).add(2); //ì¦‰, 1ë²ˆ ë…¸ë“œì—” 2ë²ˆ, 3ë²ˆ, 8ë²ˆ ë…¸ë“œê°€ ì—°ê²°ë˜ì–´ ìˆë‹¤.
+        // ³ëµå 1¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+        graph2.get(1).add(2); //Áï, 1¹ø ³ëµå¿£ 2¹ø, 3¹ø, 8¹ø ³ëµå°¡ ¿¬°áµÇ¾î ÀÖ´Ù.
         graph2.get(1).add(3);
         graph2.get(1).add(8);
 
-        // ë…¸ë“œ 2ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 2¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(2).add(1);
         graph2.get(2).add(7);
 
-        // ë…¸ë“œ 3ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 3¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(3).add(1);
         graph2.get(3).add(4);
         graph2.get(3).add(5);
 
-        // ë…¸ë“œ 4ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 4¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(4).add(3);
         graph2.get(4).add(5);
 
-        // ë…¸ë“œ 5ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 5¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(5).add(3);
         graph2.get(5).add(4);
 
-        // ë…¸ë“œ 6ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 6¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(6).add(7);
 
-        // ë…¸ë“œ 7ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 7¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(7).add(2);
         graph2.get(7).add(6);
         graph2.get(7).add(8);
 
-        // ë…¸ë“œ 8ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+        // ³ëµå 8¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
         graph2.get(8).add(1);
         graph2.get(8).add(7);
 
-        subBFS(1); //ë…¸ë“œì˜ ì²« ì‹œì‘ì¸ 1ì„ ë„£ì–´ì¤Œ.
+        subBFS(1); //³ëµåÀÇ Ã¹ ½ÃÀÛÀÎ 1À» ³Ö¾îÁÜ.
 
         System.out.println();
     }

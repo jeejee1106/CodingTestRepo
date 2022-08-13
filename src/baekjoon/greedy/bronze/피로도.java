@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class í”¼ë¡œë„ {
+public class ÇÇ·Îµµ {
     public static void main(String[] args) throws IOException {
 //        solution1();
 
@@ -21,7 +21,7 @@ public class í”¼ë¡œë„ {
         System.out.println(solution3(A3, B3, C3, M3)); // 0
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] arr = new int[4];
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -30,8 +30,8 @@ public class í”¼ë¡œë„ {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int fatigue = 0; //í”¼ë¡œë„
-        int work = 0; //ì¼í•œ ì–‘
+        int fatigue = 0; //ÇÇ·Îµµ
+        int work = 0; //ÀÏÇÑ ¾ç
         int time = 0;
 
         while(time < 24) {
@@ -52,43 +52,43 @@ public class í”¼ë¡œë„ {
     }
 
     public static int solution2(int A, int B, int C, int M) {
-        int fatigue = 0; //í”¼ë¡œë„
-        int work = 0; //ì¼í•œ ì–‘
+        int fatigue = 0; //ÇÇ·Îµµ
+        int work = 0; //ÀÏÇÑ ¾ç
         int time = 0;
 
         while(time < 24) {
-            if (A > M) { //ì²˜ìŒë¶€í„° í”¼ë¡œë„ê°€ ìµœê³ ì¹˜(M)ì„ ë„˜ì–´ê°€ë©´ ì¼ ê·¸ë§Œ.
+            if (A > M) { //Ã³À½ºÎÅÍ ÇÇ·Îµµ°¡ ÃÖ°íÄ¡(M)À» ³Ñ¾î°¡¸é ÀÏ ±×¸¸.
                 break;
             }
-            if (fatigue + A > M) { //í˜„ì¬ í”¼ë¡œë„ + 1ì‹œê°„ ë” í•˜ë©´ ìŒ“ì¼ í”¼ë¡œë„ê°€ ìµœëŒ€ì¹˜(M)ë³´ë‹¤ í¬ë©´ ì‰¬ì–´ì£¼ê¸°
-                fatigue -= C; //ì‰¬ë©´ì„œ í”¼ë¡œë„ ì¤„ì´ê¸°
-                fatigue = fatigue < 0 ? 0 : fatigue; //í”¼ë¡œë„ê°€ ìŒìˆ˜ë©´ 0ìœ¼ë¡œ ë°”ê¿”ì£¼ê¸°
-                time++; //ì‰¬ëŠ”ì‹œê°„ ë”í•´ì£¼ê¸°
+            if (fatigue + A > M) { //ÇöÀç ÇÇ·Îµµ + 1½Ã°£ ´õ ÇÏ¸é ½×ÀÏ ÇÇ·Îµµ°¡ ÃÖ´ëÄ¡(M)º¸´Ù Å©¸é ½¬¾îÁÖ±â
+                fatigue -= C; //½¬¸é¼­ ÇÇ·Îµµ ÁÙÀÌ±â
+                fatigue = fatigue < 0 ? 0 : fatigue; //ÇÇ·Îµµ°¡ À½¼ö¸é 0À¸·Î ¹Ù²ãÁÖ±â
+                time++; //½¬´Â½Ã°£ ´õÇØÁÖ±â
                 continue;
             }
-            fatigue += A; //ì¼í•  ìˆ˜ ìˆëŠ” ìƒíƒœë¼ë©´ í˜„ì¬ í”¼ë¡œë„ì— 1ì‹œê°„ ë” í•˜ë©´ ìŒ“ì¼ í”¼ë¡œë„ ë”í•´ì£¼ê¸°
-            work += B; //ì¼í•œ ì–‘ ë”í•´ì£¼ê¸°
-            time++; //ì¼í•œ ì‹œê°„ ë”í•´ì£¼ê¸°
+            fatigue += A; //ÀÏÇÒ ¼ö ÀÖ´Â »óÅÂ¶ó¸é ÇöÀç ÇÇ·Îµµ¿¡ 1½Ã°£ ´õ ÇÏ¸é ½×ÀÏ ÇÇ·Îµµ ´õÇØÁÖ±â
+            work += B; //ÀÏÇÑ ¾ç ´õÇØÁÖ±â
+            time++; //ÀÏÇÑ ½Ã°£ ´õÇØÁÖ±â
         }
         return  work;
     }
 
     public static int solution3(int A, int B, int C, int M) {
-        int fatigue = 0; //í”¼ë¡œë„
-        int work = 0; //ì¼í•œ ì–‘
+        int fatigue = 0; //ÇÇ·Îµµ
+        int work = 0; //ÀÏÇÑ ¾ç
         int time = 0;
 
         while(time < 24) {
-            if (A > M) { //ì²˜ìŒë¶€í„° í”¼ë¡œë„ê°€ ìµœê³ ì¹˜(M)ì„ ë„˜ì–´ê°€ë©´ ì¼ ê·¸ë§Œ.
+            if (A > M) { //Ã³À½ºÎÅÍ ÇÇ·Îµµ°¡ ÃÖ°íÄ¡(M)À» ³Ñ¾î°¡¸é ÀÏ ±×¸¸.
                 break;
             }
-            if (fatigue + A > M) { //í˜„ì¬ í”¼ë¡œë„ + 1ì‹œê°„ ë” í•˜ë©´ ìŒ“ì¼ í”¼ë¡œë„ê°€ ìµœëŒ€ì¹˜(M)ë³´ë‹¤ í¬ë©´ ì‰¬ì–´ì£¼ê¸°
-                fatigue = fatigue - C < 0 ? 0 : fatigue - C; //ì‰¬ë©´ì„œ í”¼ë¡œë„ ì¤„ì´ê³  í”¼ë¡œë„ê°€ ìŒìˆ˜ë©´ 0ìœ¼ë¡œ ë°”ê¿”ì£¼ê¸°
+            if (fatigue + A > M) { //ÇöÀç ÇÇ·Îµµ + 1½Ã°£ ´õ ÇÏ¸é ½×ÀÏ ÇÇ·Îµµ°¡ ÃÖ´ëÄ¡(M)º¸´Ù Å©¸é ½¬¾îÁÖ±â
+                fatigue = fatigue - C < 0 ? 0 : fatigue - C; //½¬¸é¼­ ÇÇ·Îµµ ÁÙÀÌ°í ÇÇ·Îµµ°¡ À½¼ö¸é 0À¸·Î ¹Ù²ãÁÖ±â
             } else {
-                fatigue += A; //ì¼í•  ìˆ˜ ìˆëŠ” ìƒíƒœë¼ë©´ í˜„ì¬ í”¼ë¡œë„ì— 1ì‹œê°„ ë” í•˜ë©´ ìŒ“ì¼ í”¼ë¡œë„ ë”í•´ì£¼ê¸°
-                work += B; //ì¼í•œ ì–‘ ë”í•´ì£¼ê¸°
+                fatigue += A; //ÀÏÇÒ ¼ö ÀÖ´Â »óÅÂ¶ó¸é ÇöÀç ÇÇ·Îµµ¿¡ 1½Ã°£ ´õ ÇÏ¸é ½×ÀÏ ÇÇ·Îµµ ´õÇØÁÖ±â
+                work += B; //ÀÏÇÑ ¾ç ´õÇØÁÖ±â
             }
-            time++; //ì‰¬ëŠ”ì‹œê°„ or ì¼í•œì‹œê°„ ë”í•´ì£¼ê¸°
+            time++; //½¬´Â½Ã°£ or ÀÏÇÑ½Ã°£ ´õÇØÁÖ±â
         }
         return  work;
     }

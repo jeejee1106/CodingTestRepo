@@ -1,20 +1,20 @@
 package programmers.level1;
 
-public class ì„œìš¸ì—ì„œê¹€ì„œë°©ì°¾ê¸° {
+public class ¼­¿ï¿¡¼­±è¼­¹æÃ£±â {
     public static void main(String[] args) {
         String[] seoul = {"Lee", "Park", "Kim"};
         String[] seoul2 = {"Kim", "Lee", "Park", "Kim"};
-        System.out.println(ì„œìš¸ì—ì„œê¹€ì„œë°©ì°¾ê¸°.solution1(seoul));
-        System.out.println(ì„œìš¸ì—ì„œê¹€ì„œë°©ì°¾ê¸°.solution2(seoul));
+        System.out.println(¼­¿ï¿¡¼­±è¼­¹æÃ£±â.solution1(seoul));
+        System.out.println(¼­¿ï¿¡¼­±è¼­¹æÃ£±â.solution2(seoul));
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static String solution1(String[] seoul) {
         String result = "";
 
         for (int i = 0; i < seoul.length; i++) {
             if (seoul[i].equals("Kim")) {
-                result = "ê¹€ì„œë°©ì€ " + i + "ì— ìˆë‹¤";
+                result = "±è¼­¹æÀº " + i + "¿¡ ÀÖ´Ù";
                 break;
             }
         }
@@ -22,15 +22,15 @@ public class ì„œìš¸ì—ì„œê¹€ì„œë°©ì°¾ê¸° {
     }
 
     public static String solution2(String[] seoul) {
-        int x = 0; //Stringíƒ€ì…ì„ ì„ ì–¸í•˜ëŠ” ê²ƒ ë³´ë‹¤ intíƒ€ì…ìœ¼ë¡œ ì„ ì–¸í•˜ëŠ” ê²ƒì´ ë©”ëª¨ë¦¬ ê³µê°„ì„ ëœ ì°¨ì§€í•˜ë‹ˆê¹Œ ë” ì¢‹ì§€ ì•Šì„ê¹Œ?
+        int x = 0; //StringÅ¸ÀÔÀ» ¼±¾ğÇÏ´Â °Í º¸´Ù intÅ¸ÀÔÀ¸·Î ¼±¾ğÇÏ´Â °ÍÀÌ ¸Ş¸ğ¸® °ø°£À» ´ú Â÷ÁöÇÏ´Ï±î ´õ ÁÁÁö ¾ÊÀ»±î?
 
-        //í–¥ìƒëœ forë¬¸ì„ ì¨ë´¤ëŠ”ë°, ìŒ... ì„±ëŠ¥ë©´ì˜ ì°¨ì´ëŠ” ì˜ ëª¨ë¥´ê² ì§€ë§Œ ë°°ì—´ì„ ëŒë¦´ ë•Œ ì“°ë¼ê³  ë‚˜ì˜¨ê±°ë‹ˆê¹Œ ì‚¬ìš©í•´ë´¤ë‹¤.
+        //Çâ»óµÈ for¹®À» ½áºÃ´Âµ¥, À½... ¼º´É¸éÀÇ Â÷ÀÌ´Â Àß ¸ğ¸£°ÚÁö¸¸ ¹è¿­À» µ¹¸± ¶§ ¾²¶ó°í ³ª¿Â°Å´Ï±î »ç¿ëÇØºÃ´Ù.
         for (String name : seoul) {
             if (name.equals("Kim")) {
                 break;
             }
             x++;
         }
-        return "ê¹€ì„œë°©ì€ " + x + "ì— ìˆë‹¤";
+        return "±è¼­¹æÀº " + x + "¿¡ ÀÖ´Ù";
     }
 }

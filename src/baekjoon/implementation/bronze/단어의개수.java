@@ -5,14 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ë‹¨ì–´ì˜ê°œìˆ˜ {
+public class ´Ü¾îÀÇ°³¼ö {
     public static void main(String[] args) throws IOException {
 //        solution1();
         System.out.println(solution2("The Curious Case of Benjamin Button"));
         System.out.println(solution2("Infinite KSG JDW NWH LHW LSY KMS LSJ"));
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -20,7 +20,7 @@ public class ë‹¨ì–´ì˜ê°œìˆ˜ {
     }
 
     public static int solution2(String str) {
-        String[] strArr = str.split(" "); //splití•¨ìˆ˜ : ë¬¸ìì—´ì„ íŠ¹ì • ë¬¸ìë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì˜ë¼ì„œ ë°°ì—´ì— ë„£ì–´ì¤€ë‹¤.
+        String[] strArr = str.split(" "); //splitÇÔ¼ö : ¹®ÀÚ¿­À» Æ¯Á¤ ¹®ÀÚ¸¦ ±âÁØÀ¸·Î Àß¶ó¼­ ¹è¿­¿¡ ³Ö¾îÁØ´Ù.
         return strArr.length;
     }
 

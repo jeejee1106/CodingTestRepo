@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ë”í•˜ê¸°ì‚¬ì´í´ {
+public class ´õÇÏ±â»çÀÌÅ¬ {
     public static void main(String[] args) throws IOException {
 //        solution1();
 
@@ -15,7 +15,7 @@ public class ë”í•˜ê¸°ì‚¬ì´í´ {
         System.out.println(solution2(71)); //12
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());

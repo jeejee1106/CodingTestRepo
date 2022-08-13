@@ -5,31 +5,31 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ê±°ìŠ¤ë¦„ëˆ {
+public class °Å½º¸§µ· {
     public static void main(String[] args) {
         int n1 = 7410;
         int n2 = 4810;
         int n3 = 1920;
         int n4 = 8170;
 
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution1(n1)); //19
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution1(n2)); //13
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution1(n3)); //9
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution1(n4)); //20
+        System.out.println(°Å½º¸§µ·.solution1(n1)); //19
+        System.out.println(°Å½º¸§µ·.solution1(n2)); //13
+        System.out.println(°Å½º¸§µ·.solution1(n3)); //9
+        System.out.println(°Å½º¸§µ·.solution1(n4)); //20
 
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
-    public static int solution1(int n) { //ë‚´ í’€ì´
+    /////////////////[solution ½ÃÀÛ]/////////////////
+    public static int solution1(int n) { //³» Ç®ÀÌ
         int answer = 0;
-        //1. ë™ì „ë°°ì—´ ë§Œë“¤ê¸°(í° ê°’ë¶€í„°)
+        //1. µ¿Àü¹è¿­ ¸¸µé±â(Å« °ªºÎÅÍ)
         int[] coins = {500, 100, 50, 10};
 
-        //2. í° ë™ì „ë¶€í„° ë°˜ë³µë¬¸ ëŒë¦¬ê¸°
+        //2. Å« µ¿ÀüºÎÅÍ ¹İº¹¹® µ¹¸®±â
         for (int i = 0; i < 4; i++) {
-            int coin = coins[i]; //ë™ì „ì´ ìˆœì„œëŒ€ë¡œ ë“¤ì–´ì˜´
-            answer += n / coin; //answerì— ê¸ˆì•¡ì„ ë™ì „ìœ¼ë¡œ ë‚˜ëˆˆ ëª« ê³„ì† ë”í•´ì£¼ê¸°
-            n %= coin; //ê¸ˆì•¡ì€ íŠ¹ì • ë™ì „ìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ ê°’ì„ ì €ì¥í•¨
+            int coin = coins[i]; //µ¿ÀüÀÌ ¼ø¼­´ë·Î µé¾î¿È
+            answer += n / coin; //answer¿¡ ±İ¾×À» µ¿ÀüÀ¸·Î ³ª´« ¸ò °è¼Ó ´õÇØÁÖ±â
+            n %= coin; //±İ¾×Àº Æ¯Á¤ µ¿ÀüÀ¸·Î ³ª´« ³ª¸ÓÁö °ªÀ» ÀúÀåÇÔ
         }
         return answer;
     }

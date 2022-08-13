@@ -4,8 +4,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
 
-public class ì¼ì´ë ë•Œê¹Œì§€ {
-    // 1ì´ ë  ë•Œ ê¹Œì§€
+public class ÀÏÀÌµÉ¶§±îÁö {
+    // 1ÀÌ µÉ ¶§ ±îÁö
     public static void main(String[] args) {
         int n1 = 17;
         int k1 = 4;
@@ -16,30 +16,30 @@ public class ì¼ì´ë ë•Œê¹Œì§€ {
         int n3 = 43;
         int k3 = 4;
 
-        System.out.println(ì¼ì´ë ë•Œê¹Œì§€.solution1(n1, k1)); // 3
-        System.out.println(ì¼ì´ë ë•Œê¹Œì§€.solution1(n2, k2)); // 2
-        System.out.println(ì¼ì´ë ë•Œê¹Œì§€.solution1(n3, k3)); // 8
+        System.out.println(ÀÏÀÌµÉ¶§±îÁö.solution1(n1, k1)); // 3
+        System.out.println(ÀÏÀÌµÉ¶§±îÁö.solution1(n2, k2)); // 2
+        System.out.println(ÀÏÀÌµÉ¶§±îÁö.solution1(n3, k3)); // 8
 
-        System.out.println(ì¼ì´ë ë•Œê¹Œì§€.solution2(n1, k1)); // 3
-        System.out.println(ì¼ì´ë ë•Œê¹Œì§€.solution2(n2, k2)); // 2
-        System.out.println(ì¼ì´ë ë•Œê¹Œì§€.solution2(n3, k3)); // 8
+        System.out.println(ÀÏÀÌµÉ¶§±îÁö.solution2(n1, k1)); // 3
+        System.out.println(ÀÏÀÌµÉ¶§±îÁö.solution2(n2, k2)); // 2
+        System.out.println(ÀÏÀÌµÉ¶§±îÁö.solution2(n3, k3)); // 8
     }
 
-    /////////////////[solution ì‹œìž‘]/////////////////
-    public static int solution1(int n, int k) { //ë‚´ í’€ì´ - 6ë¶„ ê±¸ë¦¼
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+    /////////////////[solution ½ÃÀÛ]/////////////////
+    public static int solution1(int n, int k) { //³» Ç®ÀÌ - 6ºÐ °É¸²
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
         int answer = 0;
 
-        //1. nì´ 1ì´ ë  ë•Œ ê¹Œì§€ whileë¬¸ì„ ëŒë¦°ë‹¤.
+        //1. nÀÌ 1ÀÌ µÉ ¶§ ±îÁö while¹®À» µ¹¸°´Ù.
         while (n > 1) {
-            if(n == 1){ //2. ì•„ëž˜ì˜ ifë¬¸ì´ ì‹¤í–‰ ë˜ê³  nì´ 1ì´ ë˜ë©´ forë¬¸ì„ ë¹ ì ¸ë‚˜ê°€ê²Œ ì œì¼ ìœ„ì— ì ì–´ì¤€ë‹¤.
+            if(n == 1){ //2. ¾Æ·¡ÀÇ if¹®ÀÌ ½ÇÇà µÇ°í nÀÌ 1ÀÌ µÇ¸é for¹®À» ºüÁ®³ª°¡°Ô Á¦ÀÏ À§¿¡ Àû¾îÁØ´Ù.
                 break;
             }
-            if (n % k == 0) { //3. nì´ kë¡œ ë”± ë‚˜ëˆ„ì–´ ë–¨ì–´ì§„ë‹¤ë©´ ê·¸ ëª«ì„ nì— ë„£ëŠ”ë‹¤.
+            if (n % k == 0) { //3. nÀÌ k·Î µü ³ª´©¾î ¶³¾îÁø´Ù¸é ±× ¸òÀ» n¿¡ ³Ö´Â´Ù.
                 n = n / k;
-                answer++; //4. ê³„ì‚° íšŸìˆ˜ë¥¼ ì˜¬ë ¤ì¤€ë‹¤.(count)
-            } else { //5. nì´ kë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ì§€ ì•ŠëŠ”ë‹¤ë©´ nì—ì„œ 1ì„ ë¹¼ì£¼ê³  ë§ˆì°¬ê°€ì§€ë¡œ ê³„ì‚° íšŸìˆ˜ë¥¼ ì˜¬ë ¤ì¤€ë‹¤.
+                answer++; //4. °è»ê È½¼ö¸¦ ¿Ã·ÁÁØ´Ù.(count)
+            } else { //5. nÀÌ k·Î ³ª´©¾î ¶³¾îÁöÁö ¾Ê´Â´Ù¸é n¿¡¼­ 1À» »©ÁÖ°í ¸¶Âù°¡Áö·Î °è»ê È½¼ö¸¦ ¿Ã·ÁÁØ´Ù.
                 n -= 1;
                 answer++;
             }
@@ -48,36 +48,36 @@ public class ì¼ì´ë ë•Œê¹Œì§€ {
         long finishTime = System.nanoTime();
         long elapsedTime = finishTime - startTime;
         System.out.println("elapsedTime(ns) : " + elapsedTime);
-        return answer; //6. ì œì¼ ìœ„ì˜ ifë¬¸ì—ì„œ nì´ 1ì´ ë˜ì—ˆìŒì„ í™•ì¸í–ˆë‹¤ë©´ whileë¬¸ì„ ë¹ ì ¸ë‚˜ì™€ ê³„ì‚° íšŸìˆ˜ë¥¼ return!
+        return answer; //6. Á¦ÀÏ À§ÀÇ if¹®¿¡¼­ nÀÌ 1ÀÌ µÇ¾úÀ½À» È®ÀÎÇß´Ù¸é while¹®À» ºüÁ®³ª¿Í °è»ê È½¼ö¸¦ return!
     }
 
     /**
-     * ì±…ì— ë‚˜ì™€ ìžˆëŠ” ê²ƒê³¼ ì¡°ê¸ˆ ë‹¤ë¥´ê¸´ í•˜ì§€ë§Œ (ì‚¬ì‹¤ ë‚´ ì½”ë“œê°€ ë” ê°„ë‹¨í•´ë³´ì´ê³  ì±…ì˜ ì½”ë“œëŠ” ì™œ ì €ë ‡ê²Œ í•˜ëŠ”ì§€ ìž˜ ì´í•´ê°€ ê°€ì§€ ì•ŠìŒã…œã…œ)
-     * ì•„ì´ë””ì–´ì™€ ì›ë¦¬ëŠ” ë¹„ìŠ·í•œ ê²ƒ ê°™ë‹¤!
-     * ìœ„ ifë¬¸ì„ ì¡°ê¸ˆ ë” ë‹¤ë“¬ì„ ìˆœ ì—†ì„ê¹Œ? ê³ ë¯¼í•´ë´ì•¼ê² ë‹¤.
+     * Ã¥¿¡ ³ª¿Í ÀÖ´Â °Í°ú Á¶±Ý ´Ù¸£±ä ÇÏÁö¸¸ (»ç½Ç ³» ÄÚµå°¡ ´õ °£´ÜÇØº¸ÀÌ°í Ã¥ÀÇ ÄÚµå´Â ¿Ö Àú·¸°Ô ÇÏ´ÂÁö Àß ÀÌÇØ°¡ °¡Áö ¾ÊÀ½¤Ì¤Ì)
+     * ¾ÆÀÌµð¾î¿Í ¿ø¸®´Â ºñ½ÁÇÑ °Í °°´Ù!
+     * À§ if¹®À» Á¶±Ý ´õ ´ÙµëÀ» ¼ø ¾øÀ»±î? °í¹ÎÇØºÁ¾ß°Ú´Ù.
      */
 
-    //ì±…ì˜ ì½”ë“œë¥¼ ì ì–´ë³´ì•˜ë‹¤.
-    ////////////////ë‹µì´ ì œëŒ€ë¡œ ì•ˆë‚˜ì˜¨ë‹¤. íŒŒì´ì¬ ì½”ë“œë¥¼ í•´ì„í•´ì„œ ìžë°”ë¡œ ì˜®ê²¼ëŠ”ë° ë­”ê°€ ìž˜ëª»ëœ ëª¨ì–‘ì´ë‹¤........////////////
+    //Ã¥ÀÇ ÄÚµå¸¦ Àû¾îº¸¾Ò´Ù.
+    ////////////////´äÀÌ Á¦´ë·Î ¾È³ª¿Â´Ù. ÆÄÀÌ½ã ÄÚµå¸¦ ÇØ¼®ÇØ¼­ ÀÚ¹Ù·Î ¿Å°å´Âµ¥ ¹º°¡ Àß¸øµÈ ¸ð¾çÀÌ´Ù........////////////
     public static int solution2(int n, int k) {
         int result = 0;
 
         while (true) {
-            // (n==kë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ëŠ” ìˆ˜)ê°€ ë  ë•Œê¹Œì§€ 1ì”© ë¹¼ê¸°
+            // (n==k·Î ³ª´©¾î ¶³¾îÁö´Â ¼ö)°¡ µÉ ¶§±îÁö 1¾¿ »©±â
             int target = (n % k) * k;
             result += (n - target);
             n = target;
 
-            // nì´ kë³´ë‹¤ ìž‘ì„ ë•Œ (ë” ì´ìƒ ë‚˜ëˆŒ ìˆ˜ ì—†ì„ ë•Œ) ë°˜ë³µë¬¸ íƒˆì¶œ
+            // nÀÌ kº¸´Ù ÀÛÀ» ¶§ (´õ ÀÌ»ó ³ª´­ ¼ö ¾øÀ» ¶§) ¹Ýº¹¹® Å»Ãâ
             if (n < k) {
                 break;
             }
-            //kë¡œ ë‚˜ëˆ„ê¸°
+            //k·Î ³ª´©±â
             result += 1;
             n %= k;
         }
-        
-        // ë§ˆì§€ë§‰ìœ¼ë¡œ ë‚¨ì€ ìˆ˜ì— ëŒ€í•˜ì—¬ 1ì”© ë¹¼ê¸°
+
+        // ¸¶Áö¸·À¸·Î ³²Àº ¼ö¿¡ ´ëÇÏ¿© 1¾¿ »©±â
         result += n - 1;
         return result;
     }

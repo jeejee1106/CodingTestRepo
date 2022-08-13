@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ë‹¨ì–´ì •ë ¬ {
+public class ´Ü¾îÁ¤·Ä {
     public static void main(String[] args) throws IOException {
         solution1();
     }
@@ -24,11 +24,11 @@ public class ë‹¨ì–´ì •ë ¬ {
 
         Arrays.sort(arr, new Comparator<String>() {
             public int compare(String s1, String s2) {
-                // ë‹¨ì–´ ê¸¸ì´ê°€ ê°™ì„ ê²½ìš°
+                // ´Ü¾î ±æÀÌ°¡ °°À» °æ¿ì
                 if (s1.length() == s2.length()) {
                     return s1.compareTo(s2);
                 }
-                // ê·¸ ì™¸ì˜ ê²½ìš°
+                // ±× ¿ÜÀÇ °æ¿ì
                 else {
                     return s1.length() - s2.length();
                 }
@@ -38,7 +38,7 @@ public class ë‹¨ì–´ì •ë ¬ {
         sb.append(arr[0]).append('\n');
 
         for (int i = 1; i < n; i++) {
-            // ì¤‘ë³µë˜ì§€ ì•ŠëŠ” ë‹¨ì–´ë§Œ ì¶œë ¥
+            // Áßº¹µÇÁö ¾Ê´Â ´Ü¾î¸¸ Ãâ·Â
             if (!arr[i].equals(arr[i - 1])) {
                 sb.append(arr[i]).append('\n');
             }

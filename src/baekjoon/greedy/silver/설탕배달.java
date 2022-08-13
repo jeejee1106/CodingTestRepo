@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ì„¤íƒ•ë°°ë‹¬ {
+public class ¼³ÅÁ¹è´Ş {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int kg = Integer.parseInt(br.readLine());
 

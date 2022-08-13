@@ -3,23 +3,23 @@ package baekjoon.greedy.bronze;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class ê±°ìŠ¤ë¦„ëˆ {
+public class °Å½º¸§µ· {
     public static void main(String[] args) {
         int money1 = 380;
         int money2 = 1;
         int money3 = 541;
 
 //        solution1();
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution2(money1)); //4
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution2(money2)); //15
-        System.out.println(ê±°ìŠ¤ë¦„ëˆ.solution2(money3)); //10
+        System.out.println(°Å½º¸§µ·.solution2(money1)); //4
+        System.out.println(°Å½º¸§µ·.solution2(money2)); //15
+        System.out.println(°Å½º¸§µ·.solution2(money3)); //10
     }
 
-    public static void solution1() { //ë°±ì¤€ ë°©ì‹ í’€ì´
+    public static void solution1() { //¹éÁØ ¹æ½Ä Ç®ÀÌ
         Scanner in = new Scanner(System.in);
         int money = 1000 - in.nextInt();
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int answer = 0;
 
         while (money > 0) {
@@ -43,14 +43,14 @@ public class ê±°ìŠ¤ë¦„ëˆ {
                 answer++;
             }
         }
-        System.out.println("ë‹µ : " + answer);
+        System.out.println("´ä : " + answer);
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 
-    public static int solution2(int money) { // ê·¸ë¦¬ë””ë¡œ í’€ì´
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+    public static int solution2(int money) { // ±×¸®µğ·Î Ç®ÀÌ
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
         int change = 1000 - money;
         int answer = 0;
@@ -65,7 +65,7 @@ public class ê±°ìŠ¤ë¦„ëˆ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
 
         return answer;
     }

@@ -6,40 +6,40 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ìˆ˜ì •ë ¬í•˜ê¸°3 {
+public class ¼öÁ¤·ÄÇÏ±â3 {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
     /**
-     * ìˆ˜ ì •ë ¬í•˜ê¸°2ì™€ ê°™ì€ ë¬¸ì œì´ì§€ë§Œ ì´ ë¬¸ì œëŠ” ì¤‘ë³µ ìˆ«ìê°€ ìˆë‹¤.
-     * ë°ì´í„°ì˜ ë²”ìœ„ ë˜í•œ ì²œë§Œìœ¼ë¡œ ì»¤ì¡Œì§€ ë•Œë¬¸ì— (ë‹¹ì—°íˆ?)Counting sortë¥¼ ì‚¬ìš©í•´ì•¼í•œë‹¤.
+     * ¼ö Á¤·ÄÇÏ±â2¿Í °°Àº ¹®Á¦ÀÌÁö¸¸ ÀÌ ¹®Á¦´Â Áßº¹ ¼ıÀÚ°¡ ÀÖ´Ù.
+     * µ¥ÀÌÅÍÀÇ ¹üÀ§ ¶ÇÇÑ Ãµ¸¸À¸·Î Ä¿Á³Áö ¶§¹®¿¡ (´ç¿¬È÷?)Counting sort¸¦ »ç¿ëÇØ¾ßÇÑ´Ù.
      */
 
     public static void solution1() throws IOException {
         /**
-         * ë°©ë²• : Counting sort
-         * ì°¸ê³  ë¸”ë¡œê·¸ : https://st-lab.tistory.com/107
-         * ì°¸ê³  : ì´ë²ˆì˜ ê²½ìš° ì¤‘ë³µë˜ëŠ” ìˆ˜ê°€ ìˆìœ¼ë‹ˆ boolean ë°°ì—´ì´ ì•„ë‹Œ int ë°°ì—´ì„ ì‚¬ìš©í•œë‹¤.
+         * ¹æ¹ı : Counting sort
+         * Âü°í ºí·Î±× : https://st-lab.tistory.com/107
+         * Âü°í : ÀÌ¹øÀÇ °æ¿ì Áßº¹µÇ´Â ¼ö°¡ ÀÖÀ¸´Ï boolean ¹è¿­ÀÌ ¾Æ´Ñ int ¹è¿­À» »ç¿ëÇÑ´Ù.
          */
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
 
-        // ìˆ˜ì˜ ë²”ìœ„ (0 ~ 10000) ì‚¬ì‹¤ìƒ 0ì€ ì œì™¸
+        // ¼öÀÇ ¹üÀ§ (0 ~ 10000) »ç½Ç»ó 0Àº Á¦¿Ü
         int[] count = new int[10001];
 
         for (int i = 0; i < n; i++) {
-            // í•´ë‹¹ ì¸ë±ìŠ¤ì˜ ê°’ì„ 1 ì¦ê°€
+            // ÇØ´ç ÀÎµ¦½ºÀÇ °ªÀ» 1 Áõ°¡
             count[Integer.parseInt(br.readLine())] ++;
         }
 
         br.close();
 
-        // 0ì€ ì…ë ¥ë²”ìœ„ì—ì„œ ì—†ìœ¼ë¯€ë¡œ 1ë¶€í„° ì‹œì‘
+        // 0Àº ÀÔ·Â¹üÀ§¿¡¼­ ¾øÀ¸¹Ç·Î 1ºÎÅÍ ½ÃÀÛ
         for(int i = 1; i < 10001; i++){
-            // i ê°’ì´ ê°œìˆ˜ê°€ 0 ì´ ë  ë•Œ ê¹Œì§€ ì¶œë ¥ (ë¹ˆë„ìˆ˜ë¥¼ ì˜ë¯¸)
+            // i °ªÀÌ °³¼ö°¡ 0 ÀÌ µÉ ¶§ ±îÁö Ãâ·Â (ºóµµ¼ö¸¦ ÀÇ¹Ì)
             while(count[i] > 0){
                 sb.append(i).append('\n');
                 count[i]--;

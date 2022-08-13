@@ -1,7 +1,7 @@
 package book.implementation;
 
-public class ì™•ì‹¤ì˜ë‚˜ì´íŠ¸ {
-    
+public class ¿Õ½ÇÀÇ³ªÀÌÆ® {
+
     public static void main(String[] args) {
         char column1 = 'a';
         int row1 = 1;
@@ -16,29 +16,29 @@ public class ì™•ì‹¤ì˜ë‚˜ì´íŠ¸ {
         int row4 = 8;
 
 
-        System.out.println("solution1 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution1(column1, row1)); // 2
-        System.out.println("solution1 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution1(column2, row2)); // 6
-        System.out.println("solution1 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution1(column3, row3)); // 8
-        System.out.println("solution1 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution1(column4, row4)); // 4
+        System.out.println("solution1 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution1(column1, row1)); // 2
+        System.out.println("solution1 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution1(column2, row2)); // 6
+        System.out.println("solution1 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution1(column3, row3)); // 8
+        System.out.println("solution1 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution1(column4, row4)); // 4
 
-        System.out.println("solution2 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution2(column1, row1)); // 2
-        System.out.println("solution2 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution2(column2, row2)); // 6
-        System.out.println("solution2 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution2(column3, row3)); // 8
-        System.out.println("solution2 = " + ì™•ì‹¤ì˜ë‚˜ì´íŠ¸.solution2(column4, row4)); // 4
+        System.out.println("solution2 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution2(column1, row1)); // 2
+        System.out.println("solution2 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution2(column2, row2)); // 6
+        System.out.println("solution2 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution2(column3, row3)); // 8
+        System.out.println("solution2 = " + ¿Õ½ÇÀÇ³ªÀÌÆ®.solution2(column4, row4)); // 4
 
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int solution1(char column, int row) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
         int answer = 8;
 
-        int col = column - 'a' + 1; //charíƒ€ì…ì˜ ì˜ì–´ì†Œë¬¸ìë¥¼ ìˆ«ìë¡œë°”ê¿”ì£¼ê¸° a:1, b:2, c:3 ......
+        int col = column - 'a' + 1; //charÅ¸ÀÔÀÇ ¿µ¾î¼Ò¹®ÀÚ¸¦ ¼ıÀÚ·Î¹Ù²ãÁÖ±â a:1, b:2, c:3 ......
         int[] x = {-2, -2, 2, 2, -1, 1, -1, 1};
         int[] y = {1, -1, 1, -1, 2, 2, -2, -2};
 
-        //ì¦‰ ë‚˜ì´íŠ¸ê°€ (col, row)ì˜ ìœ„ì¹˜ì— ìˆì„ ë•Œ ì´ë™ ê°€ëŠ¥í•œ ê²½ìš°ì˜ ìˆ˜ëŠ”?
+        //Áï ³ªÀÌÆ®°¡ (col, row)ÀÇ À§Ä¡¿¡ ÀÖÀ» ¶§ ÀÌµ¿ °¡´ÉÇÑ °æ¿ìÀÇ ¼ö´Â?
         for (int i = 0; i < x.length; i++) {
             int nextCol = col + x[i];
             int nextRow = row + y[i];
@@ -48,37 +48,37 @@ public class ì™•ì‹¤ì˜ë‚˜ì´íŠ¸ {
         }
 
         long finishTime = System.nanoTime();
-        System.out.println("seconds : " + (finishTime - startTime) / 1000000000.0 + "ì´ˆ");
+        System.out.println("seconds : " + (finishTime - startTime) / 1000000000.0 + "ÃÊ");
         return answer;
     }
 
     /**
-     * ì±…ì˜ í’€ì´
-     * ì‚¬ì‹¤ xì™€ yë¥¼ ë°°ì—´ë¡œ ë§Œë“œëŠ” ê²ƒì€ ì‚´ì§ ì°¸ê³ ë¥¼ í–ˆì§€ë§Œ
-     * ê·¸ í›„ í˜„ì¬ ìœ„ì¹˜ì™€ x, yë¥¼ ë”í•œ í›„ ê²½ìš°ì˜ ìˆ˜ë¥¼ ì°¾ëŠ” ê²ƒì€ ë‚˜ í˜¼ì í’€ì—ˆë‹¤.
-     * ë‚˜ëŠ” ë¶ˆê°€ëŠ¥ í•  ë–¼ ì¹´ìš´íŠ¸ë¥¼ í•˜ë‚˜ì”© ë¹¼ì£¼ì—ˆëŠ”ë°, ì±…ì—ì„œëŠ” ê°€ëŠ¥ í•  ë•Œ ì¹´ìš´íŠ¸ë¥¼ í•˜ë‚˜ì”© ëŠ˜ë ¤ì£¼ì—ˆë‹¤.
+     * Ã¥ÀÇ Ç®ÀÌ
+     * »ç½Ç x¿Í y¸¦ ¹è¿­·Î ¸¸µå´Â °ÍÀº »ìÂ¦ Âü°í¸¦ ÇßÁö¸¸
+     * ±× ÈÄ ÇöÀç À§Ä¡¿Í x, y¸¦ ´õÇÑ ÈÄ °æ¿ìÀÇ ¼ö¸¦ Ã£´Â °ÍÀº ³ª È¥ÀÚ Ç®¾ú´Ù.
+     * ³ª´Â ºÒ°¡´É ÇÒ ¶¼ Ä«¿îÆ®¸¦ ÇÏ³ª¾¿ »©ÁÖ¾ú´Âµ¥, Ã¥¿¡¼­´Â °¡´É ÇÒ ¶§ Ä«¿îÆ®¸¦ ÇÏ³ª¾¿ ´Ã·ÁÁÖ¾ú´Ù.
      */
     public static int solution2(char column, int row) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int col = column - 'a' + 1;
-        // ë‚˜ì´íŠ¸ê°€ ì´ë™í•  ìˆ˜ ìˆëŠ” 8ê°€ì§€ ë°©í–¥ ì •ì˜
+        // ³ªÀÌÆ®°¡ ÀÌµ¿ÇÒ ¼ö ÀÖ´Â 8°¡Áö ¹æÇâ Á¤ÀÇ
         int[] dx = {-2, -1, 1, 2, 2, 1, -1, -2};
         int[] dy = {-1, -2, -2, -1, 1, 2, 2, 1};
 
-        // 8ê°€ì§€ ë°©í–¥ì— ëŒ€í•˜ì—¬ ê° ìœ„ì¹˜ë¡œ ì´ë™ì´ ê°€ëŠ¥í•œì§€ í™•ì¸
+        // 8°¡Áö ¹æÇâ¿¡ ´ëÇÏ¿© °¢ À§Ä¡·Î ÀÌµ¿ÀÌ °¡´ÉÇÑÁö È®ÀÎ
         int result = 0;
         for (int i = 0; i < 8; i++) {
-            // ì´ë™í•˜ê³ ì í•˜ëŠ” ìœ„ì¹˜ í™•ì¸
+            // ÀÌµ¿ÇÏ°íÀÚ ÇÏ´Â À§Ä¡ È®ÀÎ
             int nextRow = row + dx[i];
             int nextColumn = col + dy[i];
-            // í•´ë‹¹ ìœ„ì¹˜ë¡œ ì´ë™ì´ ê°€ëŠ¥í•˜ë‹¤ë©´ ì¹´ìš´íŠ¸ ì¦ê°€
+            // ÇØ´ç À§Ä¡·Î ÀÌµ¿ÀÌ °¡´ÉÇÏ´Ù¸é Ä«¿îÆ® Áõ°¡
             if (nextRow >= 1 && nextRow <= 8 && nextColumn >= 1 && nextColumn <= 8) {
                 result += 1;
             }
         }
 
         long finishTime = System.nanoTime();
-        System.out.println("seconds : " + (finishTime - startTime) / 1000000000.0 + "ì´ˆ");
+        System.out.println("seconds : " + (finishTime - startTime) / 1000000000.0 + "ÃÊ");
         return result;
     }
 }

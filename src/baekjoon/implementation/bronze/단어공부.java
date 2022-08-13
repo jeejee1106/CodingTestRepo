@@ -4,31 +4,31 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ë‹¨ì–´ê³µë¶€ {
+public class ´Ü¾î°øºÎ {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
-        String upperStr = str.toUpperCase(); //ì…ë ¥ë°›ì€ ë¬¸ìì—´ì„ ì „ë¶€ ëŒ€ë¬¸ìë¡œ ë°”ê¾¸ê¸°
+        String upperStr = str.toUpperCase(); //ÀÔ·Â¹ŞÀº ¹®ÀÚ¿­À» ÀüºÎ ´ë¹®ÀÚ·Î ¹Ù²Ù±â
         char answer = ' ';
         int max = 0;
         int[] count = new int[26];
 
-        //ë¬¸ìì—´ì„ í•˜ë‚˜í•˜ë‚˜ ê²€ì‚¬
+        //¹®ÀÚ¿­À» ÇÏ³ªÇÏ³ª °Ë»ç
         for (int i = 0; i < upperStr.length(); i++) {
-            int n = upperStr.charAt(i) -65; //ê° ìë¦¬ì˜ ë¬¸ìë¥¼ ì•„ìŠ¤í‚¤ ì½”ë“œë¡œ ë³€ê²½
-            count[n]++; //ì•ŒíŒŒë²³ì´ ëª‡ê°œì”© ë“¤ì–´ê°€ëŠ”ì§€ ì¹´ìš´íŠ¸
+            int n = upperStr.charAt(i) -65; //°¢ ÀÚ¸®ÀÇ ¹®ÀÚ¸¦ ¾Æ½ºÅ° ÄÚµå·Î º¯°æ
+            count[n]++; //¾ËÆÄºªÀÌ ¸î°³¾¿ µé¾î°¡´ÂÁö Ä«¿îÆ®
         }
 
-        //countë°°ì—´ì„ ëŒë ¤ì„œ ì œì¼ ê°’ì´ í° ì¸ë±ìŠ¤ ì°¾ê¸°
+        //count¹è¿­À» µ¹·Á¼­ Á¦ÀÏ °ªÀÌ Å« ÀÎµ¦½º Ã£±â
         for (int i = 0; i < 26; i++) {
             if (count[i] > max) {
                 max = count[i];
-                answer = (char) (i + 65); //ê°’ì´ ê°€ì¥ í° ì¸ë±ìŠ¤ì— 65ë¥¼ ë”í•˜ë©´ ìµœê³  ë§ì´ ë“±ì¥í•œ ë¬¸ìë¥¼ ì•Œ ìˆ˜ ìˆë‹¤.
-            } else if (count[i] == max) { //maxê°’ì´ ì—¬ëŸ¬ê°œë©´ ë¬¼ìŒí‘œ ë°˜í™˜
+                answer = (char) (i + 65); //°ªÀÌ °¡Àå Å« ÀÎµ¦½º¿¡ 65¸¦ ´õÇÏ¸é ÃÖ°í ¸¹ÀÌ µîÀåÇÑ ¹®ÀÚ¸¦ ¾Ë ¼ö ÀÖ´Ù.
+            } else if (count[i] == max) { //max°ªÀÌ ¿©·¯°³¸é ¹°À½Ç¥ ¹İÈ¯
                 answer = '?';
             }
         }

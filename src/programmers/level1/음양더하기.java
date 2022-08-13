@@ -1,6 +1,6 @@
 package programmers.level1;
 
-public class ìŒì–‘ë”í•˜ê¸° {
+public class À½¾ç´õÇÏ±â {
     public static void main(String[] args) {
         int[] absolutes = {4,7,12};
         boolean[] signs = {true,false,true};
@@ -8,28 +8,28 @@ public class ìŒì–‘ë”í•˜ê¸° {
         int[] absolutes2 = {1,2,3};
         boolean[] signs2 = {false,false,true};
 
-        System.out.println(ìŒì–‘ë”í•˜ê¸°.solution1(absolutes, signs)); //9
-        System.out.println(ìŒì–‘ë”í•˜ê¸°.solution1(absolutes2, signs2)); //0
+        System.out.println(À½¾ç´õÇÏ±â.solution1(absolutes, signs)); //9
+        System.out.println(À½¾ç´õÇÏ±â.solution1(absolutes2, signs2)); //0
 
-        //ë‹¤ì‹œ ì´ˆê¸°í™” (í .. í…ŒìŠ¤íŠ¸ ì½”ë“œë¡œ ì§œëŠ” ê²Œ ë” í¸í• ì§€ë„...?)
+        //´Ù½Ã ÃÊ±âÈ­ (Èì.. Å×½ºÆ® ÄÚµå·Î Â¥´Â °Ô ´õ ÆíÇÒÁöµµ...?)
         int[] absolutes3 = {4,7,12};
         boolean[] signs3 = {true,false,true};
 
         int[] absolutes4 = {1,2,3};
         boolean[] signs4 = {false,false,true};
-        System.out.println(ìŒì–‘ë”í•˜ê¸°.solution2(absolutes3, signs3)); //9
-        System.out.println(ìŒì–‘ë”í•˜ê¸°.solution2(absolutes4, signs4)); //0
+        System.out.println(À½¾ç´õÇÏ±â.solution2(absolutes3, signs3)); //9
+        System.out.println(À½¾ç´õÇÏ±â.solution2(absolutes4, signs4)); //0
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int solution1(int[] absolutes, boolean[] signs) {
         int answer = 0;
 
         for(int i = 0; i < signs.length; i++){
-            if(!signs[i]){ //signs[i]ê°€ falseì´ë©´ absolutes[i]ì˜ ê°’ì´ ìŒìˆ˜ì´ê¸° ë•Œë¬¸ì—
-                absolutes[i] *= (-1); //-1 ê³±í•´ì¤˜ì„œ ì‹¤ì œ ìŒìˆ˜ê°’ìœ¼ë¡œ ë§Œë“¤ê¸°
+            if(!signs[i]){ //signs[i]°¡ falseÀÌ¸é absolutes[i]ÀÇ °ªÀÌ À½¼öÀÌ±â ¶§¹®¿¡
+                absolutes[i] *= (-1); //-1 °öÇØÁà¼­ ½ÇÁ¦ À½¼ö°ªÀ¸·Î ¸¸µé±â
             }
-            answer += absolutes[i]; //ëª¨ë“  absolutes[i]ì˜ ê°’ ë”í•˜ê¸°
+            answer += absolutes[i]; //¸ğµç absolutes[i]ÀÇ °ª ´õÇÏ±â
         }
 
         return answer;
@@ -38,12 +38,12 @@ public class ìŒì–‘ë”í•˜ê¸° {
     public static int solution2(int[] absolutes, boolean[] signs) {
         int answer = 0;
 
-        //ì‚¼í•­ì—°ì‚°ìë¥¼ ì´ìš©í•œ í’€ì´
+        //»ïÇ×¿¬»êÀÚ¸¦ ÀÌ¿ëÇÑ Ç®ÀÌ
         for(int i = 0; i < signs.length; i++){
-            // signs[i]ê°€ trueì•¼? absolutes[i]ê·¸ëŒ€ë¡œ! trueì•„ë‹ˆì•¼? absolutes[i]ì— -1 ê³±í•´ì£¼ê¸°
-            // ê³§ ë°”ë¡œ answerì— ë”í•´ì£¼ê¸°!
+            // signs[i]°¡ true¾ß? absolutes[i]±×´ë·Î! true¾Æ´Ï¾ß? absolutes[i]¿¡ -1 °öÇØÁÖ±â
+            // °ğ ¹Ù·Î answer¿¡ ´õÇØÁÖ±â!
             answer += signs[i] ? absolutes[i] : absolutes[i] * (-1);
-//            answer += absolutes[i] * (signs[i]? 1: -1); // ì‚¼í•­ì—°ì‚°ìë¥¼ ì´ë ‡ê²Œ ì“°ëŠ” ë°©ë²•ë„..! ì—­ì‹œ ì‚¬ê³ ë ¥ì˜ ì°¨ì´ì¼ê¹Œ... ë…¸ë ¥í•´ì•¼ê² ë‹¤.
+//            answer += absolutes[i] * (signs[i]? 1: -1); // »ïÇ×¿¬»êÀÚ¸¦ ÀÌ·¸°Ô ¾²´Â ¹æ¹ıµµ..! ¿ª½Ã »ç°í·ÂÀÇ Â÷ÀÌÀÏ±î... ³ë·ÂÇØ¾ß°Ú´Ù.
         }
 
         return answer;

@@ -2,14 +2,14 @@ package baekjoon.implementation.silver;
 
 import java.util.HashMap;
 
-public class ì…€í”„ë„˜ë²„ {
+public class ¼¿ÇÁ³Ñ¹ö {
     public static void main(String[] args) {
 //        solution1();
         solution2();
     }
 
-    public static void solution1() { //ë‚´ í’€ì´
-        //10,000 ì´í•˜ì˜ ì–‘ì˜ ì •ìˆ˜ ì¤‘ ì…€í”„ë„˜ë²„ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
+    public static void solution1() { //³» Ç®ÀÌ
+        //10,000 ÀÌÇÏÀÇ ¾çÀÇ Á¤¼ö Áß ¼¿ÇÁ³Ñ¹ö¸¦ Ãâ·ÂÇÏ½Ã¿À
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 1; i <= 10000; i++) {
             map.put(i, 0);
@@ -37,21 +37,21 @@ public class ì…€í”„ë„˜ë²„ {
         }
     }
 
-    public static void solution2() { //ë‹¤ë¥¸ ì‚¬ëŒ í’€ì´ - ì†ë„ê°€ í›¨ì”¬ ë¹ ë¥´ë‹¤....ê±°ì˜ 1.7ë°°ì •ë„....
-        boolean[] check = new boolean[10001]; //ì£¼ì–´ì§„ ìˆ˜ì˜ ë²”ìœ„ëŠ” 1ë¶€í„° 10000ì´ë¯€ë¡œ
+    public static void solution2() { //´Ù¸¥ »ç¶÷ Ç®ÀÌ - ¼Óµµ°¡ ÈÎ¾À ºü¸£´Ù....°ÅÀÇ 1.7¹èÁ¤µµ....
+        boolean[] check = new boolean[10001]; //ÁÖ¾îÁø ¼öÀÇ ¹üÀ§´Â 1ºÎÅÍ 10000ÀÌ¹Ç·Î
 
         for (int i = 1; i < 10001; i++){
             int n = d(i);
 
-            if(n < 10001){ // 10000 ì´ ë„˜ëŠ” ìˆ˜ëŠ” í•„ìš”ê°€ ì—†ìŒ
-                check[n] = true; //nì€ ìƒì„±ìê°€ ìˆëŠ” ìˆ˜ì´ê¸° ë•Œë¬¸ì— trueì…ë ¥
+            if(n < 10001){ // 10000 ÀÌ ³Ñ´Â ¼ö´Â ÇÊ¿ä°¡ ¾øÀ½
+                check[n] = true; //nÀº »ı¼ºÀÚ°¡ ÀÖ´Â ¼öÀÌ±â ¶§¹®¿¡ trueÀÔ·Â
             }
         }
 
         StringBuilder sb = new StringBuilder();
 
         for (int i = 1; i < 10001; i++) {
-            if (!check[i]) { // false ì¸ ì¸ë±ìŠ¤ë§Œ ì¶œë ¥
+            if (!check[i]) { // false ÀÎ ÀÎµ¦½º¸¸ Ãâ·Â
                 sb.append(i).append('\n');
             }
         }
@@ -62,8 +62,8 @@ public class ì…€í”„ë„˜ë²„ {
         int sum = number;
 
         while(number != 0){
-            sum = sum + (number % 10); // 1ì˜ ìë¦¬ìˆ˜
-            number = number/10;	// 10ì„ ë‚˜ëˆ„ì–´ 1ì˜ìë¦¬ë¥¼ ì—†ì•¤ë‹¤
+            sum = sum + (number % 10); // 1ÀÇ ÀÚ¸®¼ö
+            number = number/10;	// 10À» ³ª´©¾î 1ÀÇÀÚ¸®¸¦ ¾ø¾Ø´Ù
         }
 
         return sum;

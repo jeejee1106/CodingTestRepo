@@ -2,7 +2,7 @@ package programmers.level1;
 
 import java.util.Arrays;
 
-public class ë¡œë˜ì˜ìµœê³ ìˆœìœ„ì™€ìµœì €ìˆœìœ„ {
+public class ·Î¶ÇÀÇÃÖ°í¼øÀ§¿ÍÃÖÀú¼øÀ§ {
     public static void main(String[] args) {
         int[] lottos1 = {44, 1, 0, 0, 31, 25};
         int[] win_nums1 = {31, 10, 45, 1, 6, 19};
@@ -13,15 +13,15 @@ public class ë¡œë˜ì˜ìµœê³ ìˆœìœ„ì™€ìµœì €ìˆœìœ„ {
         int[] lottos3 = {45, 4, 35, 20, 3, 9};
         int[] win_nums3 = {20, 9, 3, 45, 4, 35};
 
-        System.out.println(Arrays.toString(ë¡œë˜ì˜ìµœê³ ìˆœìœ„ì™€ìµœì €ìˆœìœ„.solution1(lottos1, win_nums1))); //[3, 5]
-        System.out.println(Arrays.toString(ë¡œë˜ì˜ìµœê³ ìˆœìœ„ì™€ìµœì €ìˆœìœ„.solution1(lottos2, win_nums2))); //[1, 6]
-        System.out.println(Arrays.toString(ë¡œë˜ì˜ìµœê³ ìˆœìœ„ì™€ìµœì €ìˆœìœ„.solution1(lottos3, win_nums3))); //[1, 1]
+        System.out.println(Arrays.toString(·Î¶ÇÀÇÃÖ°í¼øÀ§¿ÍÃÖÀú¼øÀ§.solution1(lottos1, win_nums1))); //[3, 5]
+        System.out.println(Arrays.toString(·Î¶ÇÀÇÃÖ°í¼øÀ§¿ÍÃÖÀú¼øÀ§.solution1(lottos2, win_nums2))); //[1, 6]
+        System.out.println(Arrays.toString(·Î¶ÇÀÇÃÖ°í¼øÀ§¿ÍÃÖÀú¼øÀ§.solution1(lottos3, win_nums3))); //[1, 1]
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int[] solution1(int[] lottos, int[] win_nums) {
-        int winCount = 0; //ë‚´ ë²ˆí˜¸ì™€ win_numsë²ˆí˜¸ ì¤‘ ì¼ì¹˜í•˜ëŠ” ë²ˆí˜¸ì˜ ê°¯ìˆ˜
-        int zeroCount = 0; //ë‚´ ë²ˆí˜¸ ì¤‘ 0ì˜ ê°¯ìˆ˜
+        int winCount = 0; //³» ¹øÈ£¿Í win_nums¹øÈ£ Áß ÀÏÄ¡ÇÏ´Â ¹øÈ£ÀÇ °¹¼ö
+        int zeroCount = 0; //³» ¹øÈ£ Áß 0ÀÇ °¹¼ö
 
         for(int lotto : lottos){
             if(lotto == 0){
@@ -36,18 +36,18 @@ public class ë¡œë˜ì˜ìµœê³ ìˆœìœ„ì™€ìµœì €ìˆœìœ„ {
             }
         }
 
-        int maxTotal = zeroCount + winCount; //ìµœëŒ€ ë§íŒê°¯ìˆ˜
+        int maxTotal = zeroCount + winCount; //ÃÖ´ë ¸ÂÈù°¹¼ö
 
-        if(maxTotal == 0){ //ë§íŒê°¯ìˆ˜ê°€ 0ê°œë©´ 1ì„ ë„£ê² ë‹¤.
+        if(maxTotal == 0){ //¸ÂÈù°¹¼ö°¡ 0°³¸é 1À» ³Ö°Ú´Ù.
             maxTotal = 1;
         }
-        if(winCount == 0){ //ë§íŒê°¯ìˆ˜ê°€ 0ê°œë©´ 1ì„ ë„£ê² ë‹¤.
+        if(winCount == 0){ //¸ÂÈù°¹¼ö°¡ 0°³¸é 1À» ³Ö°Ú´Ù.
             winCount = 1;
         }
 
         int[] answer = {7-maxTotal, 7-winCount};
-        //7ì—ì„œ 0ì˜ ê°¯ìˆ˜ì™€ ì¼ì¹˜í•˜ëŠ” ê°¯ìˆ˜ë¥¼ ë”í•œ ìˆ˜ë¥¼ ë¹¼ì£¼ë©´ ë“±ìˆ˜ê°€ ë‚˜ì˜¨ë‹¤.(ìµœëŒ“ê°’)
-        //7ì—ì„œ ì¼ì¹˜í•˜ëŠ” ë²ˆí˜¸ì˜ ê°¯ìˆ˜(winCount)ë¥¼ ë¹¼ì£¼ë©´ ë“±ìˆ˜ê°€ ë‚˜ì˜¨ë‹¤.(ìµœì†Ÿê°’)
+        //7¿¡¼­ 0ÀÇ °¹¼ö¿Í ÀÏÄ¡ÇÏ´Â °¹¼ö¸¦ ´õÇÑ ¼ö¸¦ »©ÁÖ¸é µî¼ö°¡ ³ª¿Â´Ù.(ÃÖ´ñ°ª)
+        //7¿¡¼­ ÀÏÄ¡ÇÏ´Â ¹øÈ£ÀÇ °¹¼ö(winCount)¸¦ »©ÁÖ¸é µî¼ö°¡ ³ª¿Â´Ù.(ÃÖ¼Ú°ª)
 
         return answer;
     }

@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.StringTokenizer;
 
-public class í•œì¡°ì„œì—´ {
+public class ÇÑÁ¶¼­¿­ {
     public static void main(String[] args) throws IOException {
 //        solution1();
         solution2();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine()); //7
         int[] height = new int[n];
@@ -20,7 +20,7 @@ public class í•œì¡°ì„œì—´ {
             height[i] = Integer.parseInt(br.readLine()); //6 4 10 2 5 7 11
         }
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int count = 0;
         int maxNum = 0;
         for (int i = 0; i < height.length; i++) {
@@ -41,10 +41,10 @@ public class í•œì¡°ì„œì—´ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 
-    public static void solution2() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution2() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine()); //7
         int[] height = new int[n];
@@ -54,17 +54,17 @@ public class í•œì¡°ì„œì—´ {
             height[i] = Integer.parseInt(st.nextToken()); //6 4 10 2 5 7 11
         }
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
         int count = 0, maxNum = 0;
         for (int i = 0; i < height.length; i++) {
             for (int j = i+1; j < height.length; j++) {
-                if (height[i] > height[j]) { //ìì‹ ë³´ë‹¤ ë‚®ì€ ë´‰ìš°ë¦¬ì¼ë•Œë§Œ ê³µê²©(ë¬¼ë¦¬ì¹˜ê¸°)
+                if (height[i] > height[j]) { //ÀÚ½Åº¸´Ù ³·Àº ºÀ¿ì¸®ÀÏ¶§¸¸ °ø°İ(¹°¸®Ä¡±â)
                     count++;
                 } else {
-                    break; //ìê¸° ë³´ë‹¤ ë†’ì€ ë´‰ìš°ë¦¬ ë§Œë‚˜ë©´ í¬ê¸°
+                    break; //ÀÚ±â º¸´Ù ³ôÀº ºÀ¿ì¸® ¸¸³ª¸é Æ÷±â
                 }
             }
-            maxNum = Math.max(maxNum, count); //ë¬¼ë¦¬ì¹œ íšŸìˆ˜ ë¹„êµí•´ì„œ ìµœëŒ“ê°’ ë„£ê¸°
+            maxNum = Math.max(maxNum, count); //¹°¸®Ä£ È½¼ö ºñ±³ÇØ¼­ ÃÖ´ñ°ª ³Ö±â
             count = 0;
         }
 
@@ -72,6 +72,6 @@ public class í•œì¡°ì„œì—´ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 }

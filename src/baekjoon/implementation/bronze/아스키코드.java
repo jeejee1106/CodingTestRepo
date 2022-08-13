@@ -4,19 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ì•„ìŠ¤í‚¤ì½”ë“œ {
+public class ¾Æ½ºÅ°ÄÚµå {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        //1. Stringìœ¼ë¡œ ì…ë ¥ì„ ë°›ëŠ”ë‹¤.
+        //1. StringÀ¸·Î ÀÔ·ÂÀ» ¹Ş´Â´Ù.
         String str = br.readLine();
 
-        //2. charAtë©”ì„œë“œë¥¼ ì‚¬ìš©í•˜ë©´ charíƒ€ì…ì˜ ë¬¸ìê°€ ë‚˜ì˜¨ë‹¤.
-        //3. charíƒ€ì…ì„ intíƒ€ì…ì— ë„£ì–´ì£¼ë©´ ì•„ìŠ¤í‚¤ ì½”ë“œë¡œ ì¶œë ¥ì´ ëœë‹¤.
+        //2. charAt¸Ş¼­µå¸¦ »ç¿ëÇÏ¸é charÅ¸ÀÔÀÇ ¹®ÀÚ°¡ ³ª¿Â´Ù.
+        //3. charÅ¸ÀÔÀ» intÅ¸ÀÔ¿¡ ³Ö¾îÁÖ¸é ¾Æ½ºÅ° ÄÚµå·Î Ãâ·ÂÀÌ µÈ´Ù.
         int ch = str.charAt(0);
 
         System.out.println(ch);

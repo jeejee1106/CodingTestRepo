@@ -3,28 +3,28 @@ package baekjoon.greedy.bronze;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class ì „ìë ˆì¸ì§€ {
+public class ÀüÀÚ·¹ÀÎÁö {
     public static void main(String[] args) {
         int time1 = 100;
         int time2 = 5000;
         int time3 = 2134;
 
 //        solution1(); //0 1 4
-        System.out.println(ì „ìë ˆì¸ì§€.solution2(time1)); //0 1 4
-        System.out.println(ì „ìë ˆì¸ì§€.solution2(time2)); //0 1 4
-        System.out.println(ì „ìë ˆì¸ì§€.solution2(time3)); //0 1 4
+        System.out.println(ÀüÀÚ·¹ÀÎÁö.solution2(time1)); //0 1 4
+        System.out.println(ÀüÀÚ·¹ÀÎÁö.solution2(time2)); //0 1 4
+        System.out.println(ÀüÀÚ·¹ÀÎÁö.solution2(time3)); //0 1 4
 
-        System.out.println(ì „ìë ˆì¸ì§€.solution3(time1)); //0 1 4
-        System.out.println(ì „ìë ˆì¸ì§€.solution3(time2)); //0 1 4
-        System.out.println(ì „ìë ˆì¸ì§€.solution3(time3)); //0 1 4
+        System.out.println(ÀüÀÚ·¹ÀÎÁö.solution3(time1)); //0 1 4
+        System.out.println(ÀüÀÚ·¹ÀÎÁö.solution3(time2)); //0 1 4
+        System.out.println(ÀüÀÚ·¹ÀÎÁö.solution3(time3)); //0 1 4
     }
 
-    public static void solution1() { //ë°±ì¤€ ë°©ì‹ í’€ì´
+    public static void solution1() { //¹éÁØ ¹æ½Ä Ç®ÀÌ
         Scanner in = new Scanner(System.in);
         int time = in.nextInt();
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
-        int A = 0, B = 0, C = 0; //A,B,Cë¥¼ ëª‡ë²ˆì”© ëˆ„ë¥¼ê±´ì§€ countí•  ê°ê°ì˜ ë³€ìˆ˜
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
+        int A = 0, B = 0, C = 0; //A,B,C¸¦ ¸î¹ø¾¿ ´©¸¦°ÇÁö countÇÒ °¢°¢ÀÇ º¯¼ö
 
         while (time >= 10) {
             if (time >= 300) {
@@ -40,20 +40,20 @@ public class ì „ìë ˆì¸ì§€ {
         }
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
         System.out.println(time == 0 ? A + " " + B + " " + C : -1);
     }
 
     public static String solution2(int time) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
-        int aCount = 0, bCount = 0, cCount = 0; //A,B,Cë¥¼ ëª‡ë²ˆì”© ëˆ„ë¥¼ê±´ì§€ countí•  ê°ê°ì˜ ë³€ìˆ˜
+        int aCount = 0, bCount = 0, cCount = 0; //A,B,C¸¦ ¸î¹ø¾¿ ´©¸¦°ÇÁö countÇÒ °¢°¢ÀÇ º¯¼ö
 
-        while (time > 0) { //(ë‚¨ì€)ì‹œê°„ì´ 0ì´ìƒì¼ ë•Œë§Œ ë°˜ë³µë¬¸ ëŒë¦¬ê¸°
-            if (time >= 300) { //(ë‚¨ì€)ì‹œê°„ì´ 300ì´ìƒì´ë©´
-                time -= 300; //(ë‚¨ì€)ì‹œê°„ì—ì„œ 300ì„ ë¹¼ì£¼ê³ 
-                aCount++; //aCountë¥¼ 1 ì˜¬ë ¤ì£¼ê¸°
-            } else if (time >=60) { //ë‚˜ë¨¸ì§€ë„ ë§ˆì¹œê°€ì§€
+        while (time > 0) { //(³²Àº)½Ã°£ÀÌ 0ÀÌ»óÀÏ ¶§¸¸ ¹İº¹¹® µ¹¸®±â
+            if (time >= 300) { //(³²Àº)½Ã°£ÀÌ 300ÀÌ»óÀÌ¸é
+                time -= 300; //(³²Àº)½Ã°£¿¡¼­ 300À» »©ÁÖ°í
+                aCount++; //aCount¸¦ 1 ¿Ã·ÁÁÖ±â
+            } else if (time >=60) { //³ª¸ÓÁöµµ ¸¶Ä£°¡Áö
                 time -= 60;
                 bCount++;
             } else {
@@ -64,15 +64,15 @@ public class ì „ìë ˆì¸ì§€ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
-        return time == 0 ? aCount + " " + bCount + " " + cCount : "-1"; //ì‹œê°„ì´ 0ì´ ë˜ë©´ (10ìœ¼ë¡œ ë‚˜ëˆ„ì–´ì¡Œì„ ë•Œë§Œ 0ì´ ë¨. 10ìœ¼ë¡œ ì•ˆë‚˜ëˆ„ì–´ì§€ë©´ ìŒìˆ˜ê°€ ë‚˜ì˜´)
-                                                                        // ì „ìë ˆì¸ì§€ a,b,cë²„íŠ¼ ëˆ„ë¥¸ ìˆœì„œëŒ€ë¡œ ì¶œë ¥, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ -1 ì¶œë ¥
+        System.out.println("seconds : " + seconds + "ÃÊ");
+        return time == 0 ? aCount + " " + bCount + " " + cCount : "-1"; //½Ã°£ÀÌ 0ÀÌ µÇ¸é (10À¸·Î ³ª´©¾îÁ³À» ¶§¸¸ 0ÀÌ µÊ. 10À¸·Î ¾È³ª´©¾îÁö¸é À½¼ö°¡ ³ª¿È)
+        // ÀüÀÚ·¹ÀÎÁö a,b,c¹öÆ° ´©¸¥ ¼ø¼­´ë·Î Ãâ·Â, ±×·¸Áö ¾ÊÀ¸¸é -1 Ãâ·Â
     }
 
     public static String solution3(int time) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
-        int[] count = {0, 0, 0}; //A,B,Cë¥¼ ëª‡ë²ˆì”© ëˆ„ë¥¼ê±´ì§€ countí•  ë°°ì—´
+        int[] count = {0, 0, 0}; //A,B,C¸¦ ¸î¹ø¾¿ ´©¸¦°ÇÁö countÇÒ ¹è¿­
         int[] fixTime = {300, 60, 10};
 
         for (int i = 0; i < fixTime.length; i++) {
@@ -84,7 +84,7 @@ public class ì „ìë ˆì¸ì§€ {
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
         return time == 0 ? count[0] + " " + count[1] + " " + count[2] : "-1";
     }
 }

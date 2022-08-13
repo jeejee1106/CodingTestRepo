@@ -6,36 +6,36 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-//ì‚¬ì‹¤ ì‹¤ë²„ë‹¨ê³„ì´ì§€ë§Œ í˜•ì œ(?)ë“¤ê³¼ í•¨ê»˜ ìžˆìœ¼ë¼ê³  ë¸Œë¡ ì¦ˆì— ë„£ì—ˆë‹¤ã…Žã…Ž
+//»ç½Ç ½Ç¹ö´Ü°èÀÌÁö¸¸ ÇüÁ¦(?)µé°ú ÇÔ²² ÀÖÀ¸¶ó°í ºê·ÐÁî¿¡ ³Ö¾ú´Ù¤¾¤¾
 
-public class ìˆ˜ì •ë ¬í•˜ê¸°2 {
+public class ¼öÁ¤·ÄÇÏ±â2 {
     public static void main(String[] args) throws IOException {
 //        solution1();
         countingSort();
     }
 
     /**
-     * ìˆ˜ ì •ë ¬í•˜ê¸°ì™€ ê°™ì€ ë¬¸ì œì´ì§€ë§Œ ì´ ë¬¸ì œì˜ í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤ëŠ” ì „ë³´ë‹¤ í›¨ì”¬ ì»¤ì¡Œë‹¤.
-     * ë°ì´í„°ë„ ì´ì „ ë¬¸ì œì— ë¹„í•´ 1000ë°° ë§Žì•„ì¡Œê³ , ìˆ˜ì˜ ë²”ìœ„ë„ 1000ë°° ë„“ë‹¤.
-     * ì‹¤ì œë¡œ ì´ ë¬¸ì œë¥¼ ìˆ˜ ì •ë ¬í•˜ê¸°ì˜ solution1ìœ¼ë¡œ ëŒë¦¬ë©´ ì‹œê°„ì´ˆê³¼ê°€ ë‚˜ì˜¨ë‹¤.
-     * ê·¸ëŸ¬ë‚˜ solution2ë¡œ ëŒë¦¬ë©´ ê°„ì‹ ížˆ ì‹œê°„ì´ˆê³¼ë¥¼ ë©´í•  ìˆ˜ ìžˆë‹¤.
-     * ì¦‰, ì „ ë¬¸ì œì—ì„œ ì–¸ê¸‰í–ˆë‹¤ì‹œí”¼ StringBuilderë¥¼ ì‚¬ìš©í•˜ì—¬ ì¶œë ¥í•˜ëŠ” ê²ƒì´ í›¨ì”¬ ë” ë¹ ë¥´ë‹¤ëŠ” ê²ƒì„ ì´ ë¬¸ì œë¥¼ í†µí•´ ì•Œ ìˆ˜ ìžˆì—ˆë‹¤.
+     * ¼ö Á¤·ÄÇÏ±â¿Í °°Àº ¹®Á¦ÀÌÁö¸¸ ÀÌ ¹®Á¦ÀÇ Å×½ºÆ®ÄÉÀÌ½º´Â Àüº¸´Ù ÈÎ¾À Ä¿Á³´Ù.
+     * µ¥ÀÌÅÍµµ ÀÌÀü ¹®Á¦¿¡ ºñÇØ 1000¹è ¸¹¾ÆÁ³°í, ¼öÀÇ ¹üÀ§µµ 1000¹è ³Ð´Ù.
+     * ½ÇÁ¦·Î ÀÌ ¹®Á¦¸¦ ¼ö Á¤·ÄÇÏ±âÀÇ solution1À¸·Î µ¹¸®¸é ½Ã°£ÃÊ°ú°¡ ³ª¿Â´Ù.
+     * ±×·¯³ª solution2·Î µ¹¸®¸é °£½ÅÈ÷ ½Ã°£ÃÊ°ú¸¦ ¸éÇÒ ¼ö ÀÖ´Ù.
+     * Áï, Àü ¹®Á¦¿¡¼­ ¾ð±ÞÇß´Ù½ÃÇÇ StringBuilder¸¦ »ç¿ëÇÏ¿© Ãâ·ÂÇÏ´Â °ÍÀÌ ÈÎ¾À ´õ ºü¸£´Ù´Â °ÍÀ» ÀÌ ¹®Á¦¸¦ ÅëÇØ ¾Ë ¼ö ÀÖ¾ú´Ù.
      *
-     * ê·¸ë¦¬ê³  ì´ ë¬¸ì œì—ì„œëŠ” 1ì˜ solution2ë³´ë‹¤ í›¨ì”¬ ë” ë¹ ë¥¸ ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œ ë¬¸ì œë¥¼ í’€ê³ ìží•œë‹¤.
-     * ë‚˜ë„ ì²˜ìŒ ë³´ëŠ” ë°©ë²•ì´ë¼ ì´ë²ˆ ë¬¸ì œëŠ” ë‚´ íž˜ìœ¼ë¡œ ë¬¸ì œë¥¼ í’€ì—ˆë‹¤ê¸° ë³´ë‹¤ëŠ” ê³µë¶€ì‹ìœ¼ë¡œ í’€ì—ˆë‹¤ë¼ê³  ë³´ëŠ” ê²ƒì´ ë§žì„ ê²ƒ ê°™ë‹¤.
+     * ±×¸®°í ÀÌ ¹®Á¦¿¡¼­´Â 1ÀÇ solution2º¸´Ù ÈÎ¾À ´õ ºü¸¥ ´Ù¸¥ ¹æ¹ýÀ¸·Î ¹®Á¦¸¦ Ç®°íÀÚÇÑ´Ù.
+     * ³ªµµ Ã³À½ º¸´Â ¹æ¹ýÀÌ¶ó ÀÌ¹ø ¹®Á¦´Â ³» ÈûÀ¸·Î ¹®Á¦¸¦ Ç®¾ú´Ù±â º¸´Ù´Â °øºÎ½ÄÀ¸·Î Ç®¾ú´Ù¶ó°í º¸´Â °ÍÀÌ ¸ÂÀ» °Í °°´Ù.
      */
 
     public static void solution1() throws IOException {
         /**
-         * ë°©ë²•1 : BufferedReader + Collections.sort
-         * ì°¸ê³  ë¸”ë¡œê·¸ : https://st-lab.tistory.com/106
-         * ìˆ˜ ì •ë ¬í•˜ê¸°1ì˜ solution2ë³´ë‹¤ëŠ” ì¡°ê¸ˆ ë¹ ë¥´ì§€ë§Œ, ì´ ë¬¸ì œì˜ solution2ì— ë¹„í•´ ë§Žì´ ëŠë¦¬ë‹¤.
+         * ¹æ¹ý1 : BufferedReader + Collections.sort
+         * Âü°í ºí·Î±× : https://st-lab.tistory.com/106
+         * ¼ö Á¤·ÄÇÏ±â1ÀÇ solution2º¸´Ù´Â Á¶±Ý ºü¸£Áö¸¸, ÀÌ ¹®Á¦ÀÇ solution2¿¡ ºñÇØ ¸¹ÀÌ ´À¸®´Ù.
          */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int count = Integer.parseInt(br.readLine());
 
-        // list ê³„ì—´ ì¤‘ í•˜ë‚˜ë¥¼ ì“°ë©´ ëœë‹¤.
+        // list °è¿­ Áß ÇÏ³ª¸¦ ¾²¸é µÈ´Ù.
         ArrayList<Integer> list = new ArrayList<>();
 
         for(int i = 0; i < count; i++) {
@@ -52,20 +52,20 @@ public class ìˆ˜ì •ë ¬í•˜ê¸°2 {
 
     public static void solution2() throws IOException {
         /**
-         * ë°©ë²•2 : Counting Sort(ê³„ìˆ˜ ì •ë ¬) ì•Œê³ ë¦¬ì¦˜ì„ ì‘ìš©í•œ ë°©ë²•
-         * ì œì¼ ë¹ ë¥¸(?) ì•Œê³ ë¦¬ì¦˜ solution1ì— ë¹„í•´ ì•½ ë‘ë°° ì •ë„ ë¹ ë¥´ë‹¤.
+         * ¹æ¹ý2 : Counting Sort(°è¼ö Á¤·Ä) ¾Ë°í¸®ÁòÀ» ÀÀ¿ëÇÑ ¹æ¹ý
+         * Á¦ÀÏ ºü¸¥(?) ¾Ë°í¸®Áò solution1¿¡ ºñÇØ ¾à µÎ¹è Á¤µµ ºü¸£´Ù.
          *
-         * ì°¸ê³  ë¸”ë¡œê·¸ : https://st-lab.tistory.com/104
+         * Âü°í ºí·Î±× : https://st-lab.tistory.com/104
          *
-         * ìž‘ë™ì›ë¦¬ : ë¥¼ ì ìœ¼ë ¤ê³  í–ˆì§€ë§Œ ë„ˆë¬´ ì–´ë µë‹¤.. ë¸”ë¡œê·¸ ë³´ë©´ì„œ ê³„ì† ê³µë¶€í•˜ìž..
+         * ÀÛµ¿¿ø¸® : ¸¦ ÀûÀ¸·Á°í ÇßÁö¸¸ ³Ê¹« ¾î·Æ´Ù.. ºí·Î±× º¸¸é¼­ °è¼Ó °øºÎÇÏÀÚ..
          */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int count = Integer.parseInt(br.readLine());
 
         /*
-		  -1,000,000 ~ 1,000,000 //ë¬¸ì œì—ì„œì˜ ìˆ˜ì˜ ë²”ìœ„
-		  ê¸°ì¤€ì  0 = index[100000] ìœ¼ë¡œ ìƒê°
+		  -1,000,000 ~ 1,000,000 //¹®Á¦¿¡¼­ÀÇ ¼öÀÇ ¹üÀ§
+		  ±âÁØÁ¡ 0 = index[100000] À¸·Î »ý°¢
 		*/
         boolean[] arr = new boolean[2000001];
 
@@ -83,52 +83,52 @@ public class ìˆ˜ì •ë ¬í•˜ê¸°2 {
 
     public static void countingSort() {
         /**
-         * ê³„ìˆ˜ ì •ë ¬ ì§ì ‘ êµ¬í˜„í•´ë³´ê¸°(220805)
+         * °è¼ö Á¤·Ä Á÷Á¢ ±¸ÇöÇØº¸±â(220805)
          *
-         * O(n)ì˜ ì‹œê°„ë³µìž¡ë„ë¥¼ ê°€ì§€ê¸° ë•Œë¬¸ì— ì†ë„ëŠ” ë¶„ëª…ížˆ ë¹ ë¥´ì§€ë§Œ ë‹¨ì ë„ ì¡´ìž¬í•œë‹¤.
-         * ì•„ëž˜ ì½”ë“œë¥¼ í•œ ë²ˆ ì½ì–´ë³¸ë‹¤ë©´ ë‹¨ì ì„ ì°¾ì„ ìˆ˜ ìžˆë‹¤.
+         * O(n)ÀÇ ½Ã°£º¹Àâµµ¸¦ °¡Áö±â ¶§¹®¿¡ ¼Óµµ´Â ºÐ¸íÈ÷ ºü¸£Áö¸¸ ´ÜÁ¡µµ Á¸ÀçÇÑ´Ù.
+         * ¾Æ·¡ ÄÚµå¸¦ ÇÑ ¹ø ÀÐ¾îº»´Ù¸é ´ÜÁ¡À» Ã£À» ¼ö ÀÖ´Ù.
          *
-         * ë°”ë¡œ counting ë°°ì—´ì´ë¼ëŠ” ìƒˆë¡œìš´ ë°°ì—´ì„ ì„ ì–¸í•´ì£¼ì–´ì•¼ í•œë‹¤ëŠ” ì ì´ë‹¤.
-         * ìƒê°ë³´ë‹¤ ì´ ë‹¨ì ì´ ê½¤ í´ ìˆ˜ ìžˆëŠ”ë°, array ì•ˆì— ìžˆëŠ” maxê°’ì˜ ë²”ìœ„ì— ë”°ë¼ counting ë°°ì—´ì˜ ê¸¸ì´ê°€ ë‹¬ë¼ì§€ê²Œ ëœë‹¤.
-         * ì˜ˆë¡œë“¤ì–´ 10ê°œì˜ ì›ì†Œë¥¼ ì •ë ¬í•˜ê³ ìž í•˜ëŠ”ë°, ìˆ˜ì˜ ë²”ìœ„ê°€ 0~1ì–µì´ë¼ë©´ ë©”ëª¨ë¦¬ê°€ ë§¤ìš° ë‚­ë¹„ ëœë‹¤.
-         * (arrayë°°ì—´ì˜ ê¸¸ì´ëŠ” 10ì¸ë°, ê° ì›ì†Œì˜ ê°’ì´ ë§¤ìš° í¬ë‹¤ë©´ countingë°°ì—´ì˜ ê¸¸ì´ëŠ” arrayë°°ì—´ì¤‘ ì œì¼ í° ì›ì†Œì˜ ê°’ì´ ê¸¸ì´ê°€ ëœë‹¤.
-         *  ì¦‰, array = {1,2,3,4,5,6,7,8,9,1ì–µ}ì´ë¼ë©´ countingë°°ì—´ì˜ ê¸¸ì´ëŠ” 1ì–µì´ ëœë‹¤!)
+         * ¹Ù·Î counting ¹è¿­ÀÌ¶ó´Â »õ·Î¿î ¹è¿­À» ¼±¾ðÇØÁÖ¾î¾ß ÇÑ´Ù´Â Á¡ÀÌ´Ù.
+         * »ý°¢º¸´Ù ÀÌ ´ÜÁ¡ÀÌ ²Ï Å¬ ¼ö ÀÖ´Âµ¥, array ¾È¿¡ ÀÖ´Â max°ªÀÇ ¹üÀ§¿¡ µû¶ó counting ¹è¿­ÀÇ ±æÀÌ°¡ ´Þ¶óÁö°Ô µÈ´Ù.
+         * ¿¹·Îµé¾î 10°³ÀÇ ¿ø¼Ò¸¦ Á¤·ÄÇÏ°íÀÚ ÇÏ´Âµ¥, ¼öÀÇ ¹üÀ§°¡ 0~1¾ïÀÌ¶ó¸é ¸Þ¸ð¸®°¡ ¸Å¿ì ³¶ºñ µÈ´Ù.
+         * (array¹è¿­ÀÇ ±æÀÌ´Â 10ÀÎµ¥, °¢ ¿ø¼ÒÀÇ °ªÀÌ ¸Å¿ì Å©´Ù¸é counting¹è¿­ÀÇ ±æÀÌ´Â array¹è¿­Áß Á¦ÀÏ Å« ¿ø¼ÒÀÇ °ªÀÌ ±æÀÌ°¡ µÈ´Ù.
+         *  Áï, array = {1,2,3,4,5,6,7,8,9,1¾ï}ÀÌ¶ó¸é counting¹è¿­ÀÇ ±æÀÌ´Â 1¾ïÀÌ µÈ´Ù!)
          */
 
-        //1. ì •ë ¬ì„ í•´ì•¼í•˜ëŠ” ë°°ì—´
+        //1. Á¤·ÄÀ» ÇØ¾ßÇÏ´Â ¹è¿­
         int[] array = {7, 2, 3, 5, 7, 1, 4, 6, 7, 5, 0, 1};
 
-        //2. arrayë°°ì—´ ì•ˆì— ë“¤ì–´ìžˆëŠ” ì›ì†Œì˜ ê°œìˆ˜ë¥¼ ì¹´ìš´íŒ… í•´ì£¼ëŠ” ë°°ì—´
-        int[] counting = new int[15]; //ë°°ì—´ì˜ í¬ê¸°ëŠ” ìž„ì˜ë¡œ ì§€ì •(ê°„ë‹¨í•˜ê²Œ 15ë¡œ ì§€ì •í–ˆë‹¤. ì´ ë°°ì—´ í¬ê¸°ë¥¼ ì§€ì •í•´ì£¼ëŠ” ê³¼ì •ì—ì„œ ë©”ëª¨ë¦¬ì˜ ë‚­ë¹„ê°€ ë§Žì´ ë°œìƒí•œë‹¤.)
+        //2. array¹è¿­ ¾È¿¡ µé¾îÀÖ´Â ¿ø¼ÒÀÇ °³¼ö¸¦ Ä«¿îÆÃ ÇØÁÖ´Â ¹è¿­
+        int[] counting = new int[15]; //¹è¿­ÀÇ Å©±â´Â ÀÓÀÇ·Î ÁöÁ¤(°£´ÜÇÏ°Ô 15·Î ÁöÁ¤Çß´Ù. ÀÌ ¹è¿­ Å©±â¸¦ ÁöÁ¤ÇØÁÖ´Â °úÁ¤¿¡¼­ ¸Þ¸ð¸®ÀÇ ³¶ºñ°¡ ¸¹ÀÌ ¹ß»ýÇÑ´Ù.)
 
-        //3. arrayë¥¼ í•œ ë²ˆ ìˆœíšŒí•˜ë©´ì„œ ê° ê°’ì´ ë‚˜ì˜¬ ë•Œë§ˆë‹¤ í•´ë‹¹ ê°’ì„ index ë¡œ í•˜ëŠ” ìƒˆë¡œìš´ ë°°ì—´(counting)ì˜ ê°’ì„ 1 ì¦ê°€ì‹œí‚¨ë‹¤.
+        //3. array¸¦ ÇÑ ¹ø ¼øÈ¸ÇÏ¸é¼­ °¢ °ªÀÌ ³ª¿Ã ¶§¸¶´Ù ÇØ´ç °ªÀ» index ·Î ÇÏ´Â »õ·Î¿î ¹è¿­(counting)ÀÇ °ªÀ» 1 Áõ°¡½ÃÅ²´Ù.
         for(int i = 0; i <array.length; i++) {
             counting[array[i]]++;
         }
-        //ìœ„ forë¬¸ì„ ê±°ì¹˜ê²Œ ë˜ë©´ counting[i]ì˜ ê°’ì€ arrayë°°ì—´ì˜ iì˜ ê°œìˆ˜ë¥¼ ë‚˜íƒ€ë‚´ê²Œ ëœë‹¤.
+        //À§ for¹®À» °ÅÄ¡°Ô µÇ¸é counting[i]ÀÇ °ªÀº array¹è¿­ÀÇ iÀÇ °³¼ö¸¦ ³ªÅ¸³»°Ô µÈ´Ù.
 
-        //4. countingë°°ì—´ì˜ ê° ê°’ì„ ëˆ„ì í•©ìœ¼ë¡œ ë‹¤ì‹œ ë„£ì–´ì¤€ë‹¤. ì•„ëž˜ ì˜ˆì‹œì²˜ëŸ¼.
+        //4. counting¹è¿­ÀÇ °¢ °ªÀ» ´©ÀûÇÕÀ¸·Î ´Ù½Ã ³Ö¾îÁØ´Ù. ¾Æ·¡ ¿¹½ÃÃ³·³.
         // counting[1] = counting[0] + counting[1]
         // counting[2] = counting[1] + counting[2]
         // counting[3] = counting[2] + counting[3]
-        // ì‹ìœ¼ë¡œ ë‚˜íƒ€ë‚´ë©´ counting[i] = counting[i-1] + counting[i]
-        for(int i = 1; i<counting.length; i++) { //ì£¼ì˜í•  ì ì€ iì˜ ì‹œìž‘ì€ 1!! index[0]ì€ ìƒê°í•˜ì§€ ì•ŠëŠ”ë‹¤.
+        // ½ÄÀ¸·Î ³ªÅ¸³»¸é counting[i] = counting[i-1] + counting[i]
+        for(int i = 1; i<counting.length; i++) { //ÁÖÀÇÇÒ Á¡Àº iÀÇ ½ÃÀÛÀº 1!! index[0]Àº »ý°¢ÇÏÁö ¾Ê´Â´Ù.
             counting[i] += counting[i-1];
         }
-        //ìœ„ forë¬¸ì„ ê±°ì¹˜ë©´ countingë°°ì—´ì˜ ê° ì›ì†Œ ê°’ì€ arrayë°°ì—´ì´ ì •ë ¬ë˜ì–´ ë“¤ì–´ê°ˆ resultë°°ì—´(ìµœì¢…ë°°ì—´)ì˜ ì¸ë±ìŠ¤ê°€ ëœë‹¤.
-        //ì¦‰!! arrayë°°ì—´ì˜ ê° ì›ì†Œê°’ = countingë°°ì—´ì˜ ì¸ë±ìŠ¤, countingë°°ì—´ì˜ ì›ì†Œê°’ - 1 = resultë°°ì—´ì˜ ì¸ë±ìŠ¤, resultë°°ì—´ì˜ ì›ì†Œê°’ = arrayë°°ì—´ì˜ ì›ì†Œê°’
-        //ì¦‰!! arr[i]ì˜ ê°’ì´ countingì˜ indexê°’ì´ê³ , countingì˜ ê°’ì„ -1 ì‹œí‚¨ ê°’ì„ resultì˜ indexë¡œ ì‚¬ìš©í•´ í•´ë‹¹ index ê°’ì— arr[i] ê°’ì„ ë„£ì–´ì£¼ê²Œëœë‹¤.
-        //ì´ëŸ°ì‹ìœ¼ë¡œ í•˜ë©´ result ë°°ì—´ì€ array ë°°ì—´ì˜ ì •ë ¬ëœ í˜•íƒœë¡œ ìžˆê²Œ ëœë‹¤. ì•„ëž˜ì—ì„œ ê³„ì† êµ¬í˜„í•´ë³´ìž
+        //À§ for¹®À» °ÅÄ¡¸é counting¹è¿­ÀÇ °¢ ¿ø¼Ò °ªÀº array¹è¿­ÀÌ Á¤·ÄµÇ¾î µé¾î°¥ result¹è¿­(ÃÖÁ¾¹è¿­)ÀÇ ÀÎµ¦½º°¡ µÈ´Ù.
+        //Áï!! array¹è¿­ÀÇ °¢ ¿ø¼Ò°ª = counting¹è¿­ÀÇ ÀÎµ¦½º, counting¹è¿­ÀÇ ¿ø¼Ò°ª - 1 = result¹è¿­ÀÇ ÀÎµ¦½º, result¹è¿­ÀÇ ¿ø¼Ò°ª = array¹è¿­ÀÇ ¿ø¼Ò°ª
+        //Áï!! arr[i]ÀÇ °ªÀÌ countingÀÇ index°ªÀÌ°í, countingÀÇ °ªÀ» -1 ½ÃÅ² °ªÀ» resultÀÇ index·Î »ç¿ëÇØ ÇØ´ç index °ª¿¡ arr[i] °ªÀ» ³Ö¾îÁÖ°ÔµÈ´Ù.
+        //ÀÌ·±½ÄÀ¸·Î ÇÏ¸é result ¹è¿­Àº array ¹è¿­ÀÇ Á¤·ÄµÈ ÇüÅÂ·Î ÀÖ°Ô µÈ´Ù. ¾Æ·¡¿¡¼­ °è¼Ó ±¸ÇöÇØº¸ÀÚ
 
-        //5. arrayê°€ ì •ë ¬ëœ ìƒíƒœë¡œ ë‹´ê¸¸ ë°°ì—´
-        int[] result = new int[15]; //ë°°ì—´ì˜ í¬ê¸° ìž„ì˜ ì§€ì •(ê°„ë‹¨í•˜ê²Œ 15ë¡œã…Žã…Ž)
-        for (int i = array.length - 1; i >= 0; i--) { //ì•ˆì •ì ìœ¼ë¡œ ì •ë ¬í•˜ê¸° ìœ„í•´ì„œëŠ” arrayì˜ ë§ˆì§€ë§‰ index ë¶€í„° ìˆœíšŒí•˜ëŠ” ê²ƒì´ ì¢‹ë‹¤ê³  í•œë‹¤. -> ì •í™•í•œ ì´ìœ  ì•Œì•„ë³´ìž
+        //5. array°¡ Á¤·ÄµÈ »óÅÂ·Î ´ã±æ ¹è¿­
+        int[] result = new int[15]; //¹è¿­ÀÇ Å©±â ÀÓÀÇ ÁöÁ¤(°£´ÜÇÏ°Ô 15·Î¤¾¤¾)
+        for (int i = array.length - 1; i >= 0; i--) { //¾ÈÁ¤ÀûÀ¸·Î Á¤·ÄÇÏ±â À§ÇØ¼­´Â arrayÀÇ ¸¶Áö¸· index ºÎÅÍ ¼øÈ¸ÇÏ´Â °ÍÀÌ ÁÁ´Ù°í ÇÑ´Ù. -> Á¤È®ÇÑ ÀÌÀ¯ ¾Ë¾Æº¸ÀÚ
             int value = array[i];
             counting[value]--;
             result[counting[value]] = value;
         }
 
-        //6. ì´ì œ resultë°°ì—´ì—” arrayë°°ì—´ì´ ì •ë ¬ë˜ì–´ìžˆì„ ê²ƒì´ë‹¤. í™•ì¸í•´ë³´ìž
+        //6. ÀÌÁ¦ result¹è¿­¿£ array¹è¿­ÀÌ Á¤·ÄµÇ¾îÀÖÀ» °ÍÀÌ´Ù. È®ÀÎÇØº¸ÀÚ
         for (int i = 0; i < result.length; i++) {
             System.out.println(result[i]);
         }

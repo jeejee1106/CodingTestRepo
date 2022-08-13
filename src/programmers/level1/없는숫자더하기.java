@@ -1,21 +1,21 @@
 package programmers.level1;
 
-public class ì—†ëŠ”ìˆ«ìë”í•˜ê¸° {
+public class ¾ø´Â¼ıÀÚ´õÇÏ±â {
     public static void main(String[] args) {
         int[] numbers = {1,2,3,4,6,7,8,0}; //14
         int[] numbers2 = {5,8,4,0,6,7,9}; //6
 
-        System.out.println(ì—†ëŠ”ìˆ«ìë”í•˜ê¸°.solution1(numbers)); //14
-        System.out.println(ì—†ëŠ”ìˆ«ìë”í•˜ê¸°.solution1(numbers2)); //6
-        System.out.println(ì—†ëŠ”ìˆ«ìë”í•˜ê¸°.solution2(numbers)); //14
-        System.out.println(ì—†ëŠ”ìˆ«ìë”í•˜ê¸°.solution2(numbers2)); //6
+        System.out.println(¾ø´Â¼ıÀÚ´õÇÏ±â.solution1(numbers)); //14
+        System.out.println(¾ø´Â¼ıÀÚ´õÇÏ±â.solution1(numbers2)); //6
+        System.out.println(¾ø´Â¼ıÀÚ´õÇÏ±â.solution2(numbers)); //14
+        System.out.println(¾ø´Â¼ıÀÚ´õÇÏ±â.solution2(numbers2)); //6
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int solution1(int[] numbers) {
-        int answer = 45; //0~9ê¹Œì§€ ëª¨ë‘ ë”í•œ ê°’
+        int answer = 45; //0~9±îÁö ¸ğµÎ ´õÇÑ °ª
 
-        //1. 0~9ë¥¼ ëª¨ë‘ ë”í•œ 45ì—ì„œ ìˆëŠ” ìˆ«ìë¥¼ ëª¨ë‘ ë¹¼ì£¼ë©´ ì—†ëŠ” ìˆ«ìë¥¼ ë”í•œ ê°’ì´ ëœë‹¤.
+        //1. 0~9¸¦ ¸ğµÎ ´õÇÑ 45¿¡¼­ ÀÖ´Â ¼ıÀÚ¸¦ ¸ğµÎ »©ÁÖ¸é ¾ø´Â ¼ıÀÚ¸¦ ´õÇÑ °ªÀÌ µÈ´Ù.
         for(int i = 0; i < numbers.length; i++) {
             answer -= numbers[i];
         }
@@ -24,9 +24,9 @@ public class ì—†ëŠ”ìˆ«ìë”í•˜ê¸° {
     }
 
     public static int solution2(int[] numbers) {
-        int answer = 45; //0~9ê¹Œì§€ ëª¨ë‘ ë”í•œ ê°’
+        int answer = 45; //0~9±îÁö ¸ğµÎ ´õÇÑ °ª
 
-        //í–¥ìƒëœ forë¬¸ì„ ì“´ í’€ì´
+        //Çâ»óµÈ for¹®À» ¾´ Ç®ÀÌ
         for(int number : numbers) {
             answer -= number;
         }

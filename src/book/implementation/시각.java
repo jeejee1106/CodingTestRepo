@@ -1,18 +1,18 @@
 package book.implementation;
 
-public class ì‹œê° {
-    
+public class ½Ã°¢ {
+
     public static void main(String[] args) {
         int n1 = 5;
         int n2 = 13;
 
-        System.out.println("solution1 = " + ì‹œê°.solution1(n1)); // 11475
-        System.out.println("solution1 = " + ì‹œê°.solution1(n2)); // 26100
+        System.out.println("solution1 = " + ½Ã°¢.solution1(n1)); // 11475
+        System.out.println("solution1 = " + ½Ã°¢.solution1(n2)); // 26100
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int solution1(int n) {
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
 
         int answer = 0;
         String time = "";
@@ -20,9 +20,9 @@ public class ì‹œê° {
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= 59; j++) {
                 for (int k = 0; k <= 59; k++) {
-                    time = "" + i + j + k ; //ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ ë°”ê¿”ì£¼ëŠ” ì‘ì—…
-                    if (time.contains("3")) { //ë¬¸ìì—´ì— 3ì´ í¬í•¨ë˜ì–´ ìˆëŠ”ì§€ í™•ì¸
-                        answer++; //í¬í•¨ë˜ì—ˆì„ ë•Œ ì¹´ìš´íŠ¸ ì„¸ì£¼ê¸°
+                    time = "" + i + j + k ; //¼ıÀÚ¸¦ ¹®ÀÚ¿­·Î ¹Ù²ãÁÖ´Â ÀÛ¾÷
+                    if (time.contains("3")) { //¹®ÀÚ¿­¿¡ 3ÀÌ Æ÷ÇÔµÇ¾î ÀÖ´ÂÁö È®ÀÎ
+                        answer++; //Æ÷ÇÔµÇ¾úÀ» ¶§ Ä«¿îÆ® ¼¼ÁÖ±â
                     }
                 }
             }
@@ -31,7 +31,7 @@ public class ì‹œê° {
         long finishTime = System.nanoTime();
         long elapsedTime = finishTime - startTime;
         double seconds = elapsedTime / 1000000000.0;
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
         return answer;
     }
 }

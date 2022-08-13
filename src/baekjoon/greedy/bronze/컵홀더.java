@@ -4,67 +4,67 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class ì»µí™€ë” {
+public class ÄÅÈ¦´õ {
     public static void main(String[] args) throws IOException {
         solution1();
         solution2();
     }
 
-    public static void solution1() { //ë°±ì¤€ ë°©ì‹(Scannerë¡œ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() { //¹éÁØ ¹æ½Ä(Scanner·Î ÀÔ·Â¹Ş±â) Ç®ÀÌ
         Scanner in = new Scanner(System.in);
         int sitCount = in.nextInt(); //3
         String sitKind = in.next(); //SSS
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
-        int cupHolderCount = 1; //ì œì¼ ì™¼ìª½ì— ìˆëŠ” ê±° ì¹´ìš´íŠ¸ í•´ì£¼ê³  ì‹œì‘
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
+        int cupHolderCount = 1; //Á¦ÀÏ ¿ŞÂÊ¿¡ ÀÖ´Â °Å Ä«¿îÆ® ÇØÁÖ°í ½ÃÀÛ
 
         for (int i = 0; i < sitKind.length(); i++) {
             if (sitKind.charAt(i) == 'S') {
                 cupHolderCount++;
             } else {
                 cupHolderCount++;
-                i++; //ì»¤í”Œì„ì´ë©´ iì— 1ì„ ë”í•´ì£¼ê³  í•œ ì¹¸ ê±´ë„ˆë›°ê¸°
+                i++; //Ä¿ÇÃ¼®ÀÌ¸é i¿¡ 1À» ´õÇØÁÖ°í ÇÑ Ä­ °Ç³Ê¶Ù±â
             }
         }
-        //ì»µí™€ë”ì˜ ìˆ˜ > ì‚¬ëŒìˆ˜ -> ì‚¬ëŒ ìˆ˜ ì¶œë ¥
-        //ì»µí™€ë”ì˜ ìˆ˜ < ì‚¬ëŒìˆ˜ -> ì»µí™€ë” ìˆ˜ ì¶œë ¥
-        System.out.println("ë‹µ : " + (cupHolderCount > sitCount ? sitCount : cupHolderCount));
+        //ÄÅÈ¦´õÀÇ ¼ö > »ç¶÷¼ö -> »ç¶÷ ¼ö Ãâ·Â
+        //ÄÅÈ¦´õÀÇ ¼ö < »ç¶÷¼ö -> ÄÅÈ¦´õ ¼ö Ãâ·Â
+        System.out.println("´ä : " + (cupHolderCount > sitCount ? sitCount : cupHolderCount));
 
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 
     /**
-     * Scannerí´ë˜ìŠ¤ë³´ë‹¤ BufferedReaderí´ë˜ìŠ¤ê°€ í›¨ì”¬ ë” ë¹ ë¥´ë‹¤ëŠ” ì–˜ê¸°ë¥¼ ë“£ê³  í•œ ë²ˆ BufferedReaderë¥¼ ì‚¬ìš©í•´ë³´ì•˜ë‹¤.
-     * ë°±ì¤€ì½”ë”© ê²Œì‹œíŒ?ì˜ ìë£Œì—ë„ BufferedReaderí´ë˜ìŠ¤ê°€ Scannerë³´ë‹¤ ì•½ 7ë°° ì •ë„ ë¹ ë¥´ë‹¤ê³  ë‚˜ì™€ìˆì—ˆë‹¤.
-     * ê·¸ë¦¬ê³  ì‹¤ì œë¡œ BufferedReaderë¡œ í…ŒìŠ¤íŠ¸ë¥¼ ëŒë ¤ë³´ë‹ˆ í› ~~~ì–¼ì”¬ ë¹ ë¥¸ ì†ë„ê°€ ì¶œë ¥ë˜ëŠ” ê²ƒì„ ì•Œ ìˆ˜ ìˆë‹¤.
-     * ë‹¤ìŒ ë¬¸ì œë¶€í„´ Scannerì•ˆì“°ê³  BufferedReaderì¨ì•¼ì§€!!
+     * ScannerÅ¬·¡½ºº¸´Ù BufferedReaderÅ¬·¡½º°¡ ÈÎ¾À ´õ ºü¸£´Ù´Â ¾ê±â¸¦ µè°í ÇÑ ¹ø BufferedReader¸¦ »ç¿ëÇØº¸¾Ò´Ù.
+     * ¹éÁØÄÚµù °Ô½ÃÆÇ?ÀÇ ÀÚ·á¿¡µµ BufferedReaderÅ¬·¡½º°¡ Scannerº¸´Ù ¾à 7¹è Á¤µµ ºü¸£´Ù°í ³ª¿ÍÀÖ¾ú´Ù.
+     * ±×¸®°í ½ÇÁ¦·Î BufferedReader·Î Å×½ºÆ®¸¦ µ¹·Áº¸´Ï ÈÌ~~~¾ó¾À ºü¸¥ ¼Óµµ°¡ Ãâ·ÂµÇ´Â °ÍÀ» ¾Ë ¼ö ÀÖ´Ù.
+     * ´ÙÀ½ ¹®Á¦ºÎÅÏ Scanner¾È¾²°í BufferedReader½á¾ßÁö!!
      */
-    public static void solution2() throws IOException { //ë°±ì¤€ ë°©ì‹(Scannerë¡œ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution2() throws IOException { //¹éÁØ ¹æ½Ä(Scanner·Î ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int sitCount = Integer.parseInt(br.readLine()); //3
         String sitKind = br.readLine(); //SSS
 
-        long startTime = System.nanoTime(); //ì½”ë“œ ì‹¤í–‰ ì‹œê°„ì„ ì•Œì•„ë³´ê¸° ìœ„í•´ ì¶”ê°€í•¨
-        int cupHolderCount = 1; //ì œì¼ ì™¼ìª½ì— ìˆëŠ” ê±° ì¹´ìš´íŠ¸ í•´ì£¼ê³  ì‹œì‘
+        long startTime = System.nanoTime(); //ÄÚµå ½ÇÇà ½Ã°£À» ¾Ë¾Æº¸±â À§ÇØ Ãß°¡ÇÔ
+        int cupHolderCount = 1; //Á¦ÀÏ ¿ŞÂÊ¿¡ ÀÖ´Â °Å Ä«¿îÆ® ÇØÁÖ°í ½ÃÀÛ
 
         for (int i = 0; i < sitKind.length(); i++) {
             if (sitKind.charAt(i) == 'S') {
                 cupHolderCount++;
             } else {
                 cupHolderCount++;
-                i++; //ì»¤í”Œì„ì´ë©´ iì— 1ì„ ë”í•´ì£¼ê³  í•œ ì¹¸ ê±´ë„ˆë›°ê¸°
+                i++; //Ä¿ÇÃ¼®ÀÌ¸é i¿¡ 1À» ´õÇØÁÖ°í ÇÑ Ä­ °Ç³Ê¶Ù±â
             }
         }
-        //ì»µí™€ë”ì˜ ìˆ˜ > ì‚¬ëŒìˆ˜ -> ì‚¬ëŒ ìˆ˜ ì¶œë ¥
-        //ì»µí™€ë”ì˜ ìˆ˜ < ì‚¬ëŒìˆ˜ -> ì»µí™€ë” ìˆ˜ ì¶œë ¥
-        System.out.println("ë‹µ : " + (cupHolderCount > sitCount ? sitCount : cupHolderCount));
+        //ÄÅÈ¦´õÀÇ ¼ö > »ç¶÷¼ö -> »ç¶÷ ¼ö Ãâ·Â
+        //ÄÅÈ¦´õÀÇ ¼ö < »ç¶÷¼ö -> ÄÅÈ¦´õ ¼ö Ãâ·Â
+        System.out.println("´ä : " + (cupHolderCount > sitCount ? sitCount : cupHolderCount));
 
 
         long finishTime = System.nanoTime();
         BigDecimal seconds = new BigDecimal((finishTime - startTime) / 100000.0);
-        System.out.println("seconds : " + seconds + "ì´ˆ");
+        System.out.println("seconds : " + seconds + "ÃÊ");
     }
 }

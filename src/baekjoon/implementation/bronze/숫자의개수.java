@@ -4,29 +4,29 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ìˆ«ìì˜ê°œìˆ˜ {
+public class ¼ıÀÚÀÇ°³¼ö {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        //1. ìˆ«ì ì„¸ê°œ ì…ë ¥ ë°›ì•„ì„œ ê³±í•œ ê²°ê³¼ ì €ì¥
+        //1. ¼ıÀÚ ¼¼°³ ÀÔ·Â ¹Ş¾Æ¼­ °öÇÑ °á°ú ÀúÀå
         int number = Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine());
-        
-        //2. ì„¸ ìˆ«ìì˜ ê³±ì„ Stringìœ¼ë¡œ íƒ€ì… ë³€í™˜
+
+        //2. ¼¼ ¼ıÀÚÀÇ °öÀ» StringÀ¸·Î Å¸ÀÔ º¯È¯
         String strNum = String.valueOf(number);
-        
-        //3. 0~9ì˜ ê°¯ìˆ˜ë¥¼ ì €ì¥í•  ë°°ì—´ ì„ ì–¸
+
+        //3. 0~9ÀÇ °¹¼ö¸¦ ÀúÀåÇÒ ¹è¿­ ¼±¾ğ
         int[] numArr = new int[10];
 
-        //4. ë°°ì—´ì˜ ì¸ë±ìŠ¤ì— í•´ë‹¹í•˜ëŠ” ìˆ«ìê°€ ìˆìœ¼ë©´ countí•´ì£¼ê¸°
+        //4. ¹è¿­ÀÇ ÀÎµ¦½º¿¡ ÇØ´çÇÏ´Â ¼ıÀÚ°¡ ÀÖÀ¸¸é countÇØÁÖ±â
         for (int i = 0; i < strNum.length(); i++) {
             numArr[(strNum.charAt(i) - 48)]++;
         }
 
-        //5. ì¶œë ¥
+        //5. Ãâ·Â
         for (int count : numArr) {
             System.out.println(count);
         }

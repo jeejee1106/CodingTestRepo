@@ -2,7 +2,7 @@ package programmers.level1;
 
 import java.util.Arrays;
 
-public class ë‚´ì  {
+public class ³»Àû {
     public static void main(String[] args) {
         int[] a = {1,2,3,4};
         int[] b = {-3,-1,0,2};
@@ -10,11 +10,11 @@ public class ë‚´ì  {
         int[] a2 = {-1,0,1};
         int[] b2 = {1,0,-1};
 
-        System.out.println(ë‚´ì .solution1(a, b)); //3
-        System.out.println(ë‚´ì .solution1(a2, b2)); //-2
+        System.out.println(³»Àû.solution1(a, b)); //3
+        System.out.println(³»Àû.solution1(a2, b2)); //-2
     }
 
-    /////////////////[solution ì‹œì‘]/////////////////
+    /////////////////[solution ½ÃÀÛ]/////////////////
     public static int solution1(int[] a, int[] b) {
         int answer = 0;
 

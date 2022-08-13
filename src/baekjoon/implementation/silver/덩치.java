@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ë©ì¹˜ {
+public class µ¢Ä¡ {
     public static void main(String[] args) throws IOException {
         int[][] arr = {
                 {55, 185},
@@ -22,13 +22,13 @@ public class ë©ì¹˜ {
     public static void solution1() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        int[][] arr = new int[n][2]; //í‚¤ì™€ ëª¸ë¬´ê²Œë¥¼ ì €ì¥í•  ë°°ì—´
+        int[][] arr = new int[n][2]; //Å°¿Í ¸ö¹«°Ô¸¦ ÀúÀåÇÒ ¹è¿­
 
         String[] sp;
         for(int i = 0; i < n; i++) {
-            sp = br.readLine().split(" ");			// ë¬¸ìì—´ ë¶„ë¦¬
-            arr[i][0] = Integer.parseInt(sp[0]);	// [i][0] : ëª¸ë¬´ê²Œ
-            arr[i][1] = Integer.parseInt(sp[1]);	// [i][1] : í‚¤
+            sp = br.readLine().split(" ");			// ¹®ÀÚ¿­ ºĞ¸®
+            arr[i][0] = Integer.parseInt(sp[0]);	// [i][0] : ¸ö¹«°Ô
+            arr[i][1] = Integer.parseInt(sp[1]);	// [i][1] : Å°
         }
 
         for(int i = 0; i < n; i++) {
@@ -46,17 +46,17 @@ public class ë©ì¹˜ {
     }
 
     public static void solution2(int[][] arr) {
-        //ië²ˆì§¸ ì‚¬ëŒê³¼ jë²ˆì§¸ ì‚¬ëŒì„ í•˜ë‚˜í•˜ë‚˜ ë¹„êµë¥¼ í•´ë³¼ê²ƒì´ë‹¤.
+        //i¹øÂ° »ç¶÷°ú j¹øÂ° »ç¶÷À» ÇÏ³ªÇÏ³ª ºñ±³¸¦ ÇØº¼°ÍÀÌ´Ù.
         for (int i = 0; i < arr.length; i++) {
-            int rank = 1; //ìˆœìœ„ëŠ” 1ë¶€í„°ì‹œì‘. ë‹¤ìŒforë¬¸ì—ì„œ í•œì‚¬ëŒ í•œì‚¬ëŒ ë¹„êµë¥¼ í•˜ëŠ”ë°, ë‚˜ë³´ë‹¤ ë©ì¹˜ê°€ í° ì‚¬ëŒì´ ì—†ë‹¤ë©´ 1ì„ ë°˜í™˜
+            int rank = 1; //¼øÀ§´Â 1ºÎÅÍ½ÃÀÛ. ´ÙÀ½for¹®¿¡¼­ ÇÑ»ç¶÷ ÇÑ»ç¶÷ ºñ±³¸¦ ÇÏ´Âµ¥, ³ªº¸´Ù µ¢Ä¡°¡ Å« »ç¶÷ÀÌ ¾ø´Ù¸é 1À» ¹İÈ¯
 
             for(int j = 0; j < arr.length; j++) {
-                if(i == j) continue; //ê°™ì€ ì‚¬ëŒë¼ë¦¬ëŠ” ë¹„êµ ì•ˆí•˜ê³  ë„˜ì–´ê°„ë‹¤.
-                if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) { //í‚¤ì™€ ëª¸ë¬´ê²Œê°€ ië²ˆì§¸ ì‚¬ëŒë³´ë‹¤ í° ì‚¬ëŒì´ ìˆë‹¤ë©´
-                        rank++; //rankë¥¼ 1ì”© ë†’ì—¬ì¤€ë‹¤.
+                if(i == j) continue; //°°Àº »ç¶÷³¢¸®´Â ºñ±³ ¾ÈÇÏ°í ³Ñ¾î°£´Ù.
+                if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) { //Å°¿Í ¸ö¹«°Ô°¡ i¹øÂ° »ç¶÷º¸´Ù Å« »ç¶÷ÀÌ ÀÖ´Ù¸é
+                    rank++; //rank¸¦ 1¾¿ ³ô¿©ÁØ´Ù.
                 }
             }
-            System.out.print(rank + " "); //ië²ˆì§¸ ì‚¬ëŒì˜ ìˆœìœ„ ì¶œë ¥
+            System.out.print(rank + " "); //i¹øÂ° »ç¶÷ÀÇ ¼øÀ§ Ãâ·Â
         }
     }
 

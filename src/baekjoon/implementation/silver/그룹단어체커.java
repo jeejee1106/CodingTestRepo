@@ -5,41 +5,41 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class ê·¸ë£¹ë‹¨ì–´ì²´ì»¤ {
+public class ±×·ì´Ü¾îÃ¼Ä¿ {
     public static void main(String[] args) throws IOException {
         solution1();
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(Scannerë¡œ ì…ë ¥ë°›ê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(Scanner·Î ÀÔ·Â¹Ş±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int strCount = Integer.parseInt(br.readLine());
         int answer = 0;
         for (int i = 0; i < strCount; i++) {
             String str = br.readLine();
 
-            //ë°›ì€ ë¬¸ìì—´ì˜ ê¸¸ì´ê°€ 1ì´ë‚˜ 2ë©´ ë¬´ì¡°ê±´ ê·¸ë£¹ë‹¨ì–´ì´ê¸° ë•Œë¬¸ì— ë”°ë¡œ ê²€ì‚¬í•  í•„ìš” ì—†ì´ answer + 1ì„ í•´ì¤€ë‹¤.
+            //¹ŞÀº ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ 1ÀÌ³ª 2¸é ¹«Á¶°Ç ±×·ì´Ü¾îÀÌ±â ¶§¹®¿¡ µû·Î °Ë»çÇÒ ÇÊ¿ä ¾øÀÌ answer + 1À» ÇØÁØ´Ù.
             if (str.length() < 3) {
                 answer++;
             } else {
-                //ë°›ì€ ë¬¸ìì—´ì˜ ê¸¸ì´ê°€ 3ì´ìƒì´ë¼ë©´??
+                //¹ŞÀº ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ 3ÀÌ»óÀÌ¶ó¸é??
                 HashMap<Character, Integer> map = new HashMap<>();
-                map.put(str.charAt(0), 1); //HashMapì— ì²« ë¬¸ìì™€ ì¹´ìš´íŠ¸ë¥¼ ë„£ëŠ”ë‹¤.
-                //ë¬¸ìì—´ì˜ ê¸¸ì´ë§Œí¼ forë¬¸ì„ ëŒë¦¬ëŠ”ë°, ìœ„ì—ì„œ ì²« ë¬¸ìëŠ” í•´ê²°ì„ í–ˆìœ¼ë‹ˆ j = 1ë¶€í„°!
+                map.put(str.charAt(0), 1); //HashMap¿¡ Ã¹ ¹®ÀÚ¿Í Ä«¿îÆ®¸¦ ³Ö´Â´Ù.
+                //¹®ÀÚ¿­ÀÇ ±æÀÌ¸¸Å­ for¹®À» µ¹¸®´Âµ¥, À§¿¡¼­ Ã¹ ¹®ÀÚ´Â ÇØ°áÀ» ÇßÀ¸´Ï j = 1ºÎÅÍ!
                 for (int j = 1; j < str.length(); j++) {
-                    char now = str.charAt(j); //í˜„ì¬ ë¬¸ì
-                    char prev = str.charAt(j - 1); //ì´ì „ ì¸ë±ìŠ¤ì˜ ë¬¸ì
+                    char now = str.charAt(j); //ÇöÀç ¹®ÀÚ
+                    char prev = str.charAt(j - 1); //ÀÌÀü ÀÎµ¦½ºÀÇ ¹®ÀÚ
 
-                    //í˜„ì¬ ë¬¸ìë¥¼ mapì— ë„£ëŠ”ë‹¤. ë§Œì•½ ì´ë¯¸ ë§µì— ë¬¸ìê°€ ì¡´ì¬í•œë‹¤ë©´ ì¹´ìš´íŠ¸ +1 í•´ì¤€ë‹¤.
+                    //ÇöÀç ¹®ÀÚ¸¦ map¿¡ ³Ö´Â´Ù. ¸¸¾à ÀÌ¹Ì ¸Ê¿¡ ¹®ÀÚ°¡ Á¸ÀçÇÑ´Ù¸é Ä«¿îÆ® +1 ÇØÁØ´Ù.
                     map.put(now, map.getOrDefault(now, 0) + 1);
 
-                    //mapì˜ í˜„ì¬ ë¬¸ìì— ëŒ€í•œ valueê°’ì´ 2ì´ìƒì¸ë°(ì¦‰ ì²˜ìŒ ë“±ì¥í•œ ë¬¸ìê°€ ì•„ë‹ˆë¼ ë‘ ë²ˆì´ìƒ ë“±ì¥í•œ ë¬¸ìë¼ëŠ” ëœ»),
-                    //í˜„ì¬ ë¬¸ìê°€ ì´ì „ ë¬¸ìì™€ ì¼ì¹˜í•˜ì§€ ì•Šë‹¤ë©´?
-                    //ëŠì–´ì ¸ì„œ ê°™ì€ ë¬¸ìê°€ ë‘ ë²ˆ ë‚˜ì™”ë‹¤ëŠ” ëœ»ì´ë‹ˆ ê·¸ë£¹ ë‹¨ì–´ê°€ ë  ìˆ˜ ì—†ë‹¤.
+                    //mapÀÇ ÇöÀç ¹®ÀÚ¿¡ ´ëÇÑ value°ªÀÌ 2ÀÌ»óÀÎµ¥(Áï Ã³À½ µîÀåÇÑ ¹®ÀÚ°¡ ¾Æ´Ï¶ó µÎ ¹øÀÌ»ó µîÀåÇÑ ¹®ÀÚ¶ó´Â ¶æ),
+                    //ÇöÀç ¹®ÀÚ°¡ ÀÌÀü ¹®ÀÚ¿Í ÀÏÄ¡ÇÏÁö ¾Ê´Ù¸é?
+                    //²÷¾îÁ®¼­ °°Àº ¹®ÀÚ°¡ µÎ ¹ø ³ª¿Ô´Ù´Â ¶æÀÌ´Ï ±×·ì ´Ü¾î°¡ µÉ ¼ö ¾ø´Ù.
                     if (map.get(now) > 1 && now != prev) {
-                        break; //ê·¸ë£¹ë‹¨ì–´ê°€ ì•„ë‹ˆë©´ forë¬¸ ë¹ ì ¸ë‚˜ì˜¤ê¸°
+                        break; //±×·ì´Ü¾î°¡ ¾Æ´Ï¸é for¹® ºüÁ®³ª¿À±â
                     }
-                    if (j == str.length() - 1) { //ë¬¸ìì—´ì„ ëê¹Œì§€ ë‹¤ ëŒì•˜ë‹¤?? ê·¸ë£¹ë‹¨ì–´ì˜ ì¡°ê±´ì— ë§Œì¡±í•œë‹¤ëŠ” ëœ»
-                        answer++; //ê·¸ëŸ¬ë¯€ë¡œ ì¹´ìš´íŠ¸ + 1
+                    if (j == str.length() - 1) { //¹®ÀÚ¿­À» ³¡±îÁö ´Ù µ¹¾Ò´Ù?? ±×·ì´Ü¾îÀÇ Á¶°Ç¿¡ ¸¸Á·ÇÑ´Ù´Â ¶æ
+                        answer++; //±×·¯¹Ç·Î Ä«¿îÆ® + 1
                     }
                 }
             }

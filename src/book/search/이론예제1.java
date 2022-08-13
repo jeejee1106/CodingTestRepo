@@ -4,11 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class ì´ë¡ ì˜ˆì œ1 {
+public class ÀÌ·Ð¿¹Á¦1 {
 
     /**
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-     * ìŠ¤íƒ, í, ìž¬ê·€í•¨ìˆ˜ì— ëŒ€í•œ ê°„ë‹¨í•œ ì´ë¡ ê³¼ ì˜ˆì œ!!!
+     * ½ºÅÃ, Å¥, Àç±ÍÇÔ¼ö¿¡ ´ëÇÑ °£´ÜÇÑ ÀÌ·Ð°ú ¿¹Á¦!!!
      * <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
      */
 
@@ -17,21 +17,21 @@ public class ì´ë¡ ì˜ˆì œ1 {
 
         queue();
 
-//        infiniteRecursiveFunction(); //ë¬´í•œížˆ í˜¸ì¶œë˜ëŠ” ìž¬ê·€í•¨ìˆ˜!!!!!! StackOverflowErrorë°œìƒ : ìž¬ê·€ì˜ ìµœëŒ€ ê¹Šì´ë¥¼ ì´ˆê³¼í–ˆë‹¤. í˜¸ì¶œíšŸìˆ˜ ì œí•œì´ ìžˆëŠ”ë°, ì´ í•œê³„ë¥¼ ë²—ì–´ë‚¨
+//        infiniteRecursiveFunction(); //¹«ÇÑÈ÷ È£ÃâµÇ´Â Àç±ÍÇÔ¼ö!!!!!! StackOverflowError¹ß»ý : Àç±ÍÀÇ ÃÖ´ë ±íÀÌ¸¦ ÃÊ°úÇß´Ù. È£ÃâÈ½¼ö Á¦ÇÑÀÌ ÀÖ´Âµ¥, ÀÌ ÇÑ°è¸¦ ¹þ¾î³²
 
-        System.out.println(">>>>> ìž¬ê·€í•¨ìˆ˜ ì˜ˆì œ <<<<<");
+        System.out.println(">>>>> Àç±ÍÇÔ¼ö ¿¹Á¦ <<<<<");
         recursiveFunction(1);
         System.out.println();
 
         factorialIterative(5);
 
-        System.out.println(">>>>> ìž¬ê·€í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•œ íŒ©í† ë¦¬ì–¼ ì˜ˆì œ <<<<<");
+        System.out.println(">>>>> Àç±ÍÇÔ¼ö¸¦ »ç¿ëÇÑ ÆÑÅä¸®¾ó ¿¹Á¦ <<<<<");
         System.out.println(factorialRecursive(5));
         System.out.println();
 
     }
 
-    //Stack ì˜ˆì œ
+    //Stack ¿¹Á¦
     static void stack() {
         Stack<Integer> stack = new Stack<>();
 
@@ -39,21 +39,21 @@ public class ì´ë¡ ì˜ˆì œ1 {
         stack.push(2);
         stack.push(3);
         stack.push(4);
-        stack.pop(); //ì œì¼ ë§ˆì§€ë§‰ì— ë“¤ì–´ê°„(ì œì¼ ìœ„ì— ìžˆëŠ”) 4ê°€ ì‚­ì œë¨
+        stack.pop(); //Á¦ÀÏ ¸¶Áö¸·¿¡ µé¾î°£(Á¦ÀÏ À§¿¡ ÀÖ´Â) 4°¡ »èÁ¦µÊ
         stack.push(1);
         stack.push(4);
-        stack.pop(); //ì œì¼ ë§ˆì§€ë§‰ì— ë“¤ì–´ê°„(ì œì¼ ìœ„ì— ìžˆëŠ”) 4ê°€ ì‚­ì œêµ„
+        stack.pop(); //Á¦ÀÏ ¸¶Áö¸·¿¡ µé¾î°£(Á¦ÀÏ À§¿¡ ÀÖ´Â) 4°¡ »èÁ¦±¯
 
-        System.out.println(">>>>> stack ì˜ˆì œ <<<<<");
-        //ìŠ¤íƒì˜ ìµœìƒë‹¨ ì›ì†Œë¶€í„° ì¶œë ¥
+        System.out.println(">>>>> stack ¿¹Á¦ <<<<<");
+        //½ºÅÃÀÇ ÃÖ»ó´Ü ¿ø¼ÒºÎÅÍ Ãâ·Â
         while (!stack.empty()) {
-            System.out.println(stack.peek()); //ì œì¼ ìœ„ì— ì›ì†Œ ì¶œë ¥í•˜ê¸°
-            stack.pop(); //ì¶œë ¥ í›„ ì‚­ì œ! ê·¸ëž˜ì•¼ ê·¸ ë°‘ì˜ ì›ì†Œê°€ ë‚˜ì˜¤ì§€!
+            System.out.println(stack.peek()); //Á¦ÀÏ À§¿¡ ¿ø¼Ò Ãâ·ÂÇÏ±â
+            stack.pop(); //Ãâ·Â ÈÄ »èÁ¦! ±×·¡¾ß ±× ¹ØÀÇ ¿ø¼Ò°¡ ³ª¿ÀÁö!
         }
         System.out.println();
     }
 
-    //Queue ì˜ˆì œ
+    //Queue ¿¹Á¦
     static void queue() {
         Queue<Integer> queue = new LinkedList<>();
 
@@ -61,46 +61,46 @@ public class ì´ë¡ ì˜ˆì œ1 {
         queue.offer(2);
         queue.offer(3);
         queue.offer(7);
-        queue.poll(); //ì œì¼ ë¨¼ì € ë“¤ì–´ê°„ 5ê°€ ì‚­ì œë¨
+        queue.poll(); //Á¦ÀÏ ¸ÕÀú µé¾î°£ 5°¡ »èÁ¦µÊ
         queue.offer(1);
         queue.offer(4);
-        queue.poll(); //ë‘ ë²ˆì§¸ë¡œ ë“¤ì–´ê°„ 2ê°€ ì‚­ì œë¨
+        queue.poll(); //µÎ ¹øÂ°·Î µé¾î°£ 2°¡ »èÁ¦µÊ
 
-        System.out.println(">>>>> queue ì˜ˆì œ <<<<<");
-        //ë¨¼ì € ë“¤ì–´ì˜¨ ì›ì†Œë¶€í„° ì¶”ì¶œë¨
+        System.out.println(">>>>> queue ¿¹Á¦ <<<<<");
+        //¸ÕÀú µé¾î¿Â ¿ø¼ÒºÎÅÍ ÃßÃâµÊ
         while (!queue.isEmpty()) {
-            System.out.println(queue.poll()); //ì œì¼ ë¨¼ì € ë“¤ì–´ì˜¨ ì›ì†Œë¥¼ ì‚­ì œí•˜ë©´ì„œ í™•ì¸í•´ë³´ê¸°
+            System.out.println(queue.poll()); //Á¦ÀÏ ¸ÕÀú µé¾î¿Â ¿ø¼Ò¸¦ »èÁ¦ÇÏ¸é¼­ È®ÀÎÇØº¸±â
         }
         System.out.println();
     }
 
-    //ë¬´í•œížˆ í˜¸ì¶œë˜ëŠ” ìž¬ê·€í•¨ìˆ˜ ì˜ˆì œ
+    //¹«ÇÑÈ÷ È£ÃâµÇ´Â Àç±ÍÇÔ¼ö ¿¹Á¦
     static void infiniteRecursiveFunction() {
-        System.out.println("ìž¬ê·€í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤.");
-        infiniteRecursiveFunction(); //ìžê¸° ìžì‹ ì„ í˜¸ì¶œ
+        System.out.println("Àç±ÍÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.");
+        infiniteRecursiveFunction(); //ÀÚ±â ÀÚ½ÅÀ» È£Ãâ
     }
 
-    //ìž¬ê·€í•¨ìˆ˜ì˜ ì¢…ë£Œ ì¡°ê±´ ì˜ˆì œ
+    //Àç±ÍÇÔ¼öÀÇ Á¾·á Á¶°Ç ¿¹Á¦
     static void recursiveFunction(int i) {
-        //100ë²ˆì§¸ í˜¸ì¶œì„ í–ˆì„ ë•Œ ì¢…ë£Œë˜ë„ë¡ ì¢…ë£Œ ì¡°ê±´ ëª…ì‹œ
+        //100¹øÂ° È£ÃâÀ» ÇßÀ» ¶§ Á¾·áµÇµµ·Ï Á¾·á Á¶°Ç ¸í½Ã
         if (i == 100) {
             return;
         }
-        System.out.println(i + "ë²ˆì§¸ ìž¬ê·€í•¨ìˆ˜ì—ì„œ " + (i + 1) + "ë²ˆì§¸ ìž¬ê·€í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤.");
+        System.out.println(i + "¹øÂ° Àç±ÍÇÔ¼ö¿¡¼­ " + (i + 1) + "¹øÂ° Àç±ÍÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.");
         recursiveFunction(i + 1);
-        System.out.println(i + "ë²ˆì§¸ ìž¬ê·€í•¨ìˆ˜ë¥¼ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+        System.out.println(i + "¹øÂ° Àç±ÍÇÔ¼ö¸¦ Á¾·áÇÕ´Ï´Ù.");
         /**
-         * ì»´í‘¸í„° ë‚´ë¶€ì—ì„œ ìž¬ê·€í•¨ìˆ˜ì˜ ìˆ˜í–‰ì€ ìŠ¤íƒ ìžë£Œêµ¬ì¡°ë¥¼ ì´ìš©
-         * í•¨ìˆ˜ë¥¼ ê³„ì† í˜¸ì¶œ í–ˆì„ ë•Œ ê°€ìž¥ ë§ˆì§€ë§‰ì— í˜¸ì¶œí•œ í•¨ìˆ˜ê°€ ë¨¼ì € ìˆ˜í–‰ì„ ëë‚´ì•¼ ê·¸ ì•žì˜ í•¨ìˆ˜ í˜¸ì¶œì´ ì¢…ë£Œë˜ê¸° ë•Œë¬¸.
-         * ì¦‰, ìž¬ê·€í•¨ìˆ˜ëŠ” ë‚´ë¶€ì ìœ¼ë¡œ ìŠ¤íƒ ìžë£Œêµ¬ì¡°ì™€ ë™ì¼í•˜ë‹¤.
+         * ÄÄÇªÅÍ ³»ºÎ¿¡¼­ Àç±ÍÇÔ¼öÀÇ ¼öÇàÀº ½ºÅÃ ÀÚ·á±¸Á¶¸¦ ÀÌ¿ë
+         * ÇÔ¼ö¸¦ °è¼Ó È£Ãâ ÇßÀ» ¶§ °¡Àå ¸¶Áö¸·¿¡ È£ÃâÇÑ ÇÔ¼ö°¡ ¸ÕÀú ¼öÇàÀ» ³¡³»¾ß ±× ¾ÕÀÇ ÇÔ¼ö È£ÃâÀÌ Á¾·áµÇ±â ¶§¹®.
+         * Áï, Àç±ÍÇÔ¼ö´Â ³»ºÎÀûÀ¸·Î ½ºÅÃ ÀÚ·á±¸Á¶¿Í µ¿ÀÏÇÏ´Ù.
          */
     }
 
-    // ë°˜ë³µì ìœ¼ë¡œ êµ¬í˜„í•œ n! (íŒ©í† ë¦¬ì–¼)
+    // ¹Ýº¹ÀûÀ¸·Î ±¸ÇöÇÑ n! (ÆÑÅä¸®¾ó)
     static void factorialIterative(int n) {
-        System.out.println(">>>>> ë°˜ë³µë¬¸ì„ ì‚¬ìš©í•œ íŒ©í† ë¦¬ì–¼ ì˜ˆì œ <<<<<");
+        System.out.println(">>>>> ¹Ýº¹¹®À» »ç¿ëÇÑ ÆÑÅä¸®¾ó ¿¹Á¦ <<<<<");
         int result = 1;
-        // 1ë¶€í„° nê¹Œì§€ì˜ ìˆ˜ë¥¼ ì°¨ë¡€ëŒ€ë¡œ ê³±í•˜ê¸°
+        // 1ºÎÅÍ n±îÁöÀÇ ¼ö¸¦ Â÷·Ê´ë·Î °öÇÏ±â
         for (int i = 1; i <= n; i++) {
             result *= i;
         }
@@ -108,14 +108,11 @@ public class ì´ë¡ ì˜ˆì œ1 {
         System.out.println();
     }
 
-    // ìž¬ê·€ì ìœ¼ë¡œ êµ¬í˜„í•œ n!
+    // Àç±ÍÀûÀ¸·Î ±¸ÇöÇÑ n!
     static int factorialRecursive(int n) {
-        // nì´ 1 ì´í•˜ì¸ ê²½ìš° 1ì„ ë°˜í™˜
+        // nÀÌ 1 ÀÌÇÏÀÎ °æ¿ì 1À» ¹ÝÈ¯
         if (n <= 1) return 1;
-        // n! = n * (n - 1)!ë¥¼ ê·¸ëŒ€ë¡œ ì½”ë“œë¡œ ìž‘ì„±í•˜ê¸°
-        return n * factorialRecursive(n - 1); //ì‹±ê¸°í•˜ë‹¤......
+        // n! = n * (n - 1)!¸¦ ±×´ë·Î ÄÚµå·Î ÀÛ¼ºÇÏ±â
+        return n * factorialRecursive(n - 1); //½Ì±âÇÏ´Ù......
     }
-
-
-
 }

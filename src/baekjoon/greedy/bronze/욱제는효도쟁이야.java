@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class ìš±ì œëŠ”íš¨ë„ìŸì´ì•¼ {
+public class ¿íÁ¦´ÂÈ¿µµÀïÀÌ¾ß {
     public static void main(String[] args) throws IOException {
 //        solution1();
 
@@ -19,7 +19,7 @@ public class ìš±ì œëŠ”íš¨ë„ìŸì´ì•¼ {
         System.out.println(solution2(n2, expense2)); //65
     }
 
-    public static void solution1() throws IOException { //ë°±ì¤€ ë°©ì‹(BufferedReaderë¡œ í•œ ì¤„ ì…ë ¥ë°›ê³  StringTokenizerë¡œ ìª¼ê°œê¸°) í’€ì´
+    public static void solution1() throws IOException { //¹éÁØ ¹æ½Ä(BufferedReader·Î ÇÑ ÁÙ ÀÔ·Â¹Ş°í StringTokenizer·Î ÂÉ°³±â) Ç®ÀÌ
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine()); //7
         int[] expense = new int[n];
@@ -38,11 +38,11 @@ public class ìš±ì œëŠ”íš¨ë„ìŸì´ì•¼ {
     }
 
     public static int solution2(int n, int[] expense){
-        int minExpense = 0; //ìµœì†Œí•œì˜ ê²½ë¹„ë¥¼ ë‹´ì„ ë³€ìˆ˜ ì„ ì–¸
+        int minExpense = 0; //ÃÖ¼ÒÇÑÀÇ °æºñ¸¦ ´ãÀ» º¯¼ö ¼±¾ğ
 
-        Arrays.sort(expense); //ê²½ë¹„ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
-        for (int i = 0; i < expense.length - 1; i++) { //ê²½ë¹„ê°€ ì ¤ ë¹„ì‹¼ ë§ˆì§€ë§‰ ì›ì†Œ ë¹¼ê³ 
-            minExpense += expense[i]; //ê²½ë¹„ ë‹¤ ë”í•´ì£¼ê¸°
+        Arrays.sort(expense); //°æºñ ¿À¸§Â÷¼ø Á¤·Ä
+        for (int i = 0; i < expense.length - 1; i++) { //°æºñ°¡ Á© ºñ½Ñ ¸¶Áö¸· ¿ø¼Ò »©°í
+            minExpense += expense[i]; //°æºñ ´Ù ´õÇØÁÖ±â
         }
         return minExpense;
     }
