@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class 신고경과받기 {
+public class 신고결과받기 {
     /**
      * 으어ㅓ어ㅓ어어 거의 다 했는데 여러번 신고해도 한 번만 들어간다는 걸 간과함
      * 그것만 고치면 될 듯!!!!!
@@ -19,8 +19,8 @@ public class 신고경과받기 {
         String[] report2 = {"ryan con", "ryan con", "ryan con", "ryan con"};
         int k2 = 3;
 
-        System.out.println(신고경과받기.solution1(idList1, report1, k1)); //[2,1,1,0]
-        System.out.println(신고경과받기.solution1(idList2, report2, k2)); //[0,0]
+        System.out.println(신고결과받기.solution1(idList1, report1, k1)); //[2,1,1,0]
+        System.out.println(신고결과받기.solution1(idList2, report2, k2)); //[0,0]
     }
 
     /////////////////[solution 시작]/////////////////
