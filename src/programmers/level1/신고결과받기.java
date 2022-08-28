@@ -97,7 +97,7 @@ public class 신고결과받기 {
         //4. 정답을 넣을 배열 선언
         int[] answer = new int[idList.length];
 
-        //5.
+        //5. k번 이상 신고당한 유저를 신고한 유저에 대한 카운트++
         for (String reportStr : reportSet) {
             String[] reportSplit = reportStr.split(" ");
             String id = reportSplit[0]; //신고한 유저 id
