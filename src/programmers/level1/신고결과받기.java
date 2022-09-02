@@ -112,4 +112,11 @@ public class 신고결과받기 {
 
         return answer;
     }
+
+    public static int[] solution3(String[] idList, String[] report, int k) {
+
+        int[] answer = {};
+
+        return answer;
+    }
 }
