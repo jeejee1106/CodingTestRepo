@@ -31,14 +31,17 @@ public class 폰켓몬 {
         //map에 넣기
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], map.getOrDefault(map.get(nums[i]), 0) + 1);
+            map.put(nums[i], 1);
         }
 
-        if (map.size() <= half) {
-            answer = map.size();
-        } else {
-            answer = half;
-        }
+//        if (map.size() <= half) {
+//            answer = map.size();
+//        } else {
+//            answer = half;
+//        }
+
+        answer = map.size() <= half ? map.size() : half;
+
         return answer;
     }
 
@@ -92,7 +95,7 @@ public class 폰켓몬 {
          * 만약 폰켄몬 10마리의 종류가 4가지라면 count는 4가 된다.
          * 내가 가져갈 수 있는 폰켄몬은 10/2마리로 half는 5지만 문제는 최대 몇종류의 폰켄몬을 가져갈 수 있느냐?이기 때문에
          * 내가 가져갈 수 있는 폰켄몬 갯수인 5가 아니라, 최대 종류갯수인 4를 리턴해야한다.
-         * 즉, 여기서도 더 작은 값을을 턴해야한다!
+         * 즉, 여기서도 더 작은 값을 리턴해야한다!
          */
     }
 }
