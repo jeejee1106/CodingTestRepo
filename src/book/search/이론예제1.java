@@ -21,7 +21,7 @@ public class 이론예제1 {
 
         System.out.println(">>>>> 재귀함수 예제 <<<<<");
         recursiveFunction(1);
-        System.out.println();
+        System.out.println(">>>>> 재귀함수 예제 끝 <<<<<");
 
         factorialIterative(5);
 
@@ -85,6 +85,7 @@ public class 이론예제1 {
         //100번째 호출을 했을 때 종료되도록 종료 조건 명시
         if (i == 100) {
             return;
+            //여기서 return 됐을 때 어떵게 92라인으로 가서 i가 하나씩 줄어드는지 공부하기(이해가 안간다! 재귀함수의 특징인가??)
         }
         System.out.println(i + "번째 재귀함수에서 " + (i + 1) + "번째 재귀함수를 호출합니다.");
         recursiveFunction(i + 1);
