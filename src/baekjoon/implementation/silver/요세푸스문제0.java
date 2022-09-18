@@ -25,21 +25,17 @@ public class 요세푸스문제0 {
             list.add(i);
         }
 
-
         StringBuilder sb = new StringBuilder();
         sb.append('<');
 
-        int index = 0;	// 리스트에서 삭제할 요소를 참조할 인덱스 변수
+        int index = 0;
 
         while(N > 1) {
             index = (index + (K - 1)) % N;
-
-            // index위치에 있는 요소를 삭제함과 동시에 출력
             sb.append(list.remove(index)).append(", ");
             N--;
         }
 
-        // 마지막으로 남은 요소 삭제함과 동시에 출력
         sb.append(list.remove()).append('>');
         System.out.println(sb);
 
