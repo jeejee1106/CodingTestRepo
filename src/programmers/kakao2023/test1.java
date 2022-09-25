@@ -9,14 +9,14 @@ public class test1 {
         String[] privacies = {"2021.05.02 A",
                               "2021.07.01 B",
                               "2022.02.19 C",
-                              "2022.02.20 C",};
+                              "2022.02.20 C"};
 
         String today2 = "2020.03.01";
         String[] terms2 = {"A 10", "B 5", "C 3"};
         String[] privacies2 = {"2019.01.01 A",
-                "2019.03.02 A",
-                "2019.03.19 A",
-                "2019.04.20 A",};
+                               "2019.03.02 A",
+                               "2019.03.19 A",
+                               "2019.04.20 A"};
 
         System.out.println(Arrays.toString(test1.solution(today, terms, privacies)));
         System.out.println(Arrays.toString(test1.solution(today2, terms2, privacies2)));
@@ -49,8 +49,8 @@ public class test1 {
         }
 
         // 각 월에 약관에 맞는 보관시기를 더해서
-        // if(월이 12 초과면 ) {
-        // 년도 +1, 월 -12, 일 -1 } else{일 -1}
+        // while(월이 12 초과 ) {
+        // 년도 +1, 월 -12}
         int[] privYear = new int[agreeDay.length];
         int[] privmonth = new int[agreeDay.length];
         int[] privday = new int[agreeDay.length];
@@ -67,9 +67,6 @@ public class test1 {
             while (privmonth[i] > 12) {
                 privYear[i] += 1;
                 privmonth[i] -= 12;
-                if (privmonth[i] < 12) {
-                    break;
-                }
             }
         }
 
