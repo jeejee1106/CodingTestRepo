@@ -6,6 +6,11 @@ package programmers.level0;
  * 몇 번 더 풀어보기!!
  */
 public class 안전지대 {
+
+    //지뢰가 있는 곳을 기준으로 위험지대로 바꾸어줄 좌표 8방향. xy,xy ...로 읽어보면 8방향의 좌표를 얻을 수 있다.
+    static int[] positionX = {-1, 1, 0, 0, -1, -1, 1, 1};
+    static int[] positionY = {0, 0, -1, 1, -1, 1, 1, -1};
+
     public static void main(String[] args) {
         int[][] board1 = {{0, 0, 0, 0, 0},
                           {0, 0, 0, 0, 0},
@@ -29,6 +34,10 @@ public class 안전지대 {
         System.out.println(안전지대.solution1(board1)); //16
         System.out.println(안전지대.solution1(board2)); //13
         System.out.println(안전지대.solution1(board3)); //0
+
+        System.out.println(안전지대.solution2(board1)); //16
+        System.out.println(안전지대.solution2(board2)); //13
+        System.out.println(안전지대.solution2(board3)); //0
     }
 
     /////////////////[solution 시작]/////////////////
@@ -69,5 +78,45 @@ public class 안전지대 {
         }
         return answer;
     }
+
+    public static int solution2(int[][] board) {
+        getLandmine(board, positionX, positionY);
+        return safetyCount(board);
+    }
+
+    private static void getLandmine(int[][] board, int[] positionX, int[] positionY) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == 1) {
+                    changeStatus(board, positionX, positionY, i, j);
+                }
+            }
+        }
+    }
+
+    private static void changeStatus(int[][] board, int[] positionX, int[] positionY, int i, int j) {
+        for (int k = 0; k < 8; k++) {
+            int nextX = i + positionX[k];
+            int nextY = j + positionY[k];
+            if (nextX >= 0 && nextY >= 0 && nextX < board.length && nextY < board.length) {
+                if (board[nextX][nextY] == 0) {
+                    board[nextX][nextY] = 2;
+                }
+            }
+        }
+    }
+
+    private static int safetyCount(int[][] board) {
+        int answer = 0;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == 0) {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
 
 }
