@@ -1,5 +1,7 @@
 package programmers.level0;
 
+import java.util.HashMap;
+
 public class 최빈값구하기 {
     public static void main(String[] args) {
         int[] array1 = {1, 2, 3, 3, 3, 4};
@@ -59,6 +61,21 @@ public class 최빈값구하기 {
 
     public static int solution2(int[] array) {
         int answer = 0;
+        int maxCount = 0; //최빈값을 넣을 변수
+        HashMap<Integer, Integer> map = new HashMap<>(); //array의 원소를 key로, 등장 횟수를 value로 넣을 맵
+
+        for (int number : array) {
+            //1. number가 한 번 등장할 때마다 해당 key에 대한 value를 +1 해준다.
+            int count = map.getOrDefault(number, 0) + 1;
+
+            if (count > maxCount) {
+                maxCount = count; //2-1. number가 등장한 횟수(count)와 현재 최빈값을 비교해 number의 빈도수가 더 크면 최빈값 교체.
+                answer = number; //2-2. number가 등장한 횟수(count)와 현재 최빈값을 비교해 number의 빈도수가 더 크다는 것은? number가 최빈값이라는 뜻.
+            } else if (count == maxCount) { //3. number의 등장횟수와 현재 최빈값이 같다는 것은 둘의 등장횟수가 같다는 뜻이므로 -1 반환
+                answer = -1;
+            }
+            map.put(number, count); //4. 마지막으로 map에 key, value를 넣어줌. 그래야 for문이 돌면서 같은 number가 나왔을 때 value+1을 해주니까.
+        }
 
         return answer;
     }
