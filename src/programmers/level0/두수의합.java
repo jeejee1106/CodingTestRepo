@@ -1,4 +1,4 @@
-package programmers.level0.day1;
+package programmers.level0;
 
 public class 두수의합 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package programmers.level0.day1;
+package programmers.level0;
 
 public class ¸ò±¸ÇÏ±â {
     public static void main(String[] args) {

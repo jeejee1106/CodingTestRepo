@@ -1,4 +1,4 @@
-package programmers.level0.day2;
+package programmers.level0;
 
 public class 숫자비교하기 {
     public static void main(String[] args) {
