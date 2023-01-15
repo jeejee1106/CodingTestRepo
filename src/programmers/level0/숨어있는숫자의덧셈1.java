@@ -10,6 +10,9 @@ public class ¼û¾îÀÖ´Â¼ýÀÚÀÇµ¡¼À1 {
 
         System.out.println(¼û¾îÀÖ´Â¼ýÀÚÀÇµ¡¼À1.solution2(my_string1)); //10
         System.out.println(¼û¾îÀÖ´Â¼ýÀÚÀÇµ¡¼À1.solution2(my_string2)); //16
+
+        System.out.println(¼û¾îÀÖ´Â¼ýÀÚÀÇµ¡¼À1.solution3(my_string1)); //10
+        System.out.println(¼û¾îÀÖ´Â¼ýÀÚÀÇµ¡¼À1.solution3(my_string2)); //16
     }
 
     /////////////////[solution ½ÃÀÛ]/////////////////
@@ -33,5 +36,17 @@ public class ¼û¾îÀÖ´Â¼ýÀÚÀÇµ¡¼À1 {
     //Æò±Õ 3.5ms Èì..
     public static int solution2(String my_string) {
         return my_string.chars().mapToObj(i -> (char) i).filter(Character::isDigit).map(String::valueOf).mapToInt(Integer::valueOf).sum();
+    }
+
+    //Æò±Õ 0.2ms !!!! ÀÌ°Å±º!!
+    public static int solution3(String my_string) {
+        int answer = 0;
+        my_string = my_string.replaceAll("[a-z | A-Z]","");
+
+        for(int i = 0; i < my_string.length(); i++){
+            answer += my_string.charAt(i) - '0';
+        }
+
+        return answer;
     }
 }
