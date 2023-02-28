@@ -16,7 +16,7 @@ public class 치킨쿠폰 {
         System.out.println(치킨쿠폰.solution1(chicken4)); //0
         System.out.println(치킨쿠폰.solution1(chicken5)); //55
         System.out.println(치킨쿠폰.solution1(chicken6)); //111110
-        System.out.println(치킨쿠폰.solution1(chicken7)); //221
+        System.out.println(치킨쿠폰.solution1(chicken7)); //222
     }
 
     /////////////////[solution 시작]/////////////////
